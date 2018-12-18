@@ -68,6 +68,12 @@ u {
   text-decoration: underline;
 }
 
+ul.list {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 10px;
+}
+
 /* Sticky */
 
 .sticky {
@@ -329,7 +335,7 @@ u {
 
 #content h3 {
   color: var(--main-accent-color);
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 #content h4 {

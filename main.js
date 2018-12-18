@@ -178,12 +178,15 @@
     var mainTop = main.offsetTop;
     var info = document.getElementById("info");
 
-    window.onscroll = function() {
+    function sticky() {
       if (window.pageYOffset > mainTop) {
         info.classList.add("sticky");
       } else {
         info.classList.remove("sticky");
       }
-    };
+    }
+
+    window.onscroll = sticky;
+    sticky();
   }
 })();
