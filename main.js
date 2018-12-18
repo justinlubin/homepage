@@ -113,7 +113,7 @@
       var angle = 0;
       points.push(point(x, y, angle));
 
-      var stroke = "rgba(0, 0, 0, 0.1)";
+      var stroke = "rgba(0, 0, 0, 0.05)";
       colors.push(color(stroke));
     }
   }
