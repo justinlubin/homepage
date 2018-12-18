@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Justin Lubin</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Lora:400,400i,700,700i|Raleway:400,400i,700,700i" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <script src="rhill-voronoi-core.min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <header id="main-header">
+      <div id="main-circle">
+        <p>the homepage of</p>
+        <h1>Justin Lubin</h1>
+      </div>
+      <canvas id="voronoi" height="600"></canvas>
+      <div id="blur"></div>
+    </header>
+
+    <div id="main">
+      <aside id="info">
+        <img src="img/me.jpg" />
+        <div>
+          <h2>
+            <a class="fancy-underline" href="http://jlubin.net">
+              Justin Lubin
+            </a>
+          </h2>
+          <ul id="contact">
+            <li>
+              <i class="icon far fa-envelope"></i>
+              <a class="fancy-underline"
+                 href="mailto:justin@jlubin.net"
+                 title="Email">justin@jlubin.net</a>
+            </li>
+            <li>
+              <i class="icon fab fa-github"></i>
+              <a class="fancy-underline"
+                 href="https://github.com/justinlubin/"
+                 title="GitHub">justinlubin</a>
+            </li>
+          </ul>
+        </div>
+        <ul id="nav">
+          <li><a class="fancy-underline" href="#about-me">About Me</a></li>
+          <li><a class="fancy-underline" href="#research">Research</a></li>
+          <li><a class="fancy-underline" href="#news">News</a></li>
+          <li><a class="fancy-underline" href="#publications">Publications</a></li>
+          <li><a class="fancy-underline" href="#talks">Talks</a></li>
+          <!--<li><a class="fancy-underline" href="#fun">Fun</a></li>-->
+        </ul>
+      </aside>
+
+      <div id="content">
+        <section id="about-me">
+          <p>
+            Hello there! My name is Justin Lubin. I love computer science,
+            mathematics, piano, and crochet. Most of all, I am passionate about
+            research and education: not only trying to discover beautiful
+            results, but also sharing what I learn with others.
+          </p>
+
+          <p>
+            I aspire to be a professor of computer science so that I will be
+            able to combine two of my deepest passions, computer science
+            theory and teaching. I hope that one day I will be able to pay off
+            the debt of gratitude that I have to all the wonderful people who
+            have taught me in my life by passing on the knowledge that they
+            have imparted to me to the next generation.
+          </p>
+        </section>
+        <section id="research">
+          <h2>Research</h2>
+
+          <p>
+            My goal is twofold: to develop <em>elegant theories</em> and to
+            make them usable by <em>humans</em>.
+          </p>
+          <p>
+            To that end, I am very interested in <em>programming language
+            theory</em> and draw great inspiration from the study of
+            <em>human-computer interaction</em>.
+          </p>
+          <p>
+            I currently work with
+            <a href="http://people.cs.uchicago.edu/~rchugh/">
+              Professor Ravi Chugh
+            </a>
+            at the University of Chicago, and have been doing so for a few
+            years. I also worked with
+            <a href="https://www.cs.cmu.edu/~aldrich/">
+              Professor Jonathan Aldrich
+            </a>
+            at Carnegie Mellon University during the summer of 2018. Many, many
+            thanks to both of them for their extremely helpful guidance!
+          </p>
+
+          <h3>Projects</h3>
+
+          <div id="projects">
+            <div>
+              <img src="img/sketch-n-sketch.png" alt="Sketch-n-Sketch" />
+              <div>
+                <h4>
+                  <a href="http://ravichugh.github.io/sketch-n-sketch/"
+                     alt="Sketch-n-Sketch">
+                    Sketch-n-Sketch
+                  </a> @ UChicago
+                </h4>
+                <p>
+                  Sketch-n-Sketch is a bidirectional HTML and SVG editor. Users
+                  can write and evaluate programs to produce output, as usual,
+                  but they can also directly manipulate the <i>output</i> of a
+                  program to change the program itself. Two important goals of
+                  this project are (i) to provide an environment that makes it
+                  easier for users to develop complex and reusable content, and
+                  (ii) to develop theoretical machinery necessary for more
+                  general-purpose output-directed manipulation and
+                  bidirectional editing.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <img src="img/deuce.png" alt="Deuce" />
+              <div>
+                <h4>
+                  <a href="http://ravichugh.github.io/sketch-n-sketch/blog/06-deuce-user-study.html"
+                     alt="Deuce">
+                    Deuce
+                  </a> @ UChicago
+                </h4>
+                <p>
+                  Deuce is a structure-aware code editor equipped with direct
+                  manipulation capabilities for invoking automated program
+                  transformations. Deuce&rsquo;s aim is to provide human-friendly
+                  structural interactions on top of familiar text-based
+                  editing.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <img src="img/wyvern.png" alt="Wyvern" />
+              <div>
+                <h4>
+                  <a href="http://wyvernlang.github.io/" alt="Wyvern">
+                    Wyvern
+                  </a> @ CMU
+                </h4>
+                <p>
+                  Wyvern is an object-oriented, capability-safe language
+                  focused on focused on security, modularity, and language
+                  extensibility. Specifically, I have done work on
+                  Wyvern&rsquo;s capability-based effect system by developing
+                  theory (and implementing it in the compiler) to make it more
+                  usable for programmers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="news">
+          <h2>News</h2>
+          <div id="newsfeed">
+            <div>
+              <time>Nov. 2018</time>
+              <div>
+                I won first place in the SPLASH 2018 Student Research
+                Competition for <a href="talks/approx-poly-effects.pdf">
+                Approximating Polymorphic Effects with Capabilities</a>!
+              </div>
+            </div>
+            <div>
+              <time>Oct. 2018</time>
+              <div>
+                I am excited to present a poster for
+                <a href="talks/approx-poly-effects.pdf">
+                  Approximating Polymorphic Effects with Capabilities
+                </a> at Midwest Programming Languages Summit 2018.
+              </div>
+            </div>
+            <div>
+              <time>Mar. 2018</time>
+              <div>
+                I am honored to be accepted to
+                <a href="https://www.isri.cmu.edu/education/reu-se/">
+                  Carnegie Mellon's Research Experiences for Undergraduates in
+                  Software Engineering (REUSE) program</a>.
+                Catch me in Pittsburgh this summer!
+              </div>
+            </div>
+            <div>
+              <time>Dec. 2017</time>
+              <div>
+                <a href="https://arxiv.org/pdf/1707.00015.pdf">
+                  Deuce: A Lightweight User Interface for Structured Editing
+                </a>
+                accepted to ICSE 2018!
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="publications">
+          <h2>Publications</h2>
+          <ul>
+            <li>
+              <h4>
+                <a href="https://arxiv.org/pdf/1707.00015.pdf">
+                  Deuce: A Lightweight User Interface for Structured Editing
+                </a>
+              </h4>
+              <p>
+                Brian Hempel, <u>Justin Lubin</u>, Grace Lu, and Ravi Chugh.
+              </p>
+              <p>
+                In <i>Proceedings of the International Conference on Software
+                Engineering (ICSE)</i>, Gothenburg, Sweden, May 2018.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section id="talks">
+          <h2>Talks</h2>
+          <ul>
+            <li>
+              <h4>
+                Approximating Polymorphic Effects with Capabilities
+                <span>| <a href="talks/approx-poly-effects.pdf">pdf</a></span>
+              </h4>
+              <p>
+                Nov. 8, 2018 @
+                <a href="https://2018.splashcon.org/track/splash-2018-Student-Research-Competition">
+                  SPLASH 2018 SRC</a>,
+                Boston, MA.
+            </li>
+            <li>
+              <h4>
+                The ABCs of ADTs: Algebraic Data Types
+                <span>| <a href="talks/abc-adt.pdf">pdf</span></a>
+              </h4>
+              <p>
+                Jan. 28, 2018 @
+                <a href="https://www.facebook.com/AsyncAnon/">
+                  Asynchronous Anonymous</a>,
+                Chicago, IL.
+            </li>
+          </ul>
+        </section>
+
+        <!--<section id="fun">
+          <h2>Fun</h2>
+          <p>
+            Compositions, recipes, old portfolio, fun facts (favorites),
+            logic, model theory (different) category theory (same)
+          </p>
+        </section>-->
+      </div>
+    </div>
+  </body>
+</html>
