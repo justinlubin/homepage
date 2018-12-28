@@ -213,10 +213,10 @@ ul.list {
   height: 100px;
 
   /* TODO */
-  background: linear-gradient(180deg, rgba(251,249,249,0) 0%, rgba(251,249,249,1) 100%);
+  background: linear-gradient(180deg, rgba(251,249,249,0) 0%, rgba(251,249,249,1) 99%);
 
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   z-index: 1;
 }
 
