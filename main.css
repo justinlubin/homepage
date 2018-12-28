@@ -156,7 +156,7 @@ ul.list {
   height: 400px;
 
   background-color: var(--main-translucent-accent-color);
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
 
   text-align: center;
 
