@@ -70,8 +70,8 @@ u {
 
 ul.list {
   list-style-type: disc;
-  list-style-position: inside;
-  margin-left: 10px;
+  list-style-position: outside;
+  margin-left: 30px;
 }
 
 /* Sticky */
