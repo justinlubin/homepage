@@ -412,13 +412,6 @@ ul.list {
   margin-left: 120px;
 }
 
-/* Talks */
-
-#talks h4 span {
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Media Queries */
 
 @media(max-width: 850px) {
