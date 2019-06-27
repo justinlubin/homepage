@@ -122,7 +122,7 @@ ul.list {
 /* Main */
 
 #main {
-  max-width: 850px;
+  max-width: 830px;
   margin: auto;
   position: relative;
 }
@@ -312,7 +312,7 @@ ul.list {
 /* Content */
 
 #content {
-  margin-left: 300px;
+  margin-left: 280px;
 }
 
 #content * {
@@ -417,7 +417,7 @@ ul.list {
 /* margin + main-width + margin
  *   where margin = column separation distance
  */
-@media(max-width: 1050px) {
+@media(max-width: 990px) {
   /* Sticky */
 
   .sticky {
