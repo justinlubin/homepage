@@ -122,7 +122,7 @@ ul.list {
 /* Main */
 
 #main {
-  width: 800px;
+  max-width: 850px;
   margin: auto;
   position: relative;
 }
@@ -312,7 +312,7 @@ ul.list {
 /* Content */
 
 #content {
-  margin-left: 250px;
+  margin-left: 300px;
 }
 
 #content * {
@@ -414,7 +414,10 @@ ul.list {
 
 /* Media Queries */
 
-@media(max-width: 850px) {
+/* margin + main-width + margin
+ *   where margin = column separation distance
+ */
+@media(max-width: 1050px) {
   /* Sticky */
 
   .sticky {
@@ -424,7 +427,7 @@ ul.list {
   /* Main */
 
   #main {
-    width: auto;
+    max-width: 800px;
   }
 
   /* Info */
