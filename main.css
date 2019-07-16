@@ -344,11 +344,6 @@ ul.list li:last-child {
 }
 
 #content section {
-  margin-top: var(--wide-spacing);
-}
-
-#content section:first-child {
-  margin-top: 0;
   padding-top: var(--wide-spacing);
 }
 
@@ -379,7 +374,7 @@ ul.list li:last-child {
 }
 
 #content ul.entries li {
-  margin: var(--wide-spacing) 0;
+  margin-top: var(--wide-spacing);
 }
 
 #content ul.entries li p {
