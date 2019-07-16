@@ -191,7 +191,8 @@ ul.list li:last-child {
 }
 
 #main-circle h1,
-#main-circle p
+#main-circle p,
+#main-circle a
 {
   color: var(--inverted-text-color);
 }
@@ -203,6 +204,11 @@ ul.list li:last-child {
 #main-circle p {
   font-style: italic;
   line-height: 1.5em;
+}
+
+/* For fancy underline */
+#main-circle a:before {
+  background-color: var(--inverted-text-color);
 }
 
 /* Main Header - Voronoi */
@@ -339,6 +345,11 @@ ul.list li:last-child {
 
 #content section {
   margin-top: var(--wide-spacing);
+}
+
+#content section:first-child {
+  margin-top: 0;
+  padding-top: var(--wide-spacing);
 }
 
 #content section > * {
