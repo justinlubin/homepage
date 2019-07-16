@@ -423,6 +423,21 @@ ul.list li:last-child {
   margin-left: 120px;
 }
 
+/* Fancy Buttons */
+
+.fancy-button {
+  border: 1px solid var(--main-accent-color);
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+
+#play-button {
+  font-size: 0.5em;
+  vertical-align: middle;
+  margin-left: 10px;
+  color: var(--main-accent-color);
+}
+
 /* Media Queries */
 
 /* margin + main-width + margin
