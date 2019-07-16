@@ -188,5 +188,11 @@
 
     window.onscroll = sticky;
     sticky();
+
+    // --- SMOOTH SCROLLING ---
+    // Uses https://github.com/cferdinandi/smooth-scroll
+    var scroll = new SmoothScroll('a[href*="#"]', {
+      speedAsDuration: true
+    });
   }
 })();
