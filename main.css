@@ -86,6 +86,10 @@ ul.list li:last-child {
   margin-bottom: 0;
 }
 
+.extended-item .sub-info {
+  margin-left: 30px;
+}
+
 /* Better @ Symbol */
 
 .at {
