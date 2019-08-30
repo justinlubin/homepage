@@ -6,6 +6,8 @@
   --main-accent-color: #b66033;
   --main-translucent-accent-color: rgba(182, 96, 51, 0.5);
 
+  --subtle-text-color: rgba(0, 0, 0, 0.4);
+
   --secondary-bg-color: #ffffff;
   --secondary-text-color: #4b4238;
   --secondary-accent-color: #9ad1ca;
@@ -16,6 +18,17 @@
   --narrow-spacing: 5px;
   --normal-spacing: 10px;
   --wide-spacing: 15px;
+
+  --info-width: 200px;
+  --content-width: 550px;
+  --outer-spacing: 30px;
+  --inner-spacing: 80px;
+  --main-width:
+     calc(
+       var(--info-width)
+         + var(--inner-spacing)
+         + var(--content-width)
+     );
 }
 
 /* General */
@@ -45,7 +58,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Signika", sans-serif;
   font-weight: bold;
   color: var(--main-accent-color);
 }
@@ -60,7 +73,6 @@ a:hover {
 }
 
 em {
-  font-weight: bold;
   font-style: italic;
 }
 
@@ -144,7 +156,7 @@ ul.list li:last-child {
 /* Main */
 
 #main {
-  max-width: 830px;
+  width: var(--main-width);
   margin: auto;
   position: relative;
 }
@@ -207,7 +219,7 @@ ul.list li:last-child {
 
 #main-circle p {
   font-style: italic;
-  line-height: 1.5em;
+  line-height: 2em;
 }
 
 /* For fancy underline */
@@ -257,7 +269,7 @@ ul.list li:last-child {
   color: var(--inverted-text-color);
   background-color: rgba(0, 0, 0, 0.1);
 
-  font-family: "Raleway", sans-serif;
+  font-family: "Signika", sans-serif;
   font-size: 0.7em;
   font-weight: bold;
   text-align: center;
@@ -281,7 +293,7 @@ ul.list li:last-child {
 /* Info */
 
 #info {
-  width: 200px;
+  width: var(--info-width);
   padding-top: var(--wide-spacing);
   position: absolute;
 }
@@ -294,7 +306,7 @@ ul.list li:last-child {
 }
 
 #info h2 {
-  font-size: 1.6em;
+  font-size: 1.7em;
   text-align: center;
   margin-bottom: calc(2 * var(--wide-spacing));
 }
@@ -360,12 +372,11 @@ ul.list li:last-child {
 }
 
 #content h2 {
-  font-size: 1.6em;
+  font-size: 1.7em;
   text-align: center;
 
-  border-top: 1px solid var(--main-accent-color);
-  border-bottom: 1px solid var(--main-accent-color);
-  border-radius: 5px;
+  border-bottom: 1px dashed var(--main-accent-color);
+  border-top: 1px dashed var(--main-accent-color);
 }
 
 #content h3 {
@@ -381,25 +392,13 @@ ul.list li:last-child {
   margin-top: var(--wide-spacing);
 }
 
-#content ul.entries li p {
-  margin-top: var(--narrow-spacing);
+#content ul.entries li:first-child {
+  margin-top: 0;
 }
 
-/* Projects */
-
-#projects > div {
-  margin-top: var(--wide-spacing);
-}
-
-#projects img {
-  height: 100px;
-  border: 2px solid var(--secondary-accent-color);
-  border-radius: 50%;
-  float: left;
-}
-
-#projects img + div {
-  margin-left: 120px;
+#content ul.entries h4 span {
+  color: var(--subtle-text-color);
+  margin-left: 5px;
 }
 
 /* News */
@@ -440,10 +439,9 @@ ul.list li:last-child {
 
 /* Media Queries */
 
-/* margin + main-width + margin
- *   where margin = column separation distance
+/* max-width: outer-spacing + main-width + outer-spacing
  */
-@media(max-width: 990px) {
+@media(max-width: 1020px) {
   /* Sticky */
 
   .sticky {
@@ -453,14 +451,18 @@ ul.list li:last-child {
   /* Main */
 
   #main {
-    max-width: 800px;
+    width: auto;
+    max-width:
+      calc(
+        2 * var(--outer-spacing) + var(--content-width)
+      );
+    padding: 0 var(--outer-spacing);
   }
 
   /* Info */
 
   #info {
     width: 100%;
-    padding: 0 30px;
     position: relative;
   }
 
@@ -490,23 +492,24 @@ ul.list li:last-child {
   /* Info - Nav */
 
   #nav {
-    margin-top: var(--normal-spacing);
+    display: flex;
+    justify-content: space-evenly;
     text-align: center;
-    border-radius: 5px;
-    border-top: 1px solid var(--main-text-color);
-    border-bottom: 1px solid var(--main-text-color);
     line-height: 2em;
+    margin-top: var(--normal-spacing);
+    border-bottom: 1px dashed var(--main-text-color);
+    border-top: 1px dashed var(--main-text-color);
   }
 
   #nav li {
-    margin-bottom: 0;
-    margin-right: 10px;
-    display: inline-block;
+    margin: 0;
   }
 
   #nav li a {
+    font-family: "Signika";
     color: var(--link-color);
   }
+
 
   #nav .fancy-underline:before {
     background-color: var(--link-color);
@@ -516,6 +519,5 @@ ul.list li:last-child {
 
   #content {
     margin-left: 0;
-    padding: 0 30px;
   }
 }
