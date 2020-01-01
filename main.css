@@ -525,7 +525,7 @@ ul.list li:last-child {
   }
 }
 
-@media(max-width: 450px) {
+@media(max-width: 425px) {
   #info {
     text-align: center;
   }
@@ -535,13 +535,14 @@ ul.list li:last-child {
     text-align: left;
   }
 
+  #info > div h2 {
+    text-align: center;
+  }
+
   #info > img {
     display: block;
     margin: auto;
     padding: 0;
     float: none;
-  }
-
-  #info > nav {
   }
 }
