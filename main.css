@@ -314,7 +314,6 @@ ul.list li:last-child {
 #info h2 {
   font-size: 1.7em;
   text-align: center;
-  margin-bottom: calc(2 * var(--wide-spacing));
 }
 
 #info h2 a {
@@ -326,8 +325,14 @@ ul.list li:last-child {
   color: var(--main-accent-color);
 }
 
-#info ul {
-  margin-bottom: calc(2 * var(--wide-spacing));
+#pronouns {
+  text-align: center;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+#contact, #nav {
+  margin: calc(2 * var(--wide-spacing)) 0;
 }
 
 #info li {
@@ -342,7 +347,7 @@ ul.list li:last-child {
 
 #contact .icon {
   font-size: 0.9em;
-  margin-right: 10px;
+  width: 30px;
 }
 
 /* Info - Nav */
@@ -470,25 +475,25 @@ ul.list li:last-child {
   }
 
   #info > div {
-    height: 150px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
   #info img {
-    width: 150px;
+    width: 200px;
     float: left;
     margin-right: 30px;
     margin-bottom: 0;
   }
 
-  #info h2 {
+  #info h2, #pronouns {
     text-align: left;
-    margin-bottom: var(--wide-spacing);
   }
 
-  #info ul {
+  #contact {
+    margin-top: var(--wide-spacing);
     margin-bottom: 0;
   }
 
@@ -499,7 +504,8 @@ ul.list li:last-child {
     justify-content: space-evenly;
     text-align: center;
     line-height: 2em;
-    margin-top: var(--normal-spacing);
+    margin-top: var(--wide-spacing);
+    margin-bottom: 0;
     border-bottom: 1px dashed var(--main-text-color);
     border-top: 1px dashed var(--main-text-color);
   }
@@ -525,17 +531,22 @@ ul.list li:last-child {
   }
 }
 
-@media(max-width: 425px) {
+@media(max-width: 475px) {
   #info {
     text-align: center;
   }
 
   #info > div {
     display: inline-flex;
+    height: auto;
     text-align: left;
   }
 
   #info > div h2 {
+    margin-top: var(--normal-spacing);
+  }
+
+  #info > div h2, #pronouns {
     text-align: center;
   }
 
@@ -544,5 +555,9 @@ ul.list li:last-child {
     margin: auto;
     padding: 0;
     float: none;
+  }
+
+  #contact, #nav {
+    margin-top: var(--wide-spacing);
   }
 }
