@@ -392,6 +392,7 @@ ul.list li:last-child {
 
 #content h3 {
   font-size: 1.3em;
+  margin-bottom: var(--narrow-spacing);
 }
 
 #content h4 {
