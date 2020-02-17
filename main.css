@@ -127,6 +127,11 @@ ul.list li:last-child {
 .fancy-underline {
   position: relative;
   text-decoration: none;
+  text-shadow:
+    -1px -1px 0 var(--main-bg-color),
+    1px -1px 0 var(--main-bg-color),
+    -1px 1px 0 var(--main-bg-color),
+    1px 1px 0 var(--main-bg-color);
 }
 
 .fancy-underline:hover {
@@ -142,7 +147,8 @@ ul.list li:last-child {
   background-color: red; /* override per-location! */
 
   position: absolute;
-  bottom: 0;
+  z-index: -1;
+  bottom: 2px;
   left: 0;
 
   visibility: hidden;
@@ -216,6 +222,7 @@ ul.list li:last-child {
 #main-circle p,
 #main-circle a
 {
+  text-shadow: none;
   color: var(--inverted-text-color);
 }
 
