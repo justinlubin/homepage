@@ -198,8 +198,10 @@ ul.list li:last-child {
   flex-direction: column;
   justify-content: center;
 
-  width: calc(min(400px, 80vmin));
-  height: calc(min(400px, 80vmin));
+  max-width: 80vmin;
+  max-height: 80vmin;
+  width: 400px;
+  height: 400px;
 
   background-color: var(--main-translucent-accent-color);
   /* backdrop-filter: blur(10px); */
