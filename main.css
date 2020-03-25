@@ -446,7 +446,7 @@ ul.list li:last-child {
 /* Bookshelf */
 
 .bookshelf {
-  margin-top: 10px;
+  margin-top: var(--normal-spacing);
 
   border: 5px solid var(--main-text-color);
   border-bottom: none;
