@@ -443,6 +443,82 @@ ul.list li:last-child {
   margin-left: 120px;
 }
 
+/* Bookshelf */
+
+.bookshelf {
+  margin-top: 10px;
+  border: 5px solid var(--main-text-color);
+  outline: 1px solid black;
+  border-bottom: none;
+}
+
+.bookshelf > li {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.bookshelf > li > h4 {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color) !important;
+  padding: 1px 5px;
+  font-size: 1em !important;
+  font-weight: normal !important;
+}
+
+.bookshelf > li > ul {
+  background-color: var(--secondary-accent-color);
+  border: 1px solid black;
+  display: flex;
+  align-items: flex-end;
+  height: 400px;
+}
+
+.bookshelf > li > ul > li {
+  display: inline-block;
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-size: 0.8em;
+
+  background-color: var(--main-translucent-accent-color);
+  border-left: 4px double var(--main-accent-color);
+  border-right: 4px double var(--main-accent-color);
+
+  height: 350px;
+  padding: 20px 0;
+}
+
+.bookshelf > li > ul > li:last-child {
+  transform-origin: bottom left;
+  transform: rotate(-10deg) translate(60px, 11px);
+}
+
+.bookshelf > li > ul > li:only-child {
+  transform-origin: bottom left;
+  transform: rotate(-90deg) translateY(100%);
+}
+
+.bookshelf > li > ul > li > span {
+  display: block;
+  border-top: 5px double var(--main-accent-color);
+  border-bottom: 5px double var(--main-accent-color);
+  margin-left: -1px;
+}
+
+.bookshelf > li > ul > li > span:first-child {
+  font-weight: bold;
+  padding-right: 2px;
+}
+
+.bookshelf > li > ul > li > span:last-child {
+  font-style: italic;
+  padding-left: 2px;
+}
+
+.bookshelf > li > ul > li > span > span {
+  display: block;
+  font-size: 0.7em;
+}
+
 /* Fancy Buttons */
 
 .fancy-button {
