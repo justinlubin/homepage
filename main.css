@@ -646,4 +646,12 @@ ul.list li:last-child {
   #contact, #nav {
     margin-top: var(--wide-spacing);
   }
+
+  .bookshelf > li > ul > li {
+    font-size: 0.7em;
+  }
+
+  .bookshelf > li > ul > li:only-child {
+    transform: rotate(-10deg) translate(60px, 11px);
+  }
 }
