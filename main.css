@@ -98,13 +98,45 @@ ul.list {
 
 ul.list li {
   margin-bottom: var(--narrow-spacing);
+  position: relative;
+}
+
+ul.list li.fav {
+  list-style-type: none;
+  color: var(--main-accent-color);
+}
+
+ul.list li.fav::before {
+  content: "\2605";
+  color: var(--main-accent-color);
+  position: absolute;
+  left: -18px;
+  font-size: 0.8em;
+}
+
+.fav-text-icon {
+  color: var(--main-accent-color);
+  font-size: 0.8em;
 }
 
 ul.list li:last-child {
   margin-bottom: 0;
 }
 
-.extended-item .sub-info {
+ul.list li > span {
+  display: block;
+}
+
+ul.list li > span:last-of-type {
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+ul.list ul.list {
+  margin-top: var(--narrow-spacing);
+}
+
+ul.list li.extended-item .sub-info {
   margin-left: 30px;
 }
 
@@ -441,98 +473,6 @@ ul.list li:last-child {
 
 #newsfeed time + div {
   margin-left: 120px;
-}
-
-/* Bookshelf */
-
-.bookshelf {
-  margin-top: var(--normal-spacing);
-
-  border: 5px solid var(--main-text-color);
-  border-bottom: none;
-
-  outline: 1px solid black;
-}
-
-/* Shelf + space */
-.bookshelf > li {
-  display: flex;
-  /* Shelf belongs below space */
-  flex-direction: column-reverse;
-}
-
-/* Shelf (#content for precedence) */
-#content .bookshelf > li > h4 {
-  background-color: var(--main-text-color);
-  color: var(--main-bg-color);
-
-  font-size: 1em;
-  font-weight: normal;
-
-  padding: 1px 5px;
-}
-
-/* Space */
-.bookshelf > li > ul {
-  display: flex;
-  align-items: flex-end;
-  height: 400px;
-
-  background-color: var(--secondary-accent-color);
-  border: 1px solid black;
-}
-
-/* Book */
-.bookshelf > li > ul > li {
-  display: inline-block;
-  writing-mode: vertical-rl;
-  text-align: center;
-  font-size: 0.8em;
-
-  height: 350px;
-  padding: 20px 0;
-
-  background-color: var(--main-translucent-accent-color);
-  border-left: 4px double var(--main-accent-color);
-  border-right: 4px double var(--main-accent-color);
-
-  transform-origin: bottom left;
-}
-
-/* Last book */
-.bookshelf > li > ul > li:last-child {
-  transform: rotate(-10deg) translate(60px, 11px);
-}
-
-/* Only book */
-.bookshelf > li > ul > li:only-child {
-  transform: rotate(-90deg) translateY(100%);
-}
-
-/* Title and author */
-.bookshelf > li > ul > li > span {
-  display: block;
-  margin-left: -1px;
-  border-top: 5px double var(--main-accent-color);
-  border-bottom: 5px double var(--main-accent-color);
-}
-
-/* Title */
-.bookshelf > li > ul > li > span:first-child {
-  font-weight: bold;
-  padding-right: 2px;
-}
-
-/* Author */
-.bookshelf > li > ul > li > span:last-child {
-  font-style: italic;
-  padding-left: 2px;
-}
-
-/* Subtitle */
-.bookshelf > li > ul > li > span > span {
-  display: block;
-  font-size: 0.7em;
 }
 
 /* Fancy Buttons */
