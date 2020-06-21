@@ -170,29 +170,5 @@
     setPoints();
 
     window.requestAnimationFrame(step);
-
-    // --- STICKY INFO ---
-    // Inspired by https://www.w3schools.com/howto/howto_js_sticky_header.asp
-
-    var mainDiv = document.getElementById("main");
-    var mainTop = main.offsetTop;
-    var info = document.getElementById("info");
-
-    function sticky() {
-      if (window.pageYOffset > mainTop) {
-        info.classList.add("sticky");
-      } else {
-        info.classList.remove("sticky");
-      }
-    }
-
-    window.onscroll = sticky;
-    sticky();
-
-    // --- SMOOTH SCROLLING ---
-    // Uses https://github.com/cferdinandi/smooth-scroll
-    var scroll = new SmoothScroll('a[href*="#"]', {
-      speedAsDuration: true
-    });
   }
 })();

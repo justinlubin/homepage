@@ -45,8 +45,20 @@
   text-size-adjust: none;
 }
 
+/* Smooth scrolling:
+ *   https://gomakethings.com/how-to-animate-scrolling-to-anchor-links-with-one-line-of-css/
+ */
+
 html {
   height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Disable smooth scrolling when users have prefers-reduced-motion enabled */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -144,13 +156,6 @@ ul.list li.extended-item .sub-info {
 
 .at {
   font-family: "Lora", serif;
-}
-
-/* Sticky */
-
-.sticky {
-  position: fixed !important;
-  top: 0;
 }
 
 /* Fancy Underline */
@@ -342,7 +347,9 @@ ul.list li.extended-item .sub-info {
 #info {
   width: var(--info-width);
   padding-top: var(--wide-spacing);
-  position: absolute;
+  float: left;
+  position: sticky;
+  top: 0;
 }
 
 #info img {
@@ -495,12 +502,6 @@ ul.list li.extended-item .sub-info {
 /* max-width: outer-spacing + main-width + outer-spacing
  */
 @media(max-width: 1020px) {
-  /* Sticky */
-
-  .sticky {
-    position: static !important;
-  }
-
   /* Main */
 
   #main {
