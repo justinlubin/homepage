@@ -548,7 +548,7 @@ ul.list li.extended-item .sub-info {
     text-align: center;
     line-height: 2em;
     margin-top: var(--wide-spacing);
-    margin-bottom: 0;
+    margin-bottom: var(--wide-spacing);
     border-bottom: 1px dashed var(--main-text-color);
     border-top: 1px dashed var(--main-text-color);
   }
