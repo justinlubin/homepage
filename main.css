@@ -139,7 +139,7 @@ ul.list li > span {
   display: block;
 }
 
-ul.list li > span:last-of-type {
+ul.list li > span:not(:first-of-type) {
   font-style: italic;
   font-size: 0.8em;
 }
