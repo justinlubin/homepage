@@ -89,7 +89,7 @@
   }
 
   function setSizes() {
-    mainCanvas.width = window.innerWidth - 20;
+    mainCanvas.width = document.body.clientWidth - 20;
     mainCanvas.height = 600;
 
     bbox = {
