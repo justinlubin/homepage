@@ -77,7 +77,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Signika", sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--main-accent-color);
 }
 
@@ -208,6 +208,7 @@ ul.list li.extended-item .sub-info {
   width: var(--main-width);
   margin: auto;
   position: relative;
+  display: flex;
 }
 
 /* Main Header */
@@ -323,7 +324,7 @@ ul.list li.extended-item .sub-info {
 
   font-family: "Signika", sans-serif;
   font-size: 0.7em;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   line-height: 50px;
 
@@ -347,9 +348,10 @@ ul.list li.extended-item .sub-info {
 #info {
   width: var(--info-width);
   padding-top: var(--wide-spacing);
-  float: left;
   position: sticky;
   top: 0;
+  flex-shrink: 0;
+  align-self: flex-start;
 }
 
 #info img {
@@ -411,7 +413,7 @@ ul.list li.extended-item .sub-info {
 /* Content */
 
 #content {
-  margin-left: 280px;
+  margin-left: var(--inner-spacing);
 }
 
 #content * {
