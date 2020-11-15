@@ -510,6 +510,7 @@ ul.list li.extended-item .sub-info {
     width: auto;
     max-width: var(--main-width);
     padding: 0 var(--outer-spacing);
+    display: block;
   }
 
   /* Info */
