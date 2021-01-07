@@ -413,6 +413,7 @@ ul.list li.extended-item .sub-info {
 /* Content */
 
 #content {
+  width: 100%;
   margin-left: var(--inner-spacing);
 }
 
