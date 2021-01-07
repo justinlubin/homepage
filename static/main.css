@@ -152,12 +152,6 @@ ul.list li.extended-item .sub-info {
   margin-left: 30px;
 }
 
-/* Better @ Symbol */
-
-.at {
-  font-family: "Lora", serif;
-}
-
 /* Fancy Underline */
 /* http://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
 
@@ -606,13 +600,5 @@ ul.list li.extended-item .sub-info {
 
   #contact, #nav {
     margin-top: var(--wide-spacing);
-  }
-
-  .bookshelf > li > ul > li {
-    font-size: 0.7em;
-  }
-
-  .bookshelf > li > ul > li:only-child {
-    transform: rotate(-10deg) translate(60px, 11px);
   }
 }
