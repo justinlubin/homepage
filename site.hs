@@ -26,9 +26,7 @@ main :: IO ()
 main = hakyll $ do
   match "pages/*" $ do
     route (composeRoutes (removing "pages/") withoutHtml)
-    compile $
-      getResourceBody
-        >>= loadAndApplyTemplate "templates/default.html" defaultContext
+    compile copyFileCompiler
 
   match "static/**" $ do
     route (removing "static/")
