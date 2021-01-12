@@ -1,15 +1,40 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+import Hakyll
+
+import Data.List
+import Debug.Trace
+
 import Control.Arrow ((>>>), (<<<))
 
-import Hakyll
+-- Helpful resource:
+--   http://aherrmann.github.io/programming/2016/01/31/jekyll-style-urls-with-hakyll/index.html
+
+--------------------------------------------------------------------------------
+-- Helpers
+--------------------------------------------------------------------------------
+
+(|>) :: a -> (a -> b) -> b
+x |> f =
+  f x
+
+chopEnding :: Eq a => [a] -> [a] -> [a]
+chopEnding ending xs =
+  if isSuffixOf ending xs then
+    take (length xs - length ending) xs
+  else
+    xs
+
+--------------------------------------------------------------------------------
+-- Hakyll Helpers
+--------------------------------------------------------------------------------
 
 removing :: String -> Routes
 removing s =
   gsubRoute s (const "")
 
-withoutHtml :: Routes
-withoutHtml =
+withoutExtension :: Routes
+withoutExtension =
   composeRoutes
     ( setExtension ""
     )
@@ -22,15 +47,63 @@ withoutHtml =
             name ++ "/index.html"
     )
 
+withoutDate :: Routes
+withoutDate =
+  removing "[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]-"
+
+urlFieldWithoutIndex :: Context a
+urlFieldWithoutIndex =
+  mapContext
+    (chopEnding "/index.html")
+    (urlField "url")
+
+--------------------------------------------------------------------------------
+-- Posts
+--------------------------------------------------------------------------------
+
+postsPattern :: Pattern
+postsPattern =
+  "posts/*" .&&. complement "posts/index.html"
+
+postCtx :: Context String
+postCtx =
+  dateField "date" "%B %e, %Y"
+    <> urlFieldWithoutIndex
+    <> defaultContext
+
+--------------------------------------------------------------------------------
+-- Main
+--------------------------------------------------------------------------------
+
 main :: IO ()
 main = hakyll $ do
   match "pages/*" $ do
-    route (composeRoutes (removing "pages/") withoutHtml)
+    route (composeRoutes (removing "pages/") withoutExtension)
     compile copyFileCompiler
 
   match "static/**" $ do
     route (removing "static/")
     compile copyFileCompiler
+
+  match postsPattern $ do
+      route (composeRoutes withoutDate withoutExtension)
+      compile $
+        pandocCompiler
+          >>= relativizeUrls
+
+  match "posts/index.html" $ do
+    route idRoute
+    compile $ do
+      posts <- loadAll postsPattern >>= recentFirst
+
+      let
+        archiveCtx =
+          listField "posts" postCtx (return posts)
+            <> defaultContext
+
+      getResourceBody
+        >>= applyAsTemplate archiveCtx
+        >>= relativizeUrls
 
   match "templates/*" $
     compile templateBodyCompiler
