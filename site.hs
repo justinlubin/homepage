@@ -67,7 +67,8 @@ postsPattern =
 
 postCtx :: Context String
 postCtx =
-  dateField "date" "%B %e, %Y"
+  constField "post" ""
+    <> dateField "date" "%B %e, %Y"
     <> urlFieldWithoutIndex
     <> defaultContext
 
@@ -89,6 +90,7 @@ main = hakyll $ do
       route (composeRoutes withoutDate withoutExtension)
       compile $
         pandocCompiler
+          >>= loadAndApplyTemplate "templates/blog.html" postCtx
           >>= relativizeUrls
 
   match "posts/index.html" $ do
@@ -103,6 +105,7 @@ main = hakyll $ do
 
       getResourceBody
         >>= applyAsTemplate archiveCtx
+        >>= loadAndApplyTemplate "templates/blog.html" archiveCtx
         >>= relativizeUrls
 
   match "templates/*" $
