@@ -113,8 +113,11 @@ ul.list li {
   position: relative;
 }
 
-ul.list li.fav span:first-child {
+ul.list li.fav {
   list-style-type: none;
+}
+
+ul.list li.fav span:first-child {
   color: var(--main-accent-color);
 }
 
