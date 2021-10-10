@@ -501,16 +501,16 @@ ul.list li.extended-item .sub-info {
 /* Fancy Buttons */
 
 .fancy-button {
-  border: 1px solid var(--main-accent-color);
+  border: 1px solid var(--link-color);
   border-radius: 5px;
   padding: 3px 10px;
 }
 
 #play-button {
+  color: var(--link-color);
   font-size: 0.5em;
   vertical-align: middle;
   margin-left: 10px;
-  color: var(--main-accent-color);
 }
 
 /* Media Queries */
