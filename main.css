@@ -472,13 +472,9 @@ ul.list li.extended-item .sub-info {
   font-family: "Signika";
   color: var(--main-accent-color);
   padding: 3px 10px;
-  border: 1px solid var(--main-accent-color);
+  border: 1px solid var(--link-color);
   border-radius: 5px;
   vertical-align: middle;
-}
-
-#content ul.links a {
-  color: inherit;
 }
 
 /* News */
