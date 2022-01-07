@@ -479,6 +479,11 @@ ul.list li.extended-item .sub-info {
 
 /* News */
 
+#newsfeed {
+  height: 250px;
+  overflow-y: scroll;
+}
+
 #newsfeed > div {
   margin-top: var(--wide-spacing);
 }
