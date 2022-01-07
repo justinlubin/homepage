@@ -480,7 +480,7 @@ ul.list li.extended-item .sub-info {
 /* News */
 
 #newsfeed {
-  height: 251px;
+  height: 250px;
   overflow-y: scroll;
 }
 
