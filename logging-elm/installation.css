@@ -1,0 +1,20 @@
+body {
+  max-width: 800px;
+  margin: auto;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  background-color: #F8F8F8;
+}
+
+ul {
+  margin-top: 10px;
+}
+
+li:not(:first-child) {
+  margin-top: 10px;
+}
+
+pre {
+  margin-left: 30px;
+}

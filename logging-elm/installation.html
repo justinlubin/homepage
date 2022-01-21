@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Installing Edit Mirror</title>
+    <link rel="stylesheet" href="installation.css" />
+  </head>
+  <body>
+    <h1>Installing Edit Mirror</h1>
+
+    <p>
+      Thank you for participating in our research study!
+    </p>
+
+    <p>
+      If you have any questions about the following installation instructions,
+      please do not hesitate to reach out to me, Justin Lubin, at
+      <a href="mailto://justinlubin@berkeley.edu">
+        justinlubin@berkeley.edu</a>.
+      I&rsquo;d be very excited to help smooth out any issues you may run into!
+    </p>
+
+    <h2>Overview</h2>
+
+    <p>
+      Participation in this study entails installing an editor plugin that we
+      made called <i>Edit Mirror</i>. We implemented this plugin using the
+      language server protocol (LSP), so you should be able to use this plugin
+      with any editor that supports the LSP.
+    </p>
+
+    <p>
+      First, you&rsquo;ll need to install the Edit Mirror language server and
+      helper utilities, which are standalone JavaScript programs that
+      you&rsquo;ll put somewhere in your <code>PATH</code>.
+    </p>
+
+    <p>
+      Next, you&rsquo;ll need to configure your editor to be a language client
+      for the Edit Mirror language server.
+    </p>
+
+    <p>
+      Finally, you&rsquo;ll need to replace any references to the
+      <code>elm</code> binary in your build scripts to a lightweight wrapper
+      around the <code>elm</code> binary that we wrote.
+    </p>
+
+    <p>
+      This process will result in the following files being created on your
+      machine:
+    </p>
+
+    <ul>
+      <li>
+        In a directory of your choice (default <code>~/bin</code>):
+        <ul>
+          <li><code>edit-mirror-lsp-server</code> (the LSP server)</li>
+          <li><code>edit-mirror-redactor</code> (the automated redaction script)</li>
+          <li><code>edit-mirror-elm</code> (the <code>elm</code> binary wrapper)</li>
+        </ul>
+      </li>
+
+      <li>
+        In the project root of your open source programming project of choice:
+        <ul>
+          <li>
+            <code>___edit-mirror___</code> (the directory storing Edit Mirror
+            data and metadata, including unuploaded log data)
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>
+      To uninstall Edit Mirror, simply remove those files and
+      any editor-specific configurations or plugins that you
+      installed.
+    </p>
+
+    <h2>Part 1: Installing the Edit Mirror language server</h2>
+
+    <p>
+      Here&rsquo;s how you can get the Edit Mirror language server:
+    </p>
+
+    <ol>
+      <li>
+        In your terminal, navigate to the directory of the open source project
+        that you would like to use our logging software with. It should contain
+        an <code>elm.json</code> file.
+      </li>
+
+      <li>
+        Run our
+        <a href="TODO">
+          Edit Mirror language server installation script</a>,
+        which will ask you a couple basic configuration and demographic
+        questions. These questions will include asking you for your Edit Mirror
+        ID, which should have been provided to you in an email. An easy way to
+        run this script is to run the following command:
+        <code>
+<pre>
+curl --proto '=https' -sSfL TODO | sh
+</pre>
+        </code>
+        Please make sure that the installation directory you choose in the setup
+        configuration is in your <code>PATH</code>.
+      </li>
+    </ol>
+
+    <h2>Part 2: Configuring your editor to be a language client</h2>
+
+    <p>
+      At a high level, here&rsquo;s how you can configure any editor that
+      supports the LSP to be an Edit Mirror language client:
+    </p>
+
+    <ol>
+      <li>
+        Install an LSP plugin for your editor (if you haven&rsquo;t already).
+      </li>
+
+      <li>
+        Configure the LSP plugin to use the Edit Mirror language server for Elm
+        (<code>.elm</code>) files. Since the Edit mirror language server should
+        already be in your <code>PATH</code>, you should be able to simply tell
+        your LSP plugin to run the command <code>edit-mirror-lsp-server</code>.
+      </li>
+    </ol>
+
+    <p>
+      We&rsquo;ve provided some tips for a few editors below, but the two steps
+      listed above should apply to any editor that supports the LSP!
+    </p>
+
+    <h3>Visual Studio Code</h3>
+
+    <p>
+      For Visual Studio Code, all you need to do is install the
+      <a href="TODO">
+        Edit Mirror LSP Client plugin</a>.
+    </p>
+
+    <h3>Vim</h3>
+
+    <p>
+      For Vim, we strongly recommend using
+      <a href="TODO">
+        LanguageClient-neovim</a>. In your <code>vimrc</code> file, you would
+      then use the following configuration:
+      <code>
+<pre>
+let g:LanguageClient_serverCommands = {
+  \ 'elm': ['edit-mirror-lsp-server'],
+  \ }
+</pre>
+      </code>
+    </p>
+
+    <h3>Part 3: Using the Edit Mirror <code>elm</code> wrapper</h3>
+
+    <p>
+      For the final step of installation, please replace any use of the
+      <code>elm</code> binary in your build scripts or workflow with the
+      <code>edit-mirror-elm</code> script.
+    </p>
+
+    <p>
+      For example, instead of running <code>elm make</code> to build your
+      project, please run <code>edit-mirror-elm make</code>.
+    </p>
+
+    <p>
+      If you haven&rsquo;t already, we recommend wrapping your build command in
+      a build script such as a <code>Makefile</code> or simply a
+      <code>build.sh</code> file so you can keep your build command short and
+      not worry about needing to use our <code>elm</code> wrapper.
+    </p>
+
+    <p>
+      And that&rsquo;s it, you&rsquo;ve successfully installed Edit Mirror!
+      Thank you once again for your participation in this study, and happy
+      coding!
+    </p>
+  </body>
+</html>
