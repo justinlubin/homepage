@@ -10,43 +10,57 @@
   <body>
     <h1>Installing Edit Mirror</h1>
 
-    <p>
-      Thank you for participating in our research study!
-    </p>
+    <div>
+      <p>
+        Thank you for participating in our research study!
+      </p>
 
-    <p>
-      If you have any questions about the following installation instructions,
-      please do not hesitate to reach out to me, Justin Lubin, at
-      <a href="mailto://justinlubin@berkeley.edu">
-        justinlubin@berkeley.edu</a>.
-      I&rsquo;d be very excited to help smooth out any issues you may run into!
-    </p>
+      <p>
+        If you have any questions about the following installation instructions,
+        please do not hesitate to reach out to me, Justin Lubin, at
+        <a href="mailto://justinlubin@berkeley.edu">
+          justinlubin@berkeley.edu</a>!
+      </p>
+    </div>
 
     <h2>Overview</h2>
 
     <p>
-      Participation in this study entails installing an editor plugin that we
-      made called <i>Edit Mirror</i>. We implemented this plugin using the
+      Participation in this study entails using an editor plugin we made called
+      <i>Edit Mirror</i> that logs the edits you make to an open source
+      programming project of your choice. We implemented this plugin using the
       language server protocol (LSP), so you should be able to use this plugin
       with any editor that supports the LSP.
     </p>
 
     <p>
-      First, you&rsquo;ll need to install the Edit Mirror language server and
-      helper utilities, which are standalone JavaScript programs that
-      you&rsquo;ll put somewhere in your <code>PATH</code>.
+      Here is an overview of the installation process (described in more detail
+      below):
     </p>
 
-    <p>
-      Next, you&rsquo;ll need to configure your editor to be a language client
-      for the Edit Mirror language server.
-    </p>
+    <ol>
+      <li>
+        Install the Edit Mirror utility suite, which includes tools
+        like the <i>Edit Mirror language server</i> and an <i>automated
+        redactor</i> (in case you type sensitive information into your editor).
+      </li>
 
-    <p>
-      Finally, you&rsquo;ll need to replace any references to the
-      <code>elm</code> binary in your build scripts to a lightweight wrapper
-      around the <code>elm</code> binary that we wrote.
-    </p>
+      <li>
+        Configure your editor to be a language client for the Edit
+        Mirror language server.
+      </li>
+
+      <li>
+        Initialize Edit Mirror in the project root of your open source
+        programming project of choice.
+      </li>
+
+      <li>
+        Replace any references to the <code>elm</code> binary in your
+        build scripts with a lightweight wrapper around the <code>elm</code>
+        binary we wrote that is included in the Edit Mirror utility suite.
+      </li>
+    </ol>
 
     <p>
       This process will result in the following files being created on your
@@ -55,11 +69,16 @@
 
     <ul>
       <li>
-        In a directory of your choice (default <code>~/bin</code>):
+        In a directory of your choice on your <code>PATH</code> (default
+        <code>~/bin</code>):
         <ul>
-          <li><code>edit-mirror-lsp-server</code> (the language server)</li>
-          <li><code>edit-mirror-redactor</code> (the automated redaction script)</li>
-          <li><code>edit-mirror-elm</code> (the <code>elm</code> binary wrapper)</li>
+          <li>
+            <code>edit-mirror</code> (the Edit Mirror utility suite program)
+          </li>
+          <li>
+            <code>edit-mirror-repo</code> (a directory containing supporting
+            files for the Edit Mirror utility suite)
+          </li>
         </ul>
       </li>
 
@@ -67,7 +86,7 @@
         In the project root of your open source programming project of choice:
         <ul>
           <li>
-            <code>___edit-mirror___</code> (the directory storing Edit Mirror
+            <code>___edit-mirror___</code> (a directory storing Edit Mirror
             data and metadata, including unuploaded log data)
           </li>
         </ul>
@@ -75,46 +94,61 @@
     </ul>
 
     <p>
-      To uninstall Edit Mirror, simply remove those files and
-      any editor-specific configurations or plugins that you
-      installed.
+      To uninstall Edit Mirror, simply remove these files as well as any
+      editor-specific configurations you made and plugins you installed.
     </p>
 
-    <h2>Part 1: Installing the Edit Mirror language server</h2>
+    <h2>Part 1: Installing the Edit Mirror utility suite</h2>
 
     <p>
-      Here&rsquo;s how you can get the Edit Mirror language server:
+      For this step, you will run our
+      <a href="TODO">
+        Edit Mirror language server installation script</a>,
+      which will ask you a couple basic configuration and demographic
+      questions.
     </p>
 
-    <ol>
-      <li>
-        In your terminal, navigate to the directory of the open source project
-        that you would like to use our logging software with. It should contain
-        an <code>elm.json</code> file.
-      </li>
+    <p>
+      Two quick notes about the installation script:
+    </p>
 
+    <ul>
       <li>
-        Run our
-        <a href="TODO">
-          Edit Mirror language server installation script</a>,
-        which will ask you a couple basic configuration and demographic
-        questions. These questions will include asking you for your Edit Mirror
-        ID, which should have been provided to you in an email. An easy way to
-        run this script is to run the following command:
-        <code>
-<pre>
-curl --proto '=https' -sSfL TODO | sh
-</pre>
-        </code>
-        Please make sure that the installation directory you choose in the setup
-        configuration is in your <code>PATH</code>.
+        Please ensure that the installation directory you choose is on your
+        <code>PATH</code>.
       </li>
-    </ol>
+      <li>
+        The script will ask you for your Edit Mirror ID; this should have been
+        provided to you in an email from Justin Lubin
+        (<a href="mailto://justinlubin@berkeley.edu">justinlubin@berkeley.edu</a>).
+        If not, please reach out to Justin via email.
+      </li>
+    </ul>
+
+    <p>
+      An easy way to run the installation script is to execute the following
+      command in your terminal:
+      <code>
+        <pre>curl --proto '=https' -sSfL TODO | sh</pre>
+      </code>
+    </p>
+
+    <p>
+      For information about how to use Edit Mirror utilities (including the
+      automated redactor), please refer to our
+      <a href="TODO">
+        Edit Mirror documentation</a>
+      or simply type
+      <code>
+        <pre>edit-mirror</pre>
+      </code>
+      in your terminal.
+    </p>
 
     <h2>Part 2: Configuring your editor to be a language client</h2>
 
     <p>
-      At a high level, here&rsquo;s how you can configure any editor that
+      At a high level, here is what you need to do to configure any editor that
       supports the LSP to be an Edit Mirror language client:
     </p>
 
@@ -126,7 +160,7 @@ curl --proto '=https' -sSfL TODO | sh
       <li>
         Configure the LSP plugin to use the Edit Mirror language server for Elm
         (<code>.elm</code>) files. Since the Edit mirror language server should
-        already be in your <code>PATH</code>, you should be able to simply tell
+        already be on your <code>PATH</code>, you should be able to simply tell
         your LSP plugin to run the command <code>edit-mirror-lsp-server</code>.
       </li>
     </ol>
@@ -160,30 +194,64 @@ let g:LanguageClient_serverCommands = {
       </code>
     </p>
 
-    <h3>Part 3: Using the Edit Mirror <code>elm</code> wrapper</h3>
+    <h2>Part 3: Initializing Edit Mirror for your programming project</h2>
+
+    <p>
+      Please perform the following steps:
+    </p>
+
+    <ol>
+      <li>
+        In your terminal, bavigate to the project root of the open source
+        programming project that you wish to have Edit Mirror track.  (The
+        project root is likely the directory containing your
+        <code>elm.json</code> file!)
+      </li>
+      <li>
+        Run the following command:
+        <code>
+          <pre>edit-mirror init</pre>
+        </code>
+      </li>
+    </ol>
+
+    <p>
+      If you would like to use Edit Mirror with multiple open source programming
+      projects, please feel free to repeat this step for the other project roots!
+    </p>
+
+    <h2>Part 4: Using the Edit Mirror <code>elm</code> wrapper</h2>
 
     <p>
       For the final step of installation, please replace any use of the
-      <code>elm</code> binary in your build scripts or workflow with the
-      <code>edit-mirror-elm</code> script.
+      <code>elm</code> binary in your build scripts or workflow with the command
+      <code>edit-mirror elm</code>.
     </p>
 
     <p>
       For example, instead of running <code>elm make</code> to build your
-      project, please run <code>edit-mirror-elm make</code>.
+      project, please run <code>edit-mirror elm make</code>.
     </p>
 
     <p>
       If you haven&rsquo;t already, we recommend wrapping your build command in
-      a build script such as a <code>Makefile</code> or simply a
-      <code>build.sh</code> file so you can keep your build command short and
-      not worry about needing to use our <code>elm</code> wrapper.
+      a <code>Makefile</code> or <code>build.sh</code> file so you can keep
+      your build command short and not worry about needing to use our
+      <code>elm</code> wrapper.
     </p>
 
-    <p>
-      And that&rsquo;s it, you&rsquo;ve successfully installed Edit Mirror!
-      Thank you once again for your participation in this study, and happy
-      coding!
-    </p>
+    <div>
+      <p>
+        And that&rsquo;s it, you&rsquo;ve successfully installed Edit Mirror!
+        Thank you once again for your participation in this study, and happy
+        coding!
+      </p>
+
+      <p id="signature">
+        &mdash; Justin Lubin
+        (<a href="mailto://justinlubin@berkeley.edu">justinlubin@berkeley.edu</a>)
+      </p>
+    </div>
+
   </body>
 </html>
