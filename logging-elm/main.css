@@ -1,172 +1,134 @@
-/* General */
+:root {
+  --hyperlightblue: HSL(191, 51%, 95%);
+  --uultralightblue: HSL(191, 51%, 90%);
+  --sultralightblue: HSL(191, 51%, 75%);
+  --ultralightblue: HSL(191, 51%, 80%);
+  --lightblue: HSL(191, 51%, 57%);
+  --blue: HSL(191, 51%, 40%);
+  --othergray: rgb(41, 60, 75);
+  --green: #7CD04D;
+  --orange: #F3AA31;
+}
 
 * {
   box-sizing: border-box;
 }
 
-:root {
-  --main-background-color: #FFFFFF;
-  --accent-background-color: #FDEA8C;
-  --dark-background-color: #FCB858;
-
-  --pop-color-a: #A3F4F5;
-  --pop-color-b: #E05252;
-}
-
 body {
-  font-family: "Lato", sans-serif;
   font-size: 18px;
-  line-height: 1.4;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 1.5;
+  padding-bottom: 20px;
 }
-
-header, section {
-  width: 800px;
-  margin: auto;
-  margin-bottom: 10px;
-  border: 1px solid black;
-}
-
-b {
-  font-weight: 900;
-}
-
-/* Header */
 
 header {
-  /*background-color: var(--dark-background-color);*/
   text-align: center;
-  padding: 20px;
-  /*border-bottom: 5px dashed var(--main-background-color);*/
+  padding: 50px;
+  margin-bottom: 50px;
+  background-color: var(--ultralightblue);
 }
 
-header h1 {
+header ul {
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+}
+
+header li {
+  margin: 0 20px;
+  font-size: 1.3rem;
   font-weight: 700;
-  font-size: 3rem;
 }
 
-/* Sections (general) */
-
-/*
-section:nth-child(even) {
-  background-color: var(--main-background-color);
+header a {
+  color: var(--blue) !important;
+  text-decoration: none;
 }
 
-section:nth-child(odd) {
-  background-color: var(--accent-background-color);
-  /*border-top: 5px dashed var(--main-background-color);
-  /*border-bottom: 5px dashed var(--main-background-color);
-}
-*/
-
-/* Intro */
-
-#intro {
-  text-align: center;
-  padding: 20px 0;
+header a:hover {
+  text-decoration: underline;
 }
 
-#intro ul {
-  width: 100%;
-  margin: 40px auto;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+h1 {
+  font-weight: 700;
+  font-size: 2.6rem;
+  margin-bottom: 20px;
 }
 
-#intro li {
-  padding: 20px;
-  border: 1px solid black;
-  width: calc(50% - 20px);
+section {
+  max-width: 880px;
+  padding: 0 40px;
+  margin: auto;
 }
 
-#intro li:first-child {
-  flex: 0 0 100%;
-  width: 100%;
-  margin-bottom: 40px;
+section a {
+  color: var(--blue) !important;
 }
 
-#intro li span {
-  display: block;
-  font-size: 0.7rem;
+section a:hover {
+  background-color: var(--hyperlightblue);
 }
 
-/* Questions */
-
-#questions {
-  text-align: center;
-  padding: 20px;
+section p {
+  margin-bottom: 20px;
 }
 
-#questions ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 40px;
-}
-
-#questions li {
-  background-color: var(--main-background-color);
-  flex-basis: 300px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  padding: 40px;
-  border: 1px solid black;
-  border-radius: 50%;
-}
-
-#questions b {
-  display: block;
-  margin-top: 10px;
-}
-
-/* Participation */
-
-#participation {
-  padding: 20px;
-}
-
-#participation > p {
+section ul li {
+  list-style-type: circle;
+  margin-left: 40px;
   margin-bottom: 10px;
 }
 
-#participation ol li {
-  margin: 10px 0 10px 50px;
+section ul li:last-child {
+  margin-bottom: 20px;
+}
+
+section ol li {
   list-style-type: roman;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+#interest {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 20px;
+  border: 1px solid var(--blue);
+  padding: 20px;
 }
 
 #interested {
+  color: black !important;
   display: block;
-
-  font-size: 2.5rem;
-  font-weight: 900;
-	text-align: center;
-
-  margin: 20px 0;
-  padding: 20px;
-  background-color: #33AA00;
-  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: var(--ultralightblue);
+  font-size: 3rem;
+  padding: 30px;
+  font-weight: 700;
   text-decoration: none;
-  border-bottom: 2px solid #338800;
+  border-bottom: 2px solid var(--sultralightblue);
   border-radius: 5px;
 }
 
 #interested:hover {
-  background-color: #33BB00;
+  background-color: var(--uultralightblue);
 }
 
-#interested:active {
-  background-color: #339900;
-}
-
-/* About */
-
-#about {
-  padding: 20px;
-}
-
-#about h2 {
-  font-size: 1.5rem;
-  font-weight: 900;
+h2 {
+  border-top: 1px dashed black;
+  padding-top: 20px;
+  font-weight: 700;
+  font-size: 1.3rem;
   margin-bottom: 10px;
 }
+
+#intro li span {
+  font-size: 0.8rem;
+  font-style: italic;
+  display: block;
+  margin-left: 8px;
+}
+
