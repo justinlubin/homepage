@@ -1,13 +1,10 @@
 :root {
-  --hyperlightblue: HSL(191, 51%, 95%);
-  --uultralightblue: HSL(191, 51%, 90%);
-  --sultralightblue: HSL(191, 51%, 75%);
-  --ultralightblue: HSL(191, 51%, 80%);
-  --lightblue: HSL(191, 51%, 57%);
-  --blue: HSL(191, 51%, 40%);
-  --othergray: rgb(41, 60, 75);
-  --green: #7CD04D;
-  --orange: #F3AA31;
+  --highlight: hsl(191, 51%, 92%);
+  --background: hsl(191, 51%, 80%);
+  --border: hsl(191, 51%, 70%);
+  --dark: hsl(191, 51%, 40%);
+
+  --main-text: hsl(191, 51%, 12%);
 }
 
 * {
@@ -19,13 +16,14 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   line-height: 1.5;
   padding-bottom: 20px;
+  color: var(--main-text);
 }
 
 header {
   text-align: center;
   padding: 50px;
   margin-bottom: 50px;
-  background-color: var(--ultralightblue);
+  background-color: var(--background);
 }
 
 header ul {
@@ -41,7 +39,7 @@ header li {
 }
 
 header a {
-  color: var(--blue) !important;
+  color: var(--dark) !important;
   text-decoration: none;
 }
 
@@ -63,11 +61,11 @@ section {
 }
 
 section a {
-  color: var(--blue) !important;
+  color: var(--dark) !important;
 }
 
 section a:hover {
-  background-color: var(--hyperlightblue);
+  background-color: var(--highlight);
 }
 
 section p {
@@ -95,30 +93,30 @@ section ol li {
   text-align: center;
   font-weight: 700;
   margin-top: 20px;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--dark);
   padding: 20px;
 }
 
 #interested {
-  color: black !important;
+  color: var(--main-text) !important;
   display: block;
   text-align: center;
   margin-bottom: 20px;
-  background-color: var(--ultralightblue);
+  background-color: var(--background);
   font-size: 3rem;
   padding: 30px;
   font-weight: 700;
   text-decoration: none;
-  border-bottom: 2px solid var(--sultralightblue);
+  border-bottom: 2px solid var(--border);
   border-radius: 5px;
 }
 
 #interested:hover {
-  background-color: var(--uultralightblue);
+  background-color: var(--highlight);
 }
 
 h2 {
-  border-top: 1px dashed black;
+  border-top: 1px dashed var(--main-text);
   padding-top: 20px;
   font-weight: 700;
   font-size: 1.3rem;
