@@ -1,29 +1,42 @@
+/* Variables */
+
 :root {
   --highlight: hsl(191, 51%, 92%);
   --background: hsl(191, 51%, 80%);
   --border: hsl(191, 51%, 70%);
   --dark: hsl(191, 51%, 40%);
-
   --main-text: hsl(191, 51%, 12%);
 }
+
+/* General */
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-size: 18px;
-  font-family: "IBM Plex Sans", sans-serif;
-  line-height: 1.5;
-  padding-bottom: 20px;
   color: var(--main-text);
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+
+  padding-bottom: 20px;
 }
 
+/* Header */
+
 header {
-  text-align: center;
-  padding: 50px;
-  margin-bottom: 50px;
   background-color: var(--background);
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 50px;
+}
+
+header h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 header ul {
@@ -33,9 +46,9 @@ header ul {
 }
 
 header li {
-  margin: 0 20px;
   font-size: 1.3rem;
   font-weight: 700;
+  margin: 0 20px;
 }
 
 header a {
@@ -43,16 +56,11 @@ header a {
   text-decoration: none;
 }
 
-header a:hover {
-  text-decoration: underline;
-}
+  header a:hover {
+    text-decoration: underline;
+  }
 
-
-h1 {
-  font-weight: 700;
-  font-size: 2.6rem;
-  margin-bottom: 20px;
-}
+/* Sections */
 
 section {
   max-width: 880px;
@@ -64,69 +72,80 @@ section a {
   color: var(--dark) !important;
 }
 
-section a:hover {
-  background-color: var(--highlight);
-}
+  section a:hover {
+    background-color: var(--highlight);
+  }
 
 section p {
   margin-bottom: 20px;
 }
 
-section ul li {
-  list-style-type: circle;
+section li {
   margin-left: 40px;
   margin-bottom: 10px;
 }
 
-section ul li:last-child {
-  margin-bottom: 20px;
+  section li:last-child {
+    margin-bottom: 20px;
+  }
+
+section ul li {
+  list-style-type: circle;
 }
 
 section ol li {
   list-style-type: roman;
-  margin-left: 40px;
-  margin-bottom: 20px;
 }
 
-#interest {
+section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+  padding-top: 20px;
+
+  border-top: 1px dashed var(--main-text);
+}
+
+/* Special elements */
+
+.attribution {
   display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-left: 8px;
+}
+
+.callout {
+  display: block;
+
   text-align: center;
   font-weight: 700;
+
   margin-top: 20px;
-  border: 1px solid var(--dark);
   padding: 20px;
+
+  border: 1px solid var(--dark);
 }
 
-#interested {
-  color: var(--main-text) !important;
+.big-button {
   display: block;
-  text-align: center;
-  margin-bottom: 20px;
+
   background-color: var(--background);
+  color: var(--main-text) !important;
+
+  text-align: center;
   font-size: 3rem;
-  padding: 30px;
   font-weight: 700;
   text-decoration: none;
+
+  margin-bottom: 20px;
+  padding: 30px;
+
   border-bottom: 2px solid var(--border);
   border-radius: 5px;
 }
 
-#interested:hover {
-  background-color: var(--highlight);
-}
-
-h2 {
-  border-top: 1px dashed var(--main-text);
-  padding-top: 20px;
-  font-weight: 700;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-#intro li span {
-  font-size: 0.8rem;
-  font-style: italic;
-  display: block;
-  margin-left: 8px;
-}
-
+  .big-button:hover {
+    background-color: var(--highlight);
+  }
