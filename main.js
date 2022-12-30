@@ -1,174 +1,155 @@
-/*
- * This program uses the following MIT-licensed library for computing the
- * Voronoi diagram:
- *   https://github.com/gorhill/Javascript-Voronoi
- */
+////////////////////////////////////////////////////////////////////////////////
+// Helpers
 
-(function() {
-  "use strict";
+// [min, max)
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
-  // [min, max)
-  function randInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+function randFloat(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Globals
+
+const bubbleCount = 100;
+
+const baseSpeed = 20;
+const speedVariation = 15;
+
+const baseRadius = 50;
+const radiusVariation = 15;
+
+let canvas, ctx, points;
+let previousTimestamp, delta;
+
+////////////////////////////////////////////////////////////////////////////////
+// Physics
+
+function setPoints() {
+  points = [];
+  for (let i = 0; i < bubbleCount; i++) {
+    const radius = randFloat(
+      baseRadius - radiusVariation,
+      baseRadius + radiusVariation
+    );
+    points.push({
+      "x": randInt(radius, window.innerWidth - radius),
+      "y": randInt(radius, window.innerHeight - radius),
+      "angle": randFloat(0, 2 * Math.PI),
+      "speed": randFloat(baseSpeed - speedVariation, baseSpeed + speedVariation),
+      "radius": radius,
+    });
   }
+}
 
-  function point(x, y, angle) {
-    return {
-      "x": x,
-      "y": y,
-      "angle": angle
-    };
-  }
+function update(delta) {
+  for (let point of points) {
+    point.x += Math.cos(point.angle) * point.speed * delta;
+    point.y += Math.sin(point.angle) * point.speed * delta;
 
-  function color(strokeStyle) {
-    return {
-      "strokeStyle": strokeStyle
-    };
-  }
+    if (point.x > window.innerWidth - point.radius) {
+      point.x = window.innerWidth - point.radius;
+      point.angle = Math.PI - point.angle;
+    }
 
-  var mainCanvas, ctx, bbox, points, colors;
-  var previousTimestamp, delta;
+    if (point.x < point.radius) {
+      point.x = point.radius;
+      point.angle = Math.PI - point.angle;
+    }
 
-  var playPauseButton;
-  var isPlaying = true;
+    if (point.y > window.innerHeight - point.radius) {
+      point.y = window.innerHeight - point.radius;
+      point.angle = -point.angle;
+    }
 
-  function render() {
-    ctx.clearRect(0, 0, bbox.xr, bbox.yb);
-
-    var voronoi = new Voronoi();
-    var diagram = voronoi.compute(points, bbox);
-    var cells = diagram.cells;
-
-    for (var c = 0; c < cells.length; c++) {
-      var edges = cells[c].halfedges;
-
-      ctx.strokeStyle = colors[c].strokeStyle;
-
-      ctx.beginPath();
-      // closePath fills in last edge
-      for (var e = 0; e < edges.length - 1; e++) {
-        var edge = edges[e];
-        var startpoint = edge.getStartpoint();
-        var endpoint = edge.getEndpoint();
-
-        if (e == 0) {
-          ctx.moveTo(startpoint.x, startpoint.y);
-        }
-        ctx.lineTo(endpoint.x, endpoint.y);
-      }
-      ctx.closePath();
-
-      ctx.stroke();
+    if (point.y < point.radius) {
+      point.y = point.radius;
+      point.angle = -point.angle;
     }
   }
+}
 
-  var xSpeed = 10;
-  var ySpeed = 10;
-  function update(delta) {
-    for (var p = 0; p < points.length; p++) {
-      var angle = points[p].angle;
-      var dx = Math.cos(angle) * xSpeed * delta;
-      var dy = Math.sin(angle) * ySpeed * delta;
-      points[p].x += dx;
-      points[p].y += dy;
-      points[p].angle += Math.random() - 0.5;
-    }
+////////////////////////////////////////////////////////////////////////////////
+// Rendering
+
+function resetCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = "rgba(0, 0, 0, 0.1)";
+}
+
+function render() {
+  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  for (let point of points) {
+    ctx.beginPath();
+    ctx.arc(point.x, point.y, point.radius, 0, 2 * Math.PI, false);
+    ctx.stroke();
   }
+}
 
-  function step(timestamp) {
-    var delta = previousTimestamp ? (timestamp - previousTimestamp) / 1000 : 0;
-    previousTimestamp = timestamp;
+////////////////////////////////////////////////////////////////////////////////
+// Main functions
 
-    update(delta);
+function step(timestamp) {
+  const delta = previousTimestamp ? (timestamp - previousTimestamp) / 1000 : 0;
+  previousTimestamp = timestamp;
 
-    render();
+  update(delta);
 
-    if (isPlaying) {
-      window.requestAnimationFrame(step);
-    }
-  }
+  render();
 
-  function setSizes() {
-    mainCanvas.width = window.innerWidth - 20;
-    mainCanvas.height = 600;
+  window.requestAnimationFrame(step);
+}
 
-    bbox = {
-      xl: -10,
-      xr: mainCanvas.width + 10,
-      yt: -10,
-      yb: mainCanvas.height + 10
-    };
+window.addEventListener("load", (_) => {
+  // // Light/dark mode
 
-    ctx.lineWidth = 2;
-  }
+  // const mode = document.querySelector("#mode");
+  // const modeInput = mode.querySelector("input");
 
-  function setPoints() {
-    var N = 50;
+  // if (previousTheme === "dark") {
+  //   modeInput.checked = true;
+  // }
 
-    points = [];
-    colors = [];
-    for (var i = 0; i < N; i++) {
-      var x = randInt(0, bbox.xr);
-      var y = randInt(0, bbox.yb);
-      var angle = 0;
-      points.push(point(x, y, angle));
+  // window.setTimeout(() => {
+  //   mode.classList.add("ready");
+  // }, 50);
 
-      var stroke = "rgba(0, 0, 0, 0.05)";
-      colors.push(color(stroke));
-    }
-  }
+  // modeInput.addEventListener("change", (_) => {
+  //   if (modeInput.checked) {
+  //     document.documentElement.classList.add("dark");
+  //     document.documentElement.classList.remove("light");
+  //     localStorage.setItem("theme", "dark");
+  //   } else {
+  //     document.documentElement.classList.add("light");
+  //     document.documentElement.classList.remove("dark");
+  //     localStorage.setItem("theme", "light");
+  //   }
+  // });
 
-  function play() {
-    isPlaying = true;
-    playPauseButton.innerHTML = "Pause";
-    previousTimestamp = null;
-    window.requestAnimationFrame(step);
-  }
+  // Bubbles
 
-  function pause() {
-    isPlaying = false;
-    playPauseButton.innerHTML = "Play";
-  }
+  canvas = document.getElementById("background-canvas");
+  ctx = canvas.getContext("2d");
 
-  function togglePlayPause() {
-    if (isPlaying) {
-      pause();
-    } else {
-      play();
-    }
-  }
+  resetCanvas();
+  setPoints();
 
-  window.onload = function () {
-    // --- VORONOI ---
+  window.addEventListener("resize", (_) => {
+    resetCanvas();
+  });
 
-    mainCanvas = document.getElementById("voronoi");
-    ctx = mainCanvas.getContext("2d");
+  window.requestAnimationFrame(step);
+});
 
-    var resizeTimer;
-    window.onresize = function() {
-      setSizes();
+// Immediately load previous light/dark theme
 
-      // Only execute when finished resizing
-      clearTimeout(resizeTimer);
-      resizeTimer = window.setTimeout(function() {
-        setPoints();
-      }, 250);
-    };
-
-    playPauseButton = document.createElement("div");
-    playPauseButton.id = "play-pause";
-    playPauseButton.innerHTML = "Pause";
-    playPauseButton.onclick = togglePlayPause;
-
-    var mainHeader = document.getElementById("main-header");
-    mainHeader.insertBefore(playPauseButton, mainHeader.childNodes[0]);
-
-    // Pause after a bit
-    window.setTimeout(togglePlayPause, 30 * 1000);
-
-    setSizes();
-    setPoints();
-
-    window.requestAnimationFrame(step);
-  }
-})();
+// const previousTheme = localStorage.getItem("theme");
+// if (previousTheme === "dark") {
+//   document.documentElement.classList.add("dark");
+// } else if (previousTheme === "light") {
+//   document.documentElement.classList.add("light");
+// }

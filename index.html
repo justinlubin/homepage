@@ -2,18 +2,19 @@
 
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Justin Lubin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Signika:wght@600&display=swap"
-          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Signika:wght@600&display=swap">
     <link rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
           integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
-          crossorigin="anonymous" />
-    <link rel="stylesheet" href="/reset.css" />
-    <link rel="stylesheet" href="/main.css" />
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
 
     <!-- Favicon, courtesy of https://favicon.io/favicon-generator/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -21,1025 +22,111 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <script src="/rhill-voronoi-core.min.js"></script>
     <script src="/main.js"></script>
   </head>
   <body>
-    <header id="main-header">
-      <div id="main-circle">
-        <p>the homepage of</p>
-        <h1><a class="fancy-underline" href="#about-me">Justin Lubin</a></h1>
-      </div>
-      <canvas id="voronoi" height="600"></canvas>
-      <div id="blur"></div>
-    </header>
+    <canvas id="background-canvas">
+    </canvas>
 
-    <main role="main" id="main">
-      <aside id="info">
+    <!-- <div id="mode">
+      <label>
+        <input type="checkbox" autocomplete="off">
+        <span></span>
+      </label>
+    </div> -->
+
+    <nav>
+      <ul>
+        <li><a class="active" href="/">Home</a></li>
+        <li><a class="" href="/research">Research</a></li>
+        <li><a class="" href="/music">Music</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <a href="/img/me.jpg">
         <img src="/img/me.jpg"
              alt="A close-up photo of Justin Lubin smiling."
-             width="200"
-             height="200" />
-        <div>
-          <h2>
-            <a class="fancy-underline" href="/">
-              Justin Lubin</a>
-          </h2>
-          <p id="pronouns">he/him/his</p>
-          <ul id="contact">
-            <li>
-              <i class="icon far fa-envelope"></i>
-              <a class="fancy-underline"
-                 href="mailto:justin@jlubin.net"
-                 title="Email">justin@jlubin.net</a>
-            </li>
-            <li>
-              <i class="icon fab fa-github"></i>
-              <a class="fancy-underline"
-                 href="https://github.com/justinlubin/"
-                 title="GitHub">justinlubin</a>
-            </li>
-            <li>
-              <i class="icon fab fa-twitter"></i>
-              <a class="fancy-underline"
-                 href="https://twitter.com/jplubin/"
-                 title="Twitter">jplubin</a>
-            </li>
-            <li>
-              <i class="icon far fa-file-alt"></i>
-              <a class="fancy-underline"
-                 href="/assets/lubin-cv.pdf"
-                 title="Curriculum Vitae">CV</a>
-            </li>
-            <li>
-              <i class="icon fas fa-blog"></i>
-              <a class="fancy-underline"
-                 href="https://jitcompiled.net"
-                 title="Blog">Blog</a>
-            </li>
-          </ul>
-        </div>
-        <ul id="nav">
+             width="100"
+             height="100" />
+      </a>
+      <div>
+        <h1>
+          <a href="/">
+            Justin Lubin</a>
+        </h1>
+        <p>he/him/his</p>
+        <ul class="links">
           <li>
-            <a class="fancy-underline" href="#about-me">About Me</a>
+            <i class="icon far fa-file-alt"></i>
+            <a href="/assets/lubin-cv.pdf"
+               title="Curriculum Vitae">CV</a>
           </li>
           <li>
-            <a class="fancy-underline" href="#research">Research</a>
+            <i class="icon far fa-envelope"></i>
+            <a href="mailto:justin@jlubin.net"
+               title="Email">justin@jlubin.net</a>
           </li>
           <li>
-            <a class="fancy-underline" href="#news">News</a>
+            <i class="icon fab fa-github"></i>
+            <a href="https://github.com/justinlubin/"
+               title="GitHub">GitHub</a>
           </li>
           <li>
-            <a class="fancy-underline" href="#fun">Fun</a>
+            <i class="icon fab fa-twitter"></i>
+            <a href="https://twitter.com/jplubin/"
+               title="Twitter">Twitter</a>
+          </li>
+          <li>
+            <i class="icon fas fa-blog"></i>
+            <a href="https://jitcompiled.net"
+               title="Blog">Blog</a>
           </li>
         </ul>
-      </aside>
-
-      <div id="content">
-        <section id="about-me">
-          <h2>About Me</h2>
-
-          <p>
-            Hi there! My name is Justin Lubin. I&rsquo;m excited by programming
-            languages, human-computer interaction, social justice, music, and
-            mathematics.
-          </p>
-
-          <p>
-            I am a third-year PhD student in computer science advised by
-            <a href="https://schasins.com/">
-              Sarah E. Chasins</a>
-            at UC Berkeley, where I&rsquo;m part of the
-            <a href="https://ps.berkeley.edu/">
-              Programming Systems Research Group</a>.
-            Previously, as an undergraduate at UChicago, I worked extensively
-            with
-            <a href="http://people.cs.uchicago.edu/~rchugh/">
-              Ravi Chugh</a>.
-            These folks have been absolutely fantastic mentors to me!
-          </p>
-        </section>
-
-        <section id="research">
-          <h2>Research</h2>
-
-          <p>
-            Computation is empowering, and programming languages are how we
-            harness it. To that end, I am interested in studying the human
-            aspect of programming to design programming languages,
-            environments, and tools that are more accessible, intuitive, and
-            powerful.
-          </p>
-
-          <p>
-            Here are some of the projects I&rsquo;ve worked on! Please also
-            feel free to take a look at my
-            <a href="/assets/lubin-cv.pdf">
-              CV</a>.
-          </p>
-
-          <h3>
-            Exploring the Learnability of Program Synthesizers by Novice
-            Programmers
-          </h3>
-
-          <p>
-            Modern program synthesizers are increasingly delivering on
-            their promise of lightening the burden of programming by
-            automatically generating code, but little research has addressed how
-            we can make such systems learnable to all. In this work, we ask:
-            What aspects of program synthesizers contribute to and detract from
-            their learnability by novice programmers?
-          </p>
-
-          <ul class="links">
-            <li>
-              <a href="/assets/uist22.pdf">
-                publication</a>
-            </li>
-            <li>
-              <a href="https://youtu.be/k5e6wOPrGic">
-                presentation</a>
-            </li>
-            <li>
-              <a href="https://docs.google.com/presentation/d/e/2PACX-1vSCsAcrqda5bUufQjuCSMuFxYD5nvWrMWq0pp1uq6mPJT5oLlDKckAM2LHSD9eyps-VDxtj37fxN3vx/pub">
-                slides</a>
-            </li>
-          </ul>
-
-          <h3>How Statically-Typed Functional Programmers Write Code</h3>
-
-          <p>
-            How working statically-typed functional programmers write code is
-            largely understudied. And yet, a better understanding of developer
-            practices could pave the way for the design of more useful and
-            usable tooling, more ergonomic languages, and more effective
-            on-ramps into programming communities.  The goal of this work is to
-            address this knowledge gap: to better understand the high-level
-            authoring patterns that statically-typed functional programmers
-            employ.
-          </p>
-
-          <ul class="links">
-            <li>
-              <a href="/assets/oopsla21.pdf">
-                publication</a>
-            </li>
-            <li>
-              <a href="https://dl.acm.org/doi/10.1145/3485532#sec-supp">
-                presentation</a>
-            </li>
-            <li>
-              <a href="https://docs.google.com/presentation/d/e/2PACX-1vQlds8AF3Fa8pChmv-FvrRaha6hW-55cwSuuu8V0m35IoXzZmsr4-GRkN81qp5fJE4kn0HldBjMOJQE/pub">
-                slides</a>
-            </li>
-            <li>
-              <a href="/assets/stfp-authorship-poster.pdf">
-                poster</a>
-            </li>
-          </ul>
-
-          <h3>Program Sketching with Live Bidirectional Evaluation</h3>
-
-          <p>
-            We present a system called Smyth for program sketching in a typed
-            functional language whereby the concrete evaluation of ordinary
-            assertions gives rise to input-output examples, which are then used
-            to guide the search to complete the holes. The key innovation,
-            called live bidirectional evaluation, propagates examples
-            “backward” through partially evaluated sketches. Live bidirectional
-            evaluation enables Smyth to (a) synthesize recursive functions
-            without trace-complete sets of examples and (b) specify and solve
-            interdependent synthesis goals.  Eliminating the trace-completeness
-            requirement resolves a significant limitation faced by prior
-            synthesis techniques when given partial specifications in the form
-            of input-output examples.
-          </p>
-
-          <ul class="links">
-            <li>
-              <a href="https://arxiv.org/pdf/1911.00583.pdf">
-                publication</a>
-            </li>
-            <li>
-              <a href="https://youtu.be/BuxQXpv7q-A?t=4385">
-                presentation</a>
-            </li>
-            <li>
-              <a href="https://docs.google.com/presentation/d/e/2PACX-1vQahAu-Jlfu55uziiV2WCUfv0YBNgbyUFZMKTH51_GKtQgcVQTds3E-ENq2TOp_2vK-PwcTAwzEPGwt/pub">
-                slides</a>
-            </li>
-            <li>
-              <a href="https://uchicago-pl.github.io/smyth/">
-                website</a>
-            </li>
-            <li>
-              <a href="https://jlubin.net/assets/forging-smyth.pdf">
-                honors thesis</a>
-            </li>
-            <li>
-              <a href="https://jlubin.net/assets/live-bidirectional-synthesis-poster.pdf">
-                poster</a>
-            </li>
-          </ul>
-
-          <h3>
-            Type-Directed Program Transformations for the Working Functional
-            Programmer
-          </h3>
-
-          <p>
-            We present preliminary research on Deuce+, a set of tools
-            integrating plain text editing with structural manipulation that
-            brings the power of expressive and extensible type-directed program
-            transformations to everyday, working programmers without a
-            background in computer science or mathematical theory. Deuce+
-            comprises three components: (i) a novel set of type-directed
-            program transformations, (ii) support for syntax constraints for
-            specifying “code style sheets” as a means of flexibly ensuring the
-            consistency of both the concrete and abstract syntax of the output
-            of program transformations, and (iii) a domain-specific language
-            for specifying program transformations that can operate at a high
-            level on the abstract (and/or concrete) syntax tree of a program
-            and interface with syntax constraints to expose end-user options
-            and alleviate tedious and potentially mutually inconsistent style
-            choices.
-          </p>
-
-          <ul class="links">
-            <li>
-              <a href="https://drops.dagstuhl.de/opus/volltexte/2020/11957/pdf/OASIcs-PLATEAU-2019-3.pdf">
-                publication</a>
-            </li>
-            <li>
-              <a href="https://docs.google.com/presentation/d/e/2PACX-1vTc2j3bLRRliR51ppELEwzQWsG-xr3vBtUER0Y30GzW65jpEfuc-6uy1HAZOt4M2sPm5gifmEDtNI4v/pub">
-                slides</a>
-            </li>
-          </ul>
-
-          <h3>
-            Sketch-n-Sketch: Output-Directed Programming for SVG
-          </h3>
-
-          <p>
-            For creative tasks, programmers face a choice: Use a GUI and
-            sacrifice flexibility, or write code and sacrifice ergonomics?  To
-            obtain both flexibility <em>and</em> ease of use, a number of
-            systems have explored a workflow that we call <em>output-directed
-            programming</em>.  In this paradigm, direct manipulation of the
-            program's graphical output corresponds to writing code in a
-            general-purpose programming language, and edits not possible with
-            the mouse can still be enacted through ordinary text edits to the
-            program. Such capabilities provide hope for integrating graphical
-            user interfaces into what are currently text-centric programming
-            environments.
-          </p>
-
-          <p>
-            To further advance this vision, we present a variety of new
-            output-directed techniques that extend the expressive power of
-            Sketch-n-Sketch, an output-directed programming system for creating
-            programs that generate vector graphics. To enable output-directed
-            interaction at more stages of program construction, we expose
-            intermediate execution products for manipulation and we present a
-            mechanism for contextual drawing. Looking forward to
-            output-directed programming beyond vector graphics, we also offer
-            generic refactorings through the GUI, and our techniques employ a
-            domain-agnostic provenance tracing scheme.
-          </p>
-
-          <ul class="links">
-            <li>
-              <a href="https://arxiv.org/pdf/1907.10699.pdf">
-                publication</a>
-            </li>
-            <li>
-              <a href="http://ravichugh.github.io/sketch-n-sketch/releases/uist-2019-acm-archive/">
-                demo</a>
-            </li>
-          </ul>
-
-          <h3>Deuce: A Lightweight User Interface for Structured Editing</h3>
-
-          <p>
-            We present a structure-aware code editor, called Deuce, that is
-            equipped with direct manipulation capabilities for invoking
-            automated program transformations. Compared to traditional
-            refactoring environments, Deuce employs a direct manipulation
-            interface that is tightly integrated within a text-based editing
-            workflow. In particular, Deuce draws (i) clickable widgets atop the
-            source code that allow the user to <em>structurally select</em> the
-            unstructured text for subexpressions and other relevant features,
-            and (ii) a lightweight, interactive menu of potential
-            transformations based on the current selections. We implement and
-            evaluate our design with mostly standard transformations in the
-            context of a small functional programming language. A controlled
-            user study with 21 participants demonstrates that structural
-            selection is preferred to a more traditional text-selection
-            interface and may be faster overall once users gain experience with
-            the tool. These results accord with Deuce's aim to provide
-            human-friendly structural interactions on top of familiar
-            text-based editing.
-          </p>
-
-          <ul class="links">
-            <li>
-              <a href="https://arxiv.org/pdf/1707.00015.pdf">
-                publication</a>
-            </li>
-            <li>
-              <a href="http://ravichugh.github.io/sketch-n-sketch/releases/v0.6.2/">
-                demo</a>
-            </li>
-          </ul>
-
-          <h3>Approximating Polymorphic Effects with Capabilities</h3>
-
-          <p>
-            Unforgeable tokens known as capabilities provide a flexible
-            mechanism to control access to sensitive system resources, but
-            reasoning about what parts of a codebase can and do use these
-            capabilities is often imprecise. Effect systems are one solution
-            that can improve the precision of capability-based reasoning, but
-            their verbosity has proven to be a usability concern. To remove the
-            burden of full effect annotation, we propose <em>quantification
-            lifting</em>, an automatic semantics-preserving type transformation
-            to handle the mixing of effect-annotated and effect-unannotated
-            code in a capability-safe language with mutable state and effect
-            polymorphism. Because quantification lifting operates on types
-            rather than expressions, it may be used even when the
-            effect-unannotated code is unavailable ahead of time, such as in
-            the cases of dynamic loading and previously compiled code. To
-            evaluate the practicality of quantification lifting, we implemented
-            this transformation for use in the Wyvern programming language,
-            and, in doing so, demonstrate how it allows for secure and
-            ergonomic mixing of effect-unannotated code with effect-annotated
-            code in a realistic capability-safe programming language.
-          </p>
-
-          <ul class="links">
-            <li>
-              <a href="https://jlubin.net/assets/approx-poly-effects-paper.pdf">
-                manuscript</a>
-            </li>
-            <li>
-              <a href="https://jlubin.net/assets/approx-poly-effects-slides.pdf">
-                slides</a>
-            </li>
-            <li>
-              <a href="https://jlubin.net/assets/approx-poly-effects-poster.pdf">
-                poster</a>
-            </li>
-          </ul>
-        </section>
-
-        <section id="news">
-          <h2>News</h2>
-          <div id="newsfeed">
-            <div>
-              <time>Oct. 2021</time>
-              <div>
-                I&rsquo;m so excited to present
-                <a href="/assets/oopsla21.pdf">
-                  How Statically-Typed Functional Programmers Write Code</a>
-                in-person at OOPSLA 2021! Really looking forward to some great
-                conversations about the intersection of PL and HCI!
-              </div>
-            </div>
-            <div>
-              <time>Feb. 2021</time>
-              <div>
-                I was accepted to the
-                <a href="https://chi2021.acm.org/">
-                  CHI 2021</a>
-                student research competition for my work on how
-                statically-typed functional programmers write code!
-                </p>
-              </div>
-            </div>
-            <div>
-              <time>Aug. 2020</time>
-              <div>
-                I&rsquo;ve been hard at work helping organize
-                <a href="https://shutdown-pl.com/icfp-2020">
-                  #ShutdownPL @ ICFP 2020</a>,
-                an anti-racism event happening from 2&ndash;6 PM (ET) on August
-                27. I hope to see you there!
-              </div>
-            </div>
-            <div>
-              <time>Jun. 2020</time>
-              <div>
-                My first full, first-author paper to a major conference venue
-                has been unconditionally accepted for publication! Look out for
-                <a href="https://arxiv.org/pdf/1911.00583.pdf">
-                  Program Sketching with Live Bidirectional Evaluation </a>
-                at
-                  <a href="https://icfp20.sigplan.org/">
-                    ICFP 2020</a>!
-              </div>
-            </div>
-            <div>
-              <time>Jun. 2020</time>
-              <div>
-                I graduated from the University of Chicago! Now I have an
-                <a href="/assets/forging-smyth.pdf">
-                  honors</a>
-                BS in Computer Science, a BS in Mathematics, and a minor in
-                Music!
-              </div>
-            </div>
-            <div>
-              <time>Apr. 2020</time>
-              <div>
-                I&rsquo;m excited to announce that this fall I will start a PhD
-                in computer science advised by Professor
-                <a href="https://schasins.com/">
-                  Sarah Chasins</a>
-                at the University of California, Berkeley in the
-                <a href="https://ps.berkeley.edu/">
-                  Programming Systems Research</a>
-                group!
-              </div>
-            </div>
-            <div>
-              <time>Mar. 2020</time>
-              <div>
-                I am honored to receive a
-                  <a href="https://www.nsfgrfp.org/">
-                    National Science Foundation Graduate Research Fellowship</a>!
-              </div>
-            </div>
-            <div>
-              <time>Oct. 2019</time>
-              <div>
-                I presented
-                <i>
-                  <a href="https://docs.google.com/presentation/d/e/2PACX-1vTc2j3bLRRliR51ppELEwzQWsG-xr3vBtUER0Y30GzW65jpEfuc-6uy1HAZOt4M2sPm5gifmEDtNI4v/pub">
-                    Type-Directed Program Transformations for the Working Functional Programmer</a>
-                </i> at
-                <a href="http://2019.plateau-workshop.org/">PLATEAU 2019</a>
-                and had a great time meeting people at this lovely conference!
-              </div>
-            </div>
-            <div>
-              <time>Sep. 2019</time>
-              <div>
-                I had a great time meeting people and presenting
-                <i>
-                  <a href="https://www.youtube.com/watch?v=D_D0AABXl1k&feature=youtu.be&t=2709">
-                    Program Synthesis with Live Bidirectional Evaluation</a>
-                </i> at
-                <a href="https://purpl.cs.purdue.edu/kickoff.html">
-                  MWPLS 2019/PurPL Fest</a>!
-              </div>
-            </div>
-            <div>
-              <time>Aug. 2019</time>
-              <div>
-                <i>
-                  <a href="/assets/program-transformations.pdf">
-                    Type-Directed Program Transformations for the Working
-                    Functional Programmer</a>
-                </i> accepted to
-                <a href="https://2019.plateau-workshop.org/">PLATEAU 2019</a>!
-              </div>
-            </div>
-            <div>
-              <time>Jul. 2019</time>
-              <div>
-                <i>
-                  <a href="https://arxiv.org/pdf/1907.10699.pdf">
-                    Sketch-n-Sketch: Output-Directed Programming for SVG</a>
-                </i> accepted to
-                <a href="https://uist.acm.org/uist2019/">UIST 2019</a>!
-              </div>
-            </div>
-            <div>
-              <time>Jun. 2019</time>
-              <div>
-                I&rsquo;m very excited to be attending the
-                <a href="https://www.cs.uoregon.edu/research/summerschool/summer19/">
-                  Oregon Programming Languages Summer School</a>
-                this year!
-              </div>
-            </div>
-            <div>
-              <time>Nov. 2018</time>
-              <div>
-                I won first place in the SPLASH 2018 Student Research
-                Competition for <i>
-                  <a href="/assets/approx-poly-effects-slides.pdf">
-                    Approximating Polymorphic Effects with Capabilities</a></i>!
-              </div>
-            </div>
-            <div>
-              <time>Oct. 2018</time>
-              <div>
-                I am excited to present a poster for
-                <i><a href="/assets/approx-poly-effects-poster.pdf">
-                  Approximating Polymorphic Effects with Capabilities</a></i>
-                at the Midwest Programming Languages Summit 2018.
-              </div>
-            </div>
-            <div>
-              <time>Mar. 2018</time>
-              <div>
-                I am honored to be accepted to
-                <a href="https://www.cmu.edu/scs/isr/reuse/">
-                  Carnegie Mellon&rsquo;s Research Experiences for
-                  Undergraduates in Software Engineering (REUSE) program</a>.
-                Catch me in Pittsburgh this summer!
-              </div>
-            </div>
-            <div>
-              <time>Dec. 2017</time>
-              <div>
-                <i>
-                  <a href="https://arxiv.org/pdf/1707.00015.pdf">
-                    Deuce: A Lightweight User Interface for Structured
-                    Editing</a>
-                </i>
-                accepted to <a href="https://www.icse2018.org/">ICSE 2018</a>!
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="fun">
-          <h2>Fun</h2>
-          <h3>Compositions</h3>
-          <p>
-            In my free time, I like to compose music. Here are some of the
-            pieces that I&rsquo;ve composed! All my pieces are composed in the
-            wonderful, open-source music notation software
-            <a href="https://musescore.org">MuseScore</a>. Stars (<span
-            class="fav-text-icon">&#9733;</span>)
-            denote my current favorites!
-          </p>
-          <ul class="list">
-            <li>
-              <span>
-                Against a Nightmare
-                (<a href="https://viewsync.net/watch?v=D82pR8HcUlk&t=0&v=y3Hs_Cvaneo&t=1314&mode=shared">video</a>
-                | <a href="/music/against-a-nightmare.mp3">mp3</a>
-                | <a href="/music/against-a-nightmare.pdf">pdf</a>).
-              </span>
-              <span>
-                Orchestra &amp; Electric Guitar. December 2022.
-              </span>
-              <span>
-                Set to an Undertale fan animation. (Underverse, by Jael
-                Peñaloza)
-              </span>
-            </li>
-            <li>
-              <span>
-                Arboraceous Cloud
-                (<a href="/music/arboraceous-cloud.mp3">mp3</a>
-                | <a href="/music/arboraceous-cloud.pdf">pdf</a>).
-              </span>
-              <span>
-                Solo Piano. June 2022.
-              </span>
-            </li>
-            <li>
-              <span>
-                Lair
-                (<a href="/music/lair.mp3">mp3</a>
-                | <a href="/music/lair.pdf">pdf</a>).
-              </span>
-              <span>
-                Flute, Oboe, Cello, Timpani, Piano. May 2022.
-              </span>
-            </li>
-            <li class="fav">
-              <span>
-                Field
-                (<a href="/music/field.mp3">mp3</a>
-                | <a href="/music/field.pdf">pdf</a>).
-              </span>
-              <span>
-                String Quartet. April 2022.
-              </span>
-            </li>
-            <li>
-              <span>
-                Puzzle
-                (<a href="/music/puzzle.mp3">mp3</a>
-                | <a href="/music/puzzle.pdf">pdf</a>).
-              </span>
-              <span>
-                July 2021.
-              </span>
-            </li>
-            <li class="fav">
-              <span>
-                Meadow of the Pelagic
-                (<a href="/music/meadow-of-the-pelagic.mp3">mp3</a>
-                | <a href="/music/meadow-of-the-pelagic.pdf">pdf</a>).
-              </span>
-              <span>
-                Wind Quintet. April 2021.
-              </span>
-            </li>
-            <li class="fav">
-              <span>
-                Warm Encounter
-                (<a href="/music/warm-encounter.mp3">recording</a>
-                | <a href="/music/warm-encounter.pdf">pdf</a>).
-              </span>
-              <span>Variation on &ldquo;Londonderry Air.&rdquo;</span>
-              <span>
-                Solo Piano (recorded by
-                  <a href="https://www.acheungmusic.com/">
-                    Anthony Cheung</a>).
-                June 2020.
-              </span>
-            </li>
-            <li>
-              <span>
-                Looking Glass
-                (<a href="/music/looking-glass.mp3">mp3</a>
-                | <a href="/music/looking-glass.pdf">pdf</a>).
-              </span>
-              <span>
-                Solo Flute. May 2020.
-              </span>
-            </li>
-            <li>
-              <span>
-                Reminiscences
-                (<a href="/music/reminiscences.mp3">mp3</a>
-                | <a href="/music/reminiscences.pdf">pdf</a>).
-              </span>
-              <span>
-                String Quartet. May 2020.
-              </span>
-            </li>
-            <li>
-              <span>
-                Adventure
-                (<a href="/music/adventure.mp3">mp3</a>
-                | <a href="/music/adventure.pdf">pdf</a>).
-              </span>
-              <span>
-                Solo Piano. May 2020.
-              </span>
-            </li>
-            <li>
-              <span>
-                Focus
-                (<a href="/music/focus.mp3">mp3</a>
-                | <a href="/music/focus.pdf">pdf</a>).
-              </span>
-              <span>
-                Solo Piano. April 2020.
-              </span>
-            </li>
-            <li>
-              <span>
-                Revitalization
-                (<a href="/music/revitalization.mp3">mp3</a>
-                | <a href="/music/revitalization.pdf">pdf</a>).
-              </span>
-              <span>
-                Solo Viola. April 2020.
-              </span>
-            </li>
-            <li>
-              <span>
-                Slumber
-                (<a href="/music/slumber.mp3">mp3</a>
-                | <a href="/music/slumber.pdf">pdf</a>).
-              </span>
-              <span>
-                Solo Violin. April 2020.
-              </span>
-            </li>
-            <li>
-              <span>
-                An Impossibility
-                (<a href="/music/impossibility.mp3">mp3</a>
-                | <a href="/music/impossibility.pdf">pdf</a>).
-              </span>
-              <span>
-                Cello &amp; Piano. January 2020.
-              </span>
-            </li>
-            <li>
-              <span>
-                Ring
-                (<a href="/music/ring.mp3">mp3</a>
-                | <a href="/music/ring.pdf">pdf</a>).
-              </span>
-              <span>
-                SBB. November 2019.
-              </span>
-            </li>
-            <li>
-              <span>
-                Florescence
-                (<a href="/music/florescence.mp3">mp3</a>
-                | <a href="/music/florescence.pdf">pdf</a>).
-              </span>
-              <span>
-                Orchestra. September 2019.
-              </span>
-            </li>
-            <li class="extended-item" id="morrow-deseora">
-              <span>
-                Morrow &amp; Deseora Town
-                (<a href="/assets/morrow-deseora.pdf">info</a>).
-              </span>
-
-              <span>
-                June 2019.
-              </span>
-
-              <ul class="list sub-info">
-                <li>
-                  <span>
-                    Morrow Town &ndash; Marielle
-                    (<a href="/music/morrow-marielle.mp3">mp3</a>
-                    | <a href="/music/morrow-marielle.pdf">pdf</a>).
-                  </span>
-                  <span>
-                    Violin, Viola, Cello, Lute, Harpsichord.
-                  </span>
-                </li>
-                <li class="fav">
-                  <span>
-                    Morrow Town &ndash; Felix
-                    (<a href="/music/morrow-felix.mp3">mp3</a>
-                    | <a href="/music/morrow-felix.pdf">pdf</a>).
-                  </span>
-                  <span>
-                    Wind Quartet &amp; Harp.
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    Morrow Town &ndash; Cordelia
-                    (<a href="/music/morrow-cordelia.mp3">mp3</a>
-                    | <a href="/music/morrow-cordelia.pdf">pdf</a>).
-                  </span>
-                  <span>
-                    Trumpet, Horn, Trombone, Tuba, Drums.
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    Morrow Town &ndash; Reduction
-                    (<a href="/music/morrow-reduction.mp3">mp3</a>
-                    | <a href="/music/morrow-reduction.pdf">pdf</a>).
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    Deseora Town &ndash; Marielle
-                    (<a href="/music/deseora-marielle.mp3">mp3</a>
-                    | <a href="/music/deseora-marielle.pdf">pdf</a>).
-                  </span>
-                  <span>
-                    Violin, Viola, Cello, Lute, Harpsichord.
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    Deseora Town &ndash; Felix
-                    (<a href="/music/deseora-felix.mp3">mp3</a>
-                    | <a href="/music/deseora-felix.pdf">pdf</a>).
-                  </span>
-                  <span>
-                    Wind Quartet &amp; Harp.
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    Deseora Town &ndash; Cordelia
-                    (<a href="/music/deseora-cordelia.mp3">mp3</a>
-                    | <a href="/music/deseora-cordelia.pdf">pdf</a>).
-                  </span>
-                  <span>
-                    Trumpet, Horn, Trombone, Tuba, Drums.
-                  </span>
-                </li>
-                <li>
-                  <span>
-                    Deseora Town &ndash; Reduction
-                    (<a href="/music/deseora-reduction.mp3">mp3</a>
-                    | <a href="/music/deseora-reduction.pdf">pdf</a>).
-                  </span>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <span>
-                Jam
-                (<a href="/music/jam.mp3">mp3</a>
-                | <a href="/music/jam.pdf">pdf</a>).
-              </span>
-              <span>
-                Game Boy Synthesizer. April 2019.
-              </span>
-            </li>
-            <li class="extended-item">
-              <span>
-                Lucas
-                (<a href="/assets/lucas.pdf">info</a>).
-              </span>
-
-              <span>
-                April 2019.
-              </span>
-
-              <ul class="list sub-info">
-                <li>
-                  <span>
-                    Theme
-                    (<a href="/music/lucas-theme.mp3">mp3</a>
-                    | <a href="/music/lucas-theme.pdf">pdf</a>).
-                  </span>
-                  <span>
-                    String Quartet.
-                  </span>
-                </li>
-                <li class="fav">
-                  <span>
-                    Battle Theme
-                    (<a href="/music/lucas-battle.mp3">mp3</a>
-                    | <a href="/music/lucas-battle.pdf">pdf</a>).
-                  </span>
-                  <span>
-                    Trumpet, Trumpet, Violin, Cello, Drums.
-                  </span>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <span>
-                Sonata in G Minor
-                (<a href="/music/sonata-g-minor.mp3">mp3</a>
-                | <a href="/music/sonata-g-minor.pdf">pdf</a>).
-              </span>
-              <span>
-                String Quartet. April 2019.
-              </span>
-            </li>
-            <li>
-              <span>
-                Invention in D Minor
-                (<a href="/music/invention-d-minor.mp3">mp3</a>
-                | <a href="/music/invention-d-minor.pdf">pdf</a>).
-              </span>
-              <span>
-                Keyboard. January 2019.
-              </span>
-            </li>
-            <li>
-              <span>
-                Lofty Stars
-                (<a href="/music/lofty-stars.mp3">mp3</a>
-                | <a href="/music/lofty-stars.pdf">pdf</a>).
-              </span>
-              <span>
-                Wind Quartet. December 2018.
-              </span>
-            </li>
-            <li>
-              <span>
-                Wind Quintet in C
-                (<a href="/music/wind-quintet-c.mp3">mp3</a>
-                | <a href="/music/wind-quintet-c.pdf">pdf</a>).
-              </span>
-              <span>
-                Wind Quintet. November 2018.
-              </span>
-            </li>
-            <li>
-              <span>
-                Reflections
-                (<a href="/music/reflections.mp3">mp3</a>
-                | <a href="/music/reflections.pdf">pdf</a>).
-              </span>
-              <span>
-                String Quartet. October 2018.
-              </span>
-            </li>
-            <li>
-              <span>
-                Dive
-                (<a href="/music/dive.mp3">mp3</a>
-                | <a href="/music/dive.pdf">pdf</a>).
-              </span>
-              <span>
-                Orchestra. August 2018.
-              </span>
-            </li>
-            <li>
-              <span>
-                Travels
-                (<a href="/music/travels.mp3">mp3</a>
-                | <a href="/music/travels.pdf">pdf</a>).
-              </span>
-              <span>
-                Synthesizer. August 2018.
-              </span>
-            </li>
-            <li>
-              <span>
-                Lessons
-                (<a href="/music/lessons.mp3">mp3</a>
-                | <a href="/music/lessons.pdf">pdf</a>).
-              </span>
-              <span>
-                Synthesizer. August 2018.
-              </span>
-            </li>
-            <li>
-              <span class="fav">
-                Realizations
-                (<a href="/music/realizations.mp3">mp3</a>
-                | <a href="/music/realizations.pdf">pdf</a>).
-              </span>
-              <span>
-                Synthesizer. July 2018.
-              </span>
-            </li>
-            <li>
-              <span>
-                Outset
-                (<a href="/music/outset.mp3">mp3</a>
-                | <a href="/music/outset.pdf">pdf</a>).
-              </span>
-              <span>
-                Synthesizer, June 2018.
-              </span>
-            </li>
-            <li>
-              <span>
-                Minuet and Trio in A
-                (<a href="/music/minuet-trio-a.mp3">mp3</a>
-                | <a href="/music/minuet-trio-a.pdf">pdf</a>).
-              </span>
-              <span>
-                Keyboard. May 2018.
-              </span>
-            </li>
-            <li>
-              <span>
-                Caged Bird
-                (<a href="/music/caged-bird.mp3">mp3</a>
-                | <a href="/music/caged-bird.pdf">pdf</a>
-                | <a href="/music/caged-bird-annotated.pdf">annotated</a>).
-              </span>
-              <span>
-                SATB. April 2018.
-              </span>
-            </li>
-          </ul>
-          <ul class="list">
-          </ul>
-          <h3>
-            The Shards of Mt. Lampora
-            <span id="play-button" class="fancy-button">
-              <a href="https://justinlubin.github.io/lampora">
-                Play!</a> ▸
-            </span>
-          </h3>
-          <p>As my final project for the
-            <a href="https://www.classes.cs.uchicago.edu/archive/2019/spring/22300-1/index.html">
-              functional programming class</a>
-            that I took at the University of Chicago, I created <i>The Shards of
-            Mt. Lampora</i>, a 2D platformer written using the
-            <a href="https://elm-lang.org/">
-              Elm</a>
-            programming language featuring modular music that I composed myself.
-          </p>
-          <p>
-            As the player moves throughout the world and collects the shards it
-            contains, the music responds dynamically. These musical details
-            (along with some other information about the creation of the game)
-            are further described in the
-              <a href="/assets/lampora-slides.pdf">
-                brief presentation</a>
-            that I gave before demoing my game.
-          </p>
-          <p>
-            If you&rsquo;d like, you can
-            <a href="https://justinlubin.github.io/lampora">
-              click here</a>
-            to play <i>The Shards of Mt. Lampora</i>! You can also view the
-            source code for the game
-              <a href="https://github.com/justinlubin/lampora">
-                here</a>
-            and its sheet music
-            <a href="/music/lampora.pdf">
-              here</a>.
-          </p>
-        </section>
       </div>
+    </header>
+
+    <main>
+      <p>
+        Hi there! My name is Justin Lubin. I&rsquo;m excited by programming
+        languages, human-computer interaction, biology, social justice, music,
+        and mathematics.
+      </p>
+
+      <p>
+        I am a third-year PhD student in computer science advised by
+        <a href="https://schasins.com/">
+          Sarah E. Chasins</a>
+        at UC&nbsp;Berkeley, where I&rsquo;m part of the
+        <a href="https://ps.berkeley.edu/">
+          Programming Systems Research Group</a>.
+        Previously, as an undergraduate at UChicago, I worked extensively
+        with
+        <a href="http://people.cs.uchicago.edu/~rchugh/">
+          Ravi Chugh</a>.
+        I am very grateful for the fantastic mentorship of these two!
+      </p>
+
+      <p>
+        Currently, I&rsquo;m immersing myself in the world of
+        <em style="color: green;">biology</em>
+        in the hopes of fostering a substantive, ongoing, and reciprocal
+        relationship between programming languages and experimental biology.
+      </p>
+
+      <p>
+        In particular, I am simultaneously contributing to biological research
+        and developing programming tools to empower biologists without much
+        programming experience (or time to acquire it) to complete
+        computational tasks they could not previously complete alone.
+      </p>
+
+      <p>
+        I am excited to be collaborating with the lovely folks of the
+        <a href="https://www.nunezlab.org/">
+           Nuñez Lab</a>
+        in this endeavor!
+      </p>
     </main>
   </body>
 </html>

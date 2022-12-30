@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Justin Lubin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Signika:wght@600&display=swap">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+
+    <!-- Favicon, courtesy of https://favicon.io/favicon-generator/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script src="/main.js" defer></script>
+  </head>
+  <body>
+    <canvas id="background-canvas">
+    </canvas>
+
+    <nav>
+      <ul>
+        <li><a class="" href="/">Home</a></li>
+        <li><a class="active" href="/research">Research</a></li>
+        <li><a class="" href="/music">Music</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <a href="/img/me.jpg">
+        <img src="/img/me.jpg"
+             alt="A close-up photo of Justin Lubin smiling."
+             width="100"
+             height="100" />
+      </a>
+      <div>
+        <h1>
+          <a href="/">
+            Justin Lubin</a> / Research
+        </h1>
+        <p>he/him/his</p>
+        <ul class="links">
+          <li>
+            <i class="icon far fa-file-alt"></i>
+            <a href="/assets/lubin-cv.pdf"
+               title="Curriculum Vitae">CV</a>
+          </li>
+          <li>
+            <i class="icon far fa-envelope"></i>
+            <a href="mailto:justin@jlubin.net"
+               title="Email">justin@jlubin.net</a>
+          </li>
+          <li>
+            <i class="icon fab fa-github"></i>
+            <a href="https://github.com/justinlubin/"
+               title="GitHub">GitHub</a>
+          </li>
+          <li>
+            <i class="icon fab fa-twitter"></i>
+            <a href="https://twitter.com/jplubin/"
+               title="Twitter">Twitter</a>
+          </li>
+          <li>
+            <i class="icon fas fa-blog"></i>
+            <a href="https://jitcompiled.net"
+               title="Blog">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <p>
+        Computation is empowering, and programming languages are how we harness
+        it. To that end, I study the human aspect of programming to develop
+        programming languages, environments, and tools that are more
+        accessible, intuitive, and powerful.
+      </p>
+
+      <p>
+        Here are some of the research projects I&rsquo;ve worked on to achieve
+        that goal. Please also feel free to take a look at my
+        <a href="/assets/lubin-cv.pdf">
+          CV</a>!
+      </p>
+
+      <h2>
+        Exploring the Learnability of Program Synthesizers by Novice
+        Programmers
+      </h2>
+
+      <p>
+        Modern program synthesizers are increasingly delivering on
+        their promise of lightening the burden of programming by
+        automatically generating code, but little research has addressed how
+        we can make such systems learnable to all. In this work, we ask:
+        What aspects of program synthesizers contribute to and detract from
+        their learnability by novice programmers?
+      </p>
+
+      <ul class="links">
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="/assets/uist22.pdf">
+            publication</a>
+        </li>
+        <li>
+          <i class="icon fas fa-video"></i>
+          <a href="https://youtu.be/k5e6wOPrGic">
+            presentation</a>
+        </li>
+        <li>
+          <i class="icon far fa-file-powerpoint"></i>
+          <a href="https://docs.google.com/presentation/d/e/2PACX-1vSCsAcrqda5bUufQjuCSMuFxYD5nvWrMWq0pp1uq6mPJT5oLlDKckAM2LHSD9eyps-VDxtj37fxN3vx/pub">
+            slides</a>
+        </li>
+      </ul>
+
+      <h2>How Statically-Typed Functional Programmers Write Code</h2>
+
+      <p>
+        How working statically-typed functional programmers write code is
+        largely understudied. And yet, a better understanding of developer
+        practices could pave the way for the design of more useful and
+        usable tooling, more ergonomic languages, and more effective
+        on-ramps into programming communities.  The goal of this work is to
+        address this knowledge gap: to better understand the high-level
+        authoring patterns that statically-typed functional programmers
+        employ.
+      </p>
+
+      <ul class="links">
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="/assets/oopsla21.pdf">
+            publication</a>
+        </li>
+        <li>
+          <i class="icon fas fa-video"></i>
+          <a href="https://dl.acm.org/doi/10.1145/3485532#sec-supp">
+            presentation</a>
+        </li>
+        <li>
+          <i class="icon far fa-file-powerpoint"></i>
+          <a href="https://docs.google.com/presentation/d/e/2PACX-1vQlds8AF3Fa8pChmv-FvrRaha6hW-55cwSuuu8V0m35IoXzZmsr4-GRkN81qp5fJE4kn0HldBjMOJQE/pub">
+            slides</a>
+        </li>
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="/assets/stfp-authorship-poster.pdf">
+            poster</a>
+        </li>
+      </ul>
+
+      <h2>Program Sketching with Live Bidirectional Evaluation</h2>
+
+      <p>
+        We present a system called Smyth for program sketching in a typed
+        functional language whereby the concrete evaluation of ordinary
+        assertions gives rise to input-output examples, which are then used to
+        guide the search to complete the holes. The key innovation, called live
+        bidirectional evaluation, propagates examples &ldquo;backward&rdquo;
+        through partially evaluated sketches. Live bidirectional evaluation
+        enables Smyth to (a) synthesize recursive functions without
+        trace-complete sets of examples and (b) specify and solve
+        interdependent synthesis goals.  Eliminating the trace-completeness
+        requirement resolves a significant limitation faced by prior synthesis
+        techniques when given partial specifications in the form of
+        input-output examples.
+      </p>
+
+      <ul class="links">
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="https://arxiv.org/pdf/1911.00583.pdf">
+            publication</a>
+        </li>
+        <li>
+          <i class="icon fas fa-video"></i>
+          <a href="https://youtu.be/BuxQXpv7q-A?t=4385">
+            presentation</a>
+        </li>
+        <li>
+          <i class="icon far fa-file-powerpoint"></i>
+          <a href="https://docs.google.com/presentation/d/e/2PACX-1vQahAu-Jlfu55uziiV2WCUfv0YBNgbyUFZMKTH51_GKtQgcVQTds3E-ENq2TOp_2vK-PwcTAwzEPGwt/pub">
+            slides</a>
+        </li>
+        <li>
+          <i class="icon fas fa-globe"></i>
+          <a href="https://uchicago-pl.github.io/smyth/">
+            website</a>
+        </li>
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="https://jlubin.net/assets/forging-smyth.pdf">
+            honors thesis</a>
+        </li>
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="https://jlubin.net/assets/live-bidirectional-synthesis-poster.pdf">
+            poster</a>
+        </li>
+      </ul>
+
+      <h2>
+        Type-Directed Program Transformations for the Working Functional
+        Programmer
+      </h2>
+
+      <p>
+        We present preliminary research on Deuce+, a set of tools
+        integrating plain text editing with structural manipulation that
+        brings the power of expressive and extensible type-directed program
+        transformations to everyday, working programmers without a
+        background in computer science or mathematical theory.
+      </p>
+
+      <ul class="links">
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="https://drops.dagstuhl.de/opus/volltexte/2020/11957/pdf/OASIcs-PLATEAU-2019-3.pdf">
+            publication</a>
+        </li>
+        <li>
+          <i class="icon far fa-file-powerpoint"></i>
+          <a href="https://docs.google.com/presentation/d/e/2PACX-1vTc2j3bLRRliR51ppELEwzQWsG-xr3vBtUER0Y30GzW65jpEfuc-6uy1HAZOt4M2sPm5gifmEDtNI4v/pub">
+            slides</a>
+        </li>
+      </ul>
+
+      <h2>
+        Sketch-n-Sketch: Output-Directed Programming for SVG
+      </h2>
+
+      <p>
+        For creative tasks, programmers face a choice: Use a GUI and
+        sacrifice flexibility, or write code and sacrifice ergonomics?  To
+        obtain both flexibility <em>and</em> ease of use, a number of
+        systems have explored a workflow that we call <em>output-directed
+        programming</em>.  In this paradigm, direct manipulation of the
+        program's graphical output corresponds to writing code in a
+        general-purpose programming language, and edits not possible with
+        the mouse can still be enacted through ordinary text edits to the
+        program. Such capabilities provide hope for integrating graphical
+        user interfaces into what are currently text-centric programming
+        environments.
+      </p>
+
+      <p>
+        To further advance this vision, we present a variety of new
+        output-directed techniques that extend the expressive power of
+        Sketch-n-Sketch, an output-directed programming system for creating
+        programs that generate vector graphics. To enable output-directed
+        interaction at more stages of program construction, we expose
+        intermediate execution products for manipulation and we present a
+        mechanism for contextual drawing. Looking forward to
+        output-directed programming beyond vector graphics, we also offer
+        generic refactorings through the GUI, and our techniques employ a
+        domain-agnostic provenance tracing scheme.
+      </p>
+
+      <ul class="links">
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="https://arxiv.org/pdf/1907.10699.pdf">
+            publication</a>
+        </li>
+        <li>
+          <i class="icon fas fa-globe"></i>
+          <a href="http://ravichugh.github.io/sketch-n-sketch/releases/uist-2019-acm-archive/">
+            demo</a>
+        </li>
+      </ul>
+
+      <h2>Deuce: A Lightweight User Interface for Structured Editing</h2>
+
+      <p>
+        We present a structure-aware code editor, called Deuce, that is
+        equipped with direct manipulation capabilities for invoking
+        automated program transformations. Compared to traditional
+        refactoring environments, Deuce employs a direct manipulation
+        interface that is tightly integrated within a text-based editing
+        workflow. In particular, Deuce draws (i) clickable widgets atop the
+        source code that allow the user to <em>structurally select</em> the
+        unstructured text for subexpressions and other relevant features,
+        and (ii) a lightweight, interactive menu of potential
+        transformations based on the current selections.
+      </p>
+
+      <ul class="links">
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="https://arxiv.org/pdf/1707.00015.pdf">
+            publication</a>
+        </li>
+        <li>
+          <i class="icon fas fa-globe"></i>
+          <a href="http://ravichugh.github.io/sketch-n-sketch/releases/v0.6.2/">
+            demo</a>
+        </li>
+      </ul>
+
+      <h2>Approximating Polymorphic Effects with Capabilities</h2>
+
+      <p>
+        Unforgeable tokens known as capabilities provide a flexible
+        mechanism to control access to sensitive system resources, but
+        reasoning about what parts of a codebase can and do use these
+        capabilities is often imprecise. Effect systems are one solution
+        that can improve the precision of capability-based reasoning, but
+        their verbosity has proven to be a usability concern. To remove the
+        burden of full effect annotation, we propose <em>quantification
+        lifting</em>, an automatic semantics-preserving type transformation
+        to handle the mixing of effect-annotated and effect-unannotated
+        code in a capability-safe language with mutable state and effect
+        polymorphism. Because quantification lifting operates on types
+        rather than expressions, it may be used even when the
+        effect-unannotated code is unavailable ahead of time, such as in
+        the cases of dynamic loading and previously compiled code.
+      </p>
+
+      <ul class="links">
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="https://jlubin.net/assets/approx-poly-effects-paper.pdf">
+            manuscript</a>
+        </li>
+        <li>
+          <i class="icon far fa-file-powerpoint"></i>
+          <a href="https://jlubin.net/assets/approx-poly-effects-slides.pdf">
+            slides</a>
+        </li>
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="https://jlubin.net/assets/approx-poly-effects-poster.pdf">
+            poster</a>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
