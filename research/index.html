@@ -131,12 +131,11 @@
       <p>
         How working statically-typed functional programmers write code is
         largely understudied. And yet, a better understanding of developer
-        practices could pave the way for the design of more useful and
-        usable tooling, more ergonomic languages, and more effective
-        on-ramps into programming communities.  The goal of this work is to
-        address this knowledge gap: to better understand the high-level
-        authoring patterns that statically-typed functional programmers
-        employ.
+        practices could pave the way for the design of more useful and usable
+        tooling, more ergonomic languages, and more effective on-ramps into
+        programming communities. In this project, we address this knowledge gap
+        by elucidating many high-level authoring patterns that statically-typed
+        functional programmers employ.
       </p>
 
       <ul class="links">
@@ -165,18 +164,13 @@
       <h2>Program Sketching with Live Bidirectional Evaluation</h2>
 
       <p>
-        We present a system called Smyth for program sketching in a typed
-        functional language whereby the concrete evaluation of ordinary
-        assertions gives rise to input-output examples, which are then used to
-        guide the search to complete the holes. The key innovation, called live
-        bidirectional evaluation, propagates examples &ldquo;backward&rdquo;
-        through partially evaluated sketches. Live bidirectional evaluation
-        enables Smyth to (a) synthesize recursive functions without
-        trace-complete sets of examples and (b) specify and solve
-        interdependent synthesis goals.  Eliminating the trace-completeness
-        requirement resolves a significant limitation faced by prior synthesis
-        techniques when given partial specifications in the form of
-        input-output examples.
+        Sometimes, it&rsquo;s easier to write a partial solution with holes in
+        it (known as a &ldquo;sketch&rdquo;) to a programming problem and
+        provide input-output examples than to write the entire solution from
+        scratch.  In this project, we developed a program synthesizer that
+        completes (potentially recursive) sketches in a statically-typed
+        functional programming language given a set of input-output examples
+        that need not match the recursive structure of the solution.
       </p>
 
       <ul class="links">
@@ -213,60 +207,16 @@
       </ul>
 
       <h2>
-        Type-Directed Program Transformations for the Working Functional
-        Programmer
-      </h2>
-
-      <p>
-        We present preliminary research on Deuce+, a set of tools
-        integrating plain text editing with structural manipulation that
-        brings the power of expressive and extensible type-directed program
-        transformations to everyday, working programmers without a
-        background in computer science or mathematical theory.
-      </p>
-
-      <ul class="links">
-        <li>
-          <i class="icon far fa-newspaper"></i>
-          <a href="https://drops.dagstuhl.de/opus/volltexte/2020/11957/pdf/OASIcs-PLATEAU-2019-3.pdf">
-            publication</a>
-        </li>
-        <li>
-          <i class="icon far fa-file-powerpoint"></i>
-          <a href="https://docs.google.com/presentation/d/e/2PACX-1vTc2j3bLRRliR51ppELEwzQWsG-xr3vBtUER0Y30GzW65jpEfuc-6uy1HAZOt4M2sPm5gifmEDtNI4v/pub">
-            slides</a>
-        </li>
-      </ul>
-
-      <h2>
         Sketch-n-Sketch: Output-Directed Programming for SVG
       </h2>
 
       <p>
-        For creative tasks, programmers face a choice: Use a GUI and
-        sacrifice flexibility, or write code and sacrifice ergonomics?  To
-        obtain both flexibility <em>and</em> ease of use, a number of
-        systems have explored a workflow that we call <em>output-directed
-        programming</em>.  In this paradigm, direct manipulation of the
-        program's graphical output corresponds to writing code in a
-        general-purpose programming language, and edits not possible with
-        the mouse can still be enacted through ordinary text edits to the
-        program. Such capabilities provide hope for integrating graphical
-        user interfaces into what are currently text-centric programming
-        environments.
-      </p>
-
-      <p>
-        To further advance this vision, we present a variety of new
-        output-directed techniques that extend the expressive power of
-        Sketch-n-Sketch, an output-directed programming system for creating
-        programs that generate vector graphics. To enable output-directed
-        interaction at more stages of program construction, we expose
-        intermediate execution products for manipulation and we present a
-        mechanism for contextual drawing. Looking forward to
-        output-directed programming beyond vector graphics, we also offer
-        generic refactorings through the GUI, and our techniques employ a
-        domain-agnostic provenance tracing scheme.
+        For creative tasks, programmers face a choice: Use a GUI and sacrifice
+        flexibility, or write code and sacrifice ergonomics? In this project,
+        we advance the vision of combining the best of these two worlds via a
+        variety of new &ldquo;output-directed&rdquo; techniques in the domain
+        of vector graphics that propagate changes from direct manipulation of a
+        piece of code&lsquo;s output back to the code itself.
       </p>
 
       <ul class="links">
@@ -285,16 +235,11 @@
       <h2>Deuce: A Lightweight User Interface for Structured Editing</h2>
 
       <p>
-        We present a structure-aware code editor, called Deuce, that is
-        equipped with direct manipulation capabilities for invoking
-        automated program transformations. Compared to traditional
-        refactoring environments, Deuce employs a direct manipulation
-        interface that is tightly integrated within a text-based editing
-        workflow. In particular, Deuce draws (i) clickable widgets atop the
-        source code that allow the user to <em>structurally select</em> the
-        unstructured text for subexpressions and other relevant features,
-        and (ii) a lightweight, interactive menu of potential
-        transformations based on the current selections.
+        Drafting and refactoring code via text edits can be tedious and
+        error-prone. In this project, we introduce a structure-aware code
+        editor equipped with direct manipulation capabilities for invoking
+        automated program transformations that is tightly integrated within a
+        text-based editing workflow.
       </p>
 
       <ul class="links">
@@ -308,25 +253,31 @@
           <a href="http://ravichugh.github.io/sketch-n-sketch/releases/v0.6.2/">
             demo</a>
         </li>
+        <li>
+          <i class="icon far fa-newspaper"></i>
+          <a href="https://drops.dagstuhl.de/opus/volltexte/2020/11957/pdf/OASIcs-PLATEAU-2019-3.pdf">
+            follow-up vision paper</a>
+        </li>
+        <li>
+          <i class="icon far fa-file-powerpoint"></i>
+          <a href="https://docs.google.com/presentation/d/e/2PACX-1vTc2j3bLRRliR51ppELEwzQWsG-xr3vBtUER0Y30GzW65jpEfuc-6uy1HAZOt4M2sPm5gifmEDtNI4v/pub">
+            follow-up vision slides</a>
+        </li>
       </ul>
 
       <h2>Approximating Polymorphic Effects with Capabilities</h2>
 
       <p>
-        Unforgeable tokens known as capabilities provide a flexible
-        mechanism to control access to sensitive system resources, but
-        reasoning about what parts of a codebase can and do use these
-        capabilities is often imprecise. Effect systems are one solution
-        that can improve the precision of capability-based reasoning, but
-        their verbosity has proven to be a usability concern. To remove the
-        burden of full effect annotation, we propose <em>quantification
-        lifting</em>, an automatic semantics-preserving type transformation
-        to handle the mixing of effect-annotated and effect-unannotated
-        code in a capability-safe language with mutable state and effect
-        polymorphism. Because quantification lifting operates on types
-        rather than expressions, it may be used even when the
-        effect-unannotated code is unavailable ahead of time, such as in
-        the cases of dynamic loading and previously compiled code.
+        Unforgeable tokens known as capabilities provide a flexible mechanism
+        to control access to sensitive system resources, but reasoning about
+        what parts of a codebase can and do use these capabilities is often
+        imprecise and manual. Effect systems are one solution that can improve
+        the precision of capability-based reasoning, but their verbosity has
+        proven to be a usability concern. To remove the burden of full effect
+        annotation, we propose &ldquo;quantification lifting,&rdquo; an
+        automatic semantics-preserving type transformation to handle the mixing
+        of effect-annotated and effect-unannotated code in a capability-safe
+        language with mutable state and effect polymorphism.
       </p>
 
       <ul class="links">
