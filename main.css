@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  max-width: var(--main-width);
+  width: var(--main-width);
 
   margin: var(--spacing-large) auto;
   padding: var(--spacing-large) calc(2 * var(--spacing-large));
@@ -166,10 +166,7 @@ nav {
 nav ul {
   display: flex;
   justify-content: flex-end;
-}
-
-nav li {
-  margin-left: var(--spacing-large);
+  gap: var(--spacing-large);
 }
 
 nav .active {
@@ -255,4 +252,39 @@ main h2 {
 
 #music ul ul {
   margin-top: var(--spacing-small);
+}
+
+/* Screen size adjustments */
+
+/* max-width: var(--main-width) + 2 * var(--spacing-large) */
+@media(max-width: 860px) {
+  body {
+    width: calc(100% - 2 * var(--spacing-large));
+    margin: var(--spacing-large);
+  }
+
+  nav {
+    margin-bottom: var(--spacing-large);
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header > div {
+    width: 100%;
+    gap: var(--spacing-small);
+    align-items: center;
+  }
+
+  header .links {
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }
