@@ -331,7 +331,12 @@ main h2 {
 @media(max-width: 910px) {
   body {
     width: calc(100% - 2 * var(--spacing-large));
-    margin: var(--spacing-large);
+  }
+}
+
+@media(max-width: 750px) {
+  body {
+    padding: var(--spacing-large);
   }
 
   nav {
