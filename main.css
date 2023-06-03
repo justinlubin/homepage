@@ -106,6 +106,18 @@ i {
   to { transform: rotateY(360deg); }
 }
 
+@media (prefers-reduced-motion) {
+  @keyframes spin3d {
+    from { }
+    to { }
+  }
+
+  @keyframes bob-text {
+    from { }
+    to { }
+  }
+}
+
 /* Background */
 
 #background-canvas {

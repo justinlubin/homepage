@@ -101,7 +101,9 @@ function step(timestamp) {
 
   render();
 
-  window.requestAnimationFrame(step);
+  if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+    window.requestAnimationFrame(step);
+  }
 }
 
 window.addEventListener("load", (_) => {
