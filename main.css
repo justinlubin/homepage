@@ -237,6 +237,7 @@ nav .active:before {
 main {
   margin-top: var(--spacing-large);
   line-height: 1.5;
+  transform: translateZ(0); /* Fix Safari animation bug */
 }
 
 main > * {
