@@ -1,0 +1,35 @@
+    <header class="main-header">
+      <a href="/img/justin-lubin.jpg">
+        <img src="/img/justin-lubin.jpg"
+             alt="A close-up photo of Justin Lubin smiling."
+             width="125"
+             height="125" />
+      </a>
+      <div>
+        <h1>
+          <a href="/">
+            Justin Lubin</a>
+          {% if section.title != "Home" %}
+          / {{ section.title }}
+          {% endif %}
+        </h1>
+        <p>he/him/his</p>
+        <ul class="links">
+          <li>
+            <i class="icon far fa-file-alt"></i>
+            <a href="/assets/lubin-cv.pdf"
+               title="Curriculum Vitae">CV</a>
+          </li>
+          <li>
+            <i class="icon far fa-envelope"></i>
+            <a href="mailto:justin@jlubin.net"
+               title="Email">justin@jlubin.net</a>
+          </li>
+          <li>
+            <i class="icon fab fa-github"></i>
+            <a href="https://github.com/justinlubin/"
+               title="GitHub">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </header>

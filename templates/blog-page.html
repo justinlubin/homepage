@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block extra_data %}
+{% set section = "Blog" %}
+{% endblock %}
+
+{% block title %}
+JITCompiled | {{ page.title }}
+{% endblock %}
+
+{% block header %}
+{% include "blog-header.html" %}
+{% endblock header %}
+
+{% block content %}
+
+<main id="page">
+  <h2>{{ page.title }}</h2>
+  <p class="date">{{ page.date | date(format="%B %e, %Y") }}</p>
+  {{ page.content | safe }}
+  <footer>
+    <p><a href="/blog">Return to JITCompiled home.</a></h1>
+  </footer>
+</main>
+
+{% endblock content %}

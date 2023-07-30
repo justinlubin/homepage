@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block extra_data %}
+{% set section = "Home" %}
+{% endblock %}
+
+{% block title %}
+Justin Lubin
+{% endblock %}
+
+{% block header %}
+  {% include "main-header.html" %}
+{% endblock %}
+
+{% block content %}
+    <main>
+      <p>
+        Hi there! My name is Justin Lubin. I&rsquo;m excited by programming
+        languages, human-computer interaction, biology, social justice, music,
+        and mathematics.
+      </p>
+
+      <p>
+        I am a third-year PhD student in computer science advised by
+        <a href="https://schasins.com/">
+          Sarah E. Chasins</a>
+        at UC&nbsp;Berkeley, where I&rsquo;m part of the
+        <a href="https://ps.berkeley.edu/">
+          Programming Systems Research Group</a>.
+        Previously, as an undergraduate at UChicago, I worked extensively
+        with
+        <a href="http://people.cs.uchicago.edu/~rchugh/">
+          Ravi Chugh</a>.
+        I am very grateful for the fantastic mentorship of these two!
+      </p>
+
+      <p>
+        My belief is that computation is empowering, and programming languages
+        are how we harness it. Accordingly, I study the human aspect of
+        programming to develop programming languages, environments, and tools
+        that are friendlier, more usable, and enable us to achieve what we
+        previously could not.
+      </p>
+
+      <p>
+        Currently, I&rsquo;m immersing myself in the world of
+        <span class="special" style="color: green;">
+          <span>b</span><span>i</span><span>o</span><span>l</span><span>o</span><span>g</span><span>y</span>
+        </span>
+        in the hopes of fostering a substantive, ongoing, and reciprocal
+        relationship between the fields of programming languages and
+        experimental biology.
+      </p>
+
+      <p>
+        In particular, while contributing to biology research alongside
+        experimental biologists, I am developing programming tools to empower
+        biologists without much programming experience (or time to acquire it)
+        to complete computational tasks they could not previously complete
+        alone.
+      </p>
+
+      <p>
+        I am excited to be collaborating with the lovely folks of the
+        <a href="https://www.nunezlab.org/">
+           Nuñez Lab</a>
+        in this endeavor!
+      </p>
+
+      <h2>Conference and Journal Publications</h2>
+
+      <p>
+        For more, please see my <a href="/assets/lubin-cv.pdf">CV</a>!
+        <span class="mod-note">
+          (&#8727; = equal contribution, &dagger; = research mentee)
+        </span>
+      </p>
+
+      <ul class="publications">
+        <li>
+          <div class="venue">
+            <p>UIST &rsquo;22</p>
+          </div>
+          <div>
+            <h3>
+              <a href="https://doi.org/10.1145/3526113.3545659">
+                Exploring the Learnability of Program Synthesizers by Novice Programmers
+              </a>
+            </h3>
+            <ul class="authors">
+              <li>Dhanya Jayagopal</li>,<li class="mod">&#8727;&dagger;</li>
+              <li class="me">Justin Lubin</li>,<li class="mod">&#8727;</li> and
+              <li>Sarah E. Chasins</li>
+            </ul>
+            <ul class="links">
+              <li><a href="/assets/uist22.pdf">pdf</a></li>
+              <li><a href="https://youtu.be/k5e6wOPrGic">presentation</a></li>
+              <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vSCsAcrqda5bUufQjuCSMuFxYD5nvWrMWq0pp1uq6mPJT5oLlDKckAM2LHSD9eyps-VDxtj37fxN3vx/pub">slides</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="venue">
+            <p>OOPSLA &rsquo;21</p>
+          </div>
+          <div>
+            <h3>
+              <a href="https://doi.org/10.1145/3485532">
+                How Statically-Typed Functional Programmers Write Code
+              </a>
+            </h3>
+            <ul class="authors">
+              <li class="me">Justin Lubin</li> and
+              <li>Sarah E. Chasins</li>
+            </ul>
+            <ul class="links">
+              <li><a href="/assets/oopsla21.pdf">pdf</a></li>
+              <li><a href="https://dl.acm.org/doi/10.1145/3485532#sec-supp">presentation</a></li>
+              <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vQlds8AF3Fa8pChmv-FvrRaha6hW-55cwSuuu8V0m35IoXzZmsr4-GRkN81qp5fJE4kn0HldBjMOJQE/pub">slides</a></li>
+              <li><a href="/assets/hstfpwc-poster.pdf">poster</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="venue">
+            <p>ICFP &rsquo;20</p>
+          </div>
+          <div>
+            <h3>
+              <a href="https://doi.org/10.1145/3408991">
+                Program Sketching with Live Bidirectional Evaluation
+              </a>
+            </h3>
+            <ul class="authors">
+              <li class="me">Justin Lubin</li>,
+              <li>Nick Collins</li>,
+              <li>Cyrus Omar</li>, and
+              <li>Ravi Chugh</li>
+            </ul>
+            <ul class="links">
+              <li><a href="/assets/icfp20.pdf">pdf</a></li>
+              <li><a href="https://youtu.be/BuxQXpv7q-A?t=4385">presentation</a></li>
+              <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vQahAu-Jlfu55uziiV2WCUfv0YBNgbyUFZMKTH51_GKtQgcVQTds3E-ENq2TOp_2vK-PwcTAwzEPGwt/pub">slides</a></li>
+              <li><a href="https://uchicago-pl.github.io/smyth/">website</a></li>
+              <li><a href="/assets/bs-thesis.pdf">honors thesis</a></li>
+              <li><a href="/assets/pswlbe-poster.pdf">poster</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="venue">
+            <p>UIST &rsquo;19</p>
+          </div>
+          <div>
+            <h3>
+              <a href="https://doi.org/10.1145/3332165.3347925">
+                Sketch-n-Sketch: Output-Directed Programming for SVG
+              </a>
+            </h3>
+            <ul class="authors">
+              <li>Brian Hempel</li>,
+              <li class="me">Justin Lubin</li>, and
+              <li>Ravi Chugh</li>
+            </ul>
+            <ul class="links">
+              <li><a href="/assets/uist19.pdf">pdf</a></li>
+              <li><a href="http://ravichugh.github.io/sketch-n-sketch/releases/uist-2019-acm-archive/">demo</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="venue">
+            <p>ICSE &rsquo;18</p>
+          </div>
+          <div>
+            <h3>
+              <a href="https://doi.org/10.1145/3180155.3180165">
+                Deuce: A Lightweight User Interface for Structured Editing
+              </a>
+            </h3>
+            <ul class="authors">
+              <li>Brian Hempel</li>,
+              <li class="me">Justin Lubin</li>, and
+              <li>Ravi Chugh</li>
+            </ul>
+            <ul class="links">
+              <li><a href="/assets/icse18.pdf">pdf</a></li>
+              <li><a href="http://ravichugh.github.io/sketch-n-sketch/releases/v0.6.2/">demo</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </main>
+{% endblock %}

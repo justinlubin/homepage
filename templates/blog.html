@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block extra_data %}
+{% set section = "Blog" %}
+{% endblock %}
+
+{% block title %}
+JITCompiled
+{% endblock %}
+
+{% block header %}
+  {% include "blog-header.html" %}
+{% endblock header %}
+
+{% block content %}
+<main id="blog">
+  <ul>
+    {% for page in section.pages %}
+    <li>
+      <span>{{ page.date | date(format="%b %d, %Y") }}</span>
+      <h3><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h3>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
+{% endblock content %}
