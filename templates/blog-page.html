@@ -2,6 +2,7 @@
 
 {% block extra_data %}
 {% set section = "Blog" %}
+{% set katex = true %}
 {% endblock %}
 
 {% block title %}
@@ -19,7 +20,7 @@ JITCompiled | {{ page.title }}
   <p class="date">{{ page.date | date(format="%B %e, %Y") }}</p>
   {{ page.content | safe }}
   <footer>
-    <p><a href="/blog">Return to JITCompiled home.</a></h1>
+    <p>Return to <a href="/blog">JITCompiled home</a>.</p>
   </footer>
 </main>
 

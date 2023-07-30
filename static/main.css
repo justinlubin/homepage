@@ -1,3 +1,29 @@
+/* Fonts */
+
+@font-face {
+  font-family: "Inter";
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Inter-Regular.woff2?v=3.19") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style:  italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Inter-Italic.woff2?v=3.19") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Inter-Bold.woff2?v=3.19") format("woff2");
+}
+
 /* Variables */
 
 :root {
@@ -65,8 +91,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Signika", sans-serif;
 }
 
-i {
+i, em {
   font-style: italic;
+}
+
+b, strong {
+  font-weight: bold;
 }
 
 .links {
@@ -454,7 +484,21 @@ main h2 {
   margin-left: 30px;
 }
 
-#page ol li:not(:last-child) {
+#page > ul > li {
+  list-style-type: disc;
+  margin-left: 30px;
+}
+
+#page > ul > li > ul {
+  margin-top: var(--spacing-small);
+}
+
+#page > ul > li > ul > li {
+  list-style-type: circle;
+  margin-left: 30px;
+}
+
+#page li:not(:last-child) {
   margin-bottom: var(--spacing-small);
 }
 
@@ -468,6 +512,42 @@ main h2 {
   border-top: 1px solid rgba(0, 0, 0, 0.5);
   padding-top: var(--spacing-small);
   text-align: center;
+}
+
+#page .figure {
+  padding: var(--spacing-small);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#page .figure p {
+  margin-top: var(--spacing-small);
+}
+
+#page sup {
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+#page .footnote-definition-label:before,
+#page .footnote-reference:before {
+  content: "[";
+}
+
+#page .footnote-definition-label:after,
+#page .footnote-reference:after {
+  content: "]";
+}
+
+#page .footnote-definition p {
+  display: inline;
+}
+
+#page .center {
+  text-align: center;
+}
+
+#page .qed {
+	float: right;
 }
 
 /* Screen size adjustments */
