@@ -9,7 +9,7 @@ entirely block-based. For a while, I was skeptical of its expressive
 capabilities, but, after finally playing around with it myself, I realized that
 it has support for some extremely expressive constructs that enable embedded
 domain-specific languages. As part of
-[Sarah Chasins](https://schasins.com/)’s
+[Sarah Chasins](https://schasins.com/)’
 [CS 294: Building User-Centered Programming Tools](http://schasins.com/cs294-usable-programming-2020/)
 class, I implemented a *monadic do* construct in Snap!, similar to
 [monadic do notation in Haskell](https://en.wikibooks.org/wiki/Haskell/do_notation)
