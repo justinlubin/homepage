@@ -88,7 +88,9 @@ To implement this block, I used an *upvar*, a surprisingly versatile Snap! const
 
 Using an upvar turned out to be a bit tricky in this context because it meant that I had to rely on mutation to set this provided variable properly, which is not how typical *monadic do* implementations desugar. In particular, I treat the body of the monadic let binding as an uninterpreted expression and perform the following desugaring:
 
+{% center() %}
 `let* x = mx in body` ↝ `mx >>= (fun output -> (x := output; body))`
+{% end %}
 
 Which, in Snap!, looks like this:
 
