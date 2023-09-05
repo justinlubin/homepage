@@ -412,6 +412,7 @@ main h2 {
   color: var(--accent-color);
   position: absolute;
   left: calc(0px - 0.75 * var(--spacing-large));
+  top: 1px;
   font-size: 0.85em;
 
   display: inline-block;
