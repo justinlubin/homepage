@@ -99,10 +99,22 @@ b, strong {
   font-weight: bold;
 }
 
+sup {
+  font-size: 0.7em;
+  vertical-align: super;
+}
+
 .links {
   display: flex;
   gap: var(--spacing-small);
   flex-wrap: wrap;
+}
+
+.callout {
+  text-align: center;
+  border: 1px solid var(--text-color);
+  border-radius: 3px;
+  padding: var(--spacing-small);
 }
 
 @keyframes bob-text {
