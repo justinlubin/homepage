@@ -162,6 +162,10 @@ sup {
   }
 }
 
+.katex-display {
+  overflow-x: scroll;
+}
+
 /* Background */
 
 #background-canvas {
