@@ -16,7 +16,7 @@ I hope you enjoy it!
 A challenge that players of the role-playing game *Pokémon Red and Blue* (1996) must face early in their adventures is to navigate through the large and foreboding Mt. Moon via a series of interconnected caves. The cave walls are indistinguishable from one another (**Figure 1**), which—compounded with the fact that players can only see a small portion of the cave at a time—makes navigating the caves of Mt. Moon a disorienting experience. However, it is not just the caves themselves that cause this confusing experience: their music serves to disorient as well. *Pokémon* composer Junichi Masuda creates a musical backdrop to the caves that both micro- and macroscopically reflects and enhances the disorienting nature of Mt. Moon by weaving together nonfunctional harmonies, complex rhythms, a whole-tone melody, and a deceptive musical form.
 
 {% figure(
-     src="https://archives.bulbagarden.net/media/upload/b/b3/Mt_Moon_1F_RBY.png",
+     src="/blog-assets/mt-moon/Mt_Moon_1F_RBY.png",
      alt="Mt. Moon as seen in Pokémon Red and Blue") %}
 **Figure 1.** The entrance to Mt. Moon.
 *[Credit to user Clarky13 on Bulbapedia.](https://archives.bulbagarden.net/wiki/File:Mt_Moon_1F_RBY.png)*
