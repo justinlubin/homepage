@@ -34,6 +34,8 @@
   /* --accent-color-2: #f9e3f9; */
   --accent-color-2-text: #477670;
   --crisp-border: #000000;
+  --fade-text-color: rgba(0, 0, 0, 0.5);
+  --super-fade-text-color: rgba(0, 0, 0, 0.3);
 
   --main-width: 850px;
   --spacing-small: 15px;
@@ -104,6 +106,11 @@ b, strong {
 sup {
   font-size: 0.7em;
   vertical-align: super;
+}
+
+.pronouns {
+  color: var(--super-fade-text-color);
+  font-size: 0.6em;
 }
 
 .links {
@@ -332,7 +339,7 @@ main h2 {
 /* Publications */
 
 .mod-note {
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--fade-text-color);
 }
 
 .publications {
