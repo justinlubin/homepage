@@ -387,6 +387,10 @@ main h2 {
   font-size: 1.1em;
 }
 
+.publications .authors {
+  font-size: 0.9em;
+}
+
 .publications .authors li {
   display: inline;
 }
