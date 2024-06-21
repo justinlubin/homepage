@@ -342,12 +342,9 @@ main h2 {
   color: var(--fade-text-color);
 }
 
-.publications {
-}
-
 .publications > li {
   display: flex;
-  margin-top: 20px;;
+  margin-top: 20px;
 }
 
 .venue {
