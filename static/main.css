@@ -140,7 +140,7 @@ sup {
   padding: 0 5px;
 
   position: absolute;
-  top: calc(-1 * var(--spacing-small));
+  top: calc(-0.9 * var(--spacing-small));
   left: var(--spacing-small);
 }
 
