@@ -320,7 +320,7 @@ nav .active:after {
   color: var(--accent-color);
 }
 
-.main-header .narrow div {
+.main-header .narrow span {
   font-size: 0.8em;
   margin-bottom: 5px;
 }
@@ -635,12 +635,8 @@ main ol > li:before {
 /* max-width: var(--main-width) + 2 * var(--spacing-large) */
 @media(max-width: 910px) {
   body {
-    width: calc(100% - 2 * var(--spacing-large));
-  }
-}
-
-@media(max-width: 750px) {
-  body {
+    width: calc(100% - 2 * var(--spacing-small));
+    margin: var(--spacing-small);
     padding: var(--spacing-large);
   }
 
@@ -667,6 +663,14 @@ main ol > li:before {
   .main-header .links {
     align-items: center;
     justify-content: space-evenly;
+  }
+
+  .main-header .narrow span {
+    display: block;
+  }
+
+  .main-header .narrow span.sep {
+    display: none;
   }
 
   .blog-header h1 {
