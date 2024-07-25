@@ -39,7 +39,7 @@
 
   --main-width: 850px;
   --spacing-small: 15px;
-  --spacing-large: 30px;
+  --spacing-large: 25px;
 }
 
 /*
@@ -77,7 +77,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 
-  font-size: 17px;
+  font-size: 16px;
   font-family: "Inter", sans-serif;
 }
 
@@ -124,6 +124,24 @@ sup {
   border: 1px solid var(--crisp-border);
   border-radius: 3px;
   padding: var(--spacing-small);
+
+  position: relative;
+}
+
+.named.callout {
+  margin-top: calc(1.5 * var(--spacing-large));
+  font-style: italic;
+}
+
+.named.callout > span:first-child {
+  background-color: var(--bg-color);
+  font-style: normal;
+  font-weight: bold;
+  padding: 0 5px;
+
+  position: absolute;
+  top: calc(-1 * var(--spacing-small));
+  left: var(--spacing-small);
 }
 
 @keyframes bob-text {
@@ -300,6 +318,11 @@ nav .active:after {
 
 .main-header h1 a {
   color: var(--accent-color);
+}
+
+.main-header .narrow div {
+  font-size: 0.8em;
+  margin-bottom: 5px;
 }
 
 /* Blog Header */
