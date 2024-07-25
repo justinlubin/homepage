@@ -336,6 +336,21 @@ main h2 {
   margin-top: var(--spacing-large);
 }
 
+/* https://stackoverflow.com/a/1636635 */
+main ol {
+  margin-left: 30px;
+  counter-reset: list;
+}
+
+main ol > li {
+  list-style: none;
+}
+
+main ol > li:before {
+  content: "(" counter(list, lower-roman) ") ";
+  counter-increment: list;
+}
+
 /* Publications */
 
 .mod-note {
