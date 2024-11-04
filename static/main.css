@@ -374,6 +374,15 @@ main ol > li:before {
   counter-increment: list;
 }
 
+/* Footer */
+
+footer {
+  color: var(--fade-text-color);
+  font-size: 0.85em;
+  margin-top: var(--spacing-large);
+  text-align: center;
+}
+
 /* Publications */
 
 .mod-note {
