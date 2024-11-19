@@ -108,6 +108,10 @@ sup {
   vertical-align: super;
 }
 
+code {
+    font-family: monospace;
+}
+
 .pronouns {
   color: var(--super-fade-text-color);
   font-size: 0.6em;
@@ -461,6 +465,21 @@ footer {
 
 .publications .links li:after {
   content: "]";
+}
+
+.publications details {
+    margin-top: 12px;
+    font-size: 0.9em;
+}
+
+.publications summary {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.7rem;
+}
+
+.publications details p {
+    margin-top: 4px;
 }
 
 /* Music list */

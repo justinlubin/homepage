@@ -114,6 +114,34 @@ Justin Lubin
               <li><a href="/assets/pldi24-supplement.pdf">supplement</a></li>
               <li><a href="https://github.com/justinlubin/cobbler">repo</a></li>
             </ul>
+            <details>
+              <summary>Abstract</summary>
+              <p>
+                We present an enumerative program synthesis framework called
+                <em>component-based refactoring</em>
+                that can refactor &ldquo;direct&rdquo; style code that does not
+                use library components into equivalent &ldquo;combinator&rdquo;
+                style code that does use library components. This framework
+                introduces a sound but incomplete technique to check the
+                equivalence of direct code and combinator code called
+                <em>equivalence by canonicalization</em>
+                that does not rely on input-output examples or logical
+                specifications. Moreover, our approach can repurpose existing
+                compiler optimizations, leveraging decades of research from the
+                programming languages community. We instantiated our new synthesis
+                framework in two contexts: (i)&nbsp;higher-order functional
+                combinators such as <code>map</code> and <code>filter</code> in
+                the statically-typed functional programming language Elm and
+                (ii)&nbsp;high-performance numerical computing combinators
+                provided by the NumPy library for Python. We implemented both
+                instantiations in a tool called Cobbler and evaluated it on
+                thousands of real programs to test the performance of the
+                component-based refactoring framework in terms of execution time
+                and output quality. Our work offers evidence that
+                synthesis-backed refactoring can apply across a range of domains
+                without specification beyond the input program.
+              </p>
+            </details>
           </div>
         </li>
         <li>
@@ -136,6 +164,36 @@ Justin Lubin
               <li><a href="https://youtu.be/k5e6wOPrGic">presentation</a></li>
               <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vSCsAcrqda5bUufQjuCSMuFxYD5nvWrMWq0pp1uq6mPJT5oLlDKckAM2LHSD9eyps-VDxtj37fxN3vx/pub">slides</a></li>
             </ul>
+            <details>
+              <summary>Abstract</summary>
+              <p>
+                Modern program synthesizers are increasingly delivering on
+                their promise of lightening the burden of programming by
+                automatically generating code, but little research has
+                addressed how we can make such systems learnable to all. In
+                this work, we ask: What aspects of program synthesizers
+                contribute to and detract from their learnability by novice
+                programmers? We conducted a thematic analysis of 22
+                observations of novice programmers, during which novices worked
+                with existing program synthesizers, then participated in
+                semi-structured interviews. Our findings shed light on how
+                their specific points in the synthesizer design space affect
+                these tools’ learnability by novice programmers, including the
+                type of specification the synthesizer requires, the method of
+                invoking synthesis and receiving feedback, and the size of the
+                specification. We also describe common misconceptions about
+                what constitutes meaningful progress and useful specifications
+                for the synthesizers, as well as participants’ common behaviors
+                and strategies for using these tools. From this analysis, we
+                offer a set of design opportunities to inform the design of
+                future program synthesizers that strive to be learnable by
+                novice programmers. This work serves as a first step toward
+                understanding how we can make program synthesizers more
+                learnable by novices, which opens up the possibility of using
+                program synthesizers in educational settings as well as
+                developer tooling oriented toward novice programmers.
+              </p>
+            </details>
           </div>
         </li>
         <li>
@@ -158,6 +216,38 @@ Justin Lubin
               <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vQlds8AF3Fa8pChmv-FvrRaha6hW-55cwSuuu8V0m35IoXzZmsr4-GRkN81qp5fJE4kn0HldBjMOJQE/pub">slides</a></li>
               <li><a href="/assets/hstfpwc-poster.pdf">poster</a></li>
             </ul>
+              <details>
+                <summary>Abstract</summary>
+                <p>
+                  How working statically-typed functional programmers write
+                  code is largely understudied.  And yet, a better
+                  understanding of developer practices could pave the way for
+                  the design of more useful and usable tooling, more ergonomic
+                  languages, and more effective on-ramps into programming
+                  communities. The goal of this work is to address this
+                  knowledge gap: to better understand the high-level authoring
+                  patterns that statically-typed functional programmers employ.
+                  We conducted a grounded theory analysis of 30 programming
+                  sessions of practicing statically-typed functional
+                  programmers, 15 of which also included a semi-structured
+                  interview.  The theory we developed gives insight into how
+                  the specific affordances of statically-typed functional
+                  programming affect domain modeling, type construction,
+                  focusing techniques, exploratory and reasoning strategies,
+                  and expressions of intent. We conducted a set of quantitative
+                  lab experiments to validate our findings, including that
+                  statically-typed functional programmers often iterate between
+                  editing types and expressions, that they often run their
+                  compiler on code even when they know it will not successfully
+                  compile, and that they make textual program edits that
+                  reliably signal future edits that they intend to make.
+                  Lastly, we outline the implications of our findings for
+                  language and tool design. The success of this approach in
+                  revealing program authorship patterns suggests that the same
+                  methodology could be used to study other understudied
+                  programmer populations.
+                </p>
+              </details>
           </div>
         </li>
         <li>
@@ -185,6 +275,42 @@ Justin Lubin
               <li><a href="/assets/pswlbe-poster.pdf">poster</a></li>
               <li><a href="https://github.com/UChicago-PL/smyth">repo</a></li>
             </ul>
+            <details>
+              <summary>Abstract</summary>
+              <p>
+                We present a system called Smyth for program sketching in a
+                typed functional language whereby the concrete evaluation of
+                ordinary assertions gives rise to input-output examples, which
+                are then used to guide the search to complete the holes. The
+                key innovation, called <em>live bidirectional evaluation</em>,
+                propagates examples "backward" through partially evaluated
+                sketches. Live bidirectional evaluation enables Smyth to (a)
+                synthesize recursive functions without trace-complete sets of
+                examples and (b) specify and solve interdependent synthesis
+                goals. Eliminating the trace-completeness requirement resolves
+                a significant limitation faced by prior synthesis techniques
+                when given partial specifications in the form of input-output
+                examples.
+              </p>
+              <p>
+                To assess the practical implications of our techniques, we ran
+                several experiments on benchmarks used to evaluate Myth, a
+                state-of-the-art example-based synthesis tool. First, given
+                expert examples (and no partial implementations), we find that
+                Smyth requires on average 66% of the number of expert examples
+                required by Myth. Second, we find that Smyth is robust to
+                randomly-generated examples, synthesizing many tasks with
+                relatively few more random examples than those provided by an
+                expert. Third, we create a suite of small sketching tasks by
+                systematically employing a simple sketching strategy to the
+                Myth benchmarks; we find that user-provided sketches in Smyth
+                often further reduce the total specification burden (i.e. the
+                combination of partial implementations and examples). Lastly,
+                we find that Leon and Synquid, two state-of-the-art logic-based
+                synthesis tools, fail to complete several tasks on which Smyth
+                succeeds.
+              </p>
+            </details>
           </div>
         </li>
         <li>
@@ -207,6 +333,44 @@ Justin Lubin
               <li><a href="http://ravichugh.github.io/sketch-n-sketch/releases/uist-2019-acm-archive/">demo</a></li>
               <li><a href="https://github.com/ravichugh/sketch-n-sketch">repo</a></li>
             </ul>
+            <details>
+              <summary>Abstract</summary>
+              <p>
+                For creative tasks, programmers face a choice: Use a GUI and
+                sacrifice flexibility, or write code and sacrifice ergonomics?
+              </p>
+              <p>
+                To obtain both flexibility <em>and</em> ease of use, a number
+                of systems have explored a workflow that we call
+                <em>output-directed programming</em>. In this paradigm, direct
+                manipulation of the program's graphical output corresponds to
+                writing code in a general-purpose programming language, and
+                edits not possible with the mouse can still be enacted through
+                ordinary text edits to the program. Such capabilities provide
+                hope for integrating graphical user interfaces into what are
+                currently text-centric programming environments.
+              </p>
+              <p>
+                To further advance this vision, we present a variety of new
+                output-directed techniques that extend the expressive power of
+                Sketch-n-Sketch, an output-directed programming system for
+                creating programs that generate vector graphics. To enable
+                output-directed interaction at more stages of program
+                construction, we expose intermediate execution products for
+                manipulation and we present a mechanism for contextual drawing.
+                Looking forward to output-directed programming beyond vector
+                graphics, we also offer generic refactorings through the GUI,
+                and our techniques employ a domain-agnostic provenance tracing
+                scheme.
+              </p>
+              <p>
+                To demonstrate the improved expressiveness, we implement a
+                dozen new parametric designs in Sketch-n-Sketch <em>without</em>
+                text-based edits. Among these is the first demonstration of
+                building a recursive function in an output-directed programming
+                setting.
+              </p>
+            </details>
           </div>
         </li>
         <li>
@@ -230,12 +394,34 @@ Justin Lubin
               <li><a href="http://ravichugh.github.io/sketch-n-sketch/releases/v0.6.2/">demo</a></li>
               <li><a href="https://github.com/ravichugh/sketch-n-sketch">repo</a></li>
             </ul>
+            <details>
+              <summary>Abstract</summary>
+              <p>
+                We present a structure-aware code editor, called Deuce, that is
+                equipped with direct manipulation capabilities for invoking
+                automated program transformations. Compared to traditional
+                refactoring environments, Deuce employs a direct manipulation
+                interface that is tightly integrated within a text-based
+                editing workflow. In particular, Deuce draws (i) clickable
+                widgets atop the source code that allow the user to
+                <em>structurally select</em> the unstructured text for
+                subexpressions and other relevant features, and (ii) a
+                lightweight, interactive menu of potential transformations
+                based on the current selections. We implement and evaluate our
+                design with mostly standard transformations in the context of a
+                small functional programming language. A controlled user study
+                with 21 participants demonstrates that structural selection is
+                preferred to a more traditional text-selection interface and
+                may be faster overall once users gain experience with the tool.
+                These results accord with Deuce's aim to provide human-friendly
+                structural interactions on top of familiar text-based editing.
+              </p>
           </div>
         </li>
       </ul>
     </main>
 
     <footer>
-        Last updated: 2024-11-04.
+        Last updated: 2024-11-18.
     </footer>
 {% endblock %}
