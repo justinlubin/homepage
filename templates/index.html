@@ -94,6 +94,135 @@ Justin Lubin
       <ul class="publications">
         <li>
           <div class="venue">
+            <p>PLDI &rsquo;25</p>
+          </div>
+          <div>
+            <h3>
+              Programming By Navigation
+            </h3>
+            <ul class="authors">
+              <li class="me">Justin Lubin</li>,
+              <li>Parker Ziegler</li>, and
+              <li>Sarah E. Chasins</li>
+            </ul>
+            <ul class="links">
+              <li>pdf coming soon!</li>
+              <li><a href="https://github.com/justinlubin/honeybee">repo</a></li>
+            </ul>
+            <details>
+              <summary>Abstract</summary>
+              <p>
+                  When a program synthesis task starts from an ambiguous
+                  specification, the synthesis process often involves an
+                  iterative specification refinement process. We introduce the
+                  Programming By Navigation Synthesis Problem, a new synthesis
+                  problem adapted specifically for supporting iterative
+                  specification refinement in order to find a
+                  <em>particular</em>
+                  target solution. In contrast to prior work, we prove that
+                  synthesizers that solve the Programming By Navigation
+                  Synthesis Problem show
+                  <em>all</em>
+                  valid next steps
+                  (<strong class="proper-name">Strong Completeness</strong>)
+                  and
+                  <em>only</em>
+                  valid next steps
+                  (<strong class="proper-name">Strong Soundness</strong>).
+                  To meet the demands of the Programming By Navigation
+                  Synthesis Problem, we introduce an algorithm to turn a type
+                  inhabitation oracle (in the style of classical logic) into a
+                  fully constructive program synthesizer. We then define such
+                  an oracle via sound compilation to Datalog. Our empirical
+                  evaluation shows that this technique results in an efficient
+                  Programming By Navigation synthesizer that solves tasks that
+                  are either impossible or too large for baselines to solve.
+                  Our synthesizer is the first to guarantee that its
+                  specification refinement process satisfies both
+                  <strong class="proper-name">Strong Completeness</strong>
+                  and
+                  <strong class="proper-name">Strong Soundness</strong>.
+              </p>
+            </details>
+          </div>
+        </li>
+        <li>
+          <div class="venue">
+            <p>PLDI &rsquo;25</p>
+          </div>
+          <div>
+            <h3>
+              Fast Direct Manipulation Programming with Patch-Reconciliation Correspondence
+            </h3>
+            <ul class="authors">
+              <li>Parker Ziegler</li>,
+              <li class="me">Justin Lubin</li>, and
+              <li>Sarah E. Chasins</li>
+            </ul>
+            <ul class="links">
+              <li>pdf coming soon!</li>
+              <li><a href="https://github.com/parkerziegler/cartokit">repo</a></li>
+            </ul>
+            <details>
+              <summary>Abstract</summary>
+              <p>
+                Direct manipulation programming gives users a way to write
+                programs without directly writing code, by using the familiar
+                GUI-style interactions they know from direct manipulation
+                interfaces. To date, direct manipulation programming
+                environments have relied on two core components: (1)&nbsp;a
+                <em>patch</em> component, which updates the program based on a
+                GUI interaction, and (2)&nbsp;a <em>forward evaluator</em>, which
+                executes the patched program to produce an updated program
+                output. This architecture has worked for developing
+                short-running programs&mdash;i.e., programs that reliably execute
+                in &lt;1 second&mdash;generating outputs such as SVG and HTML
+                documents. However, direct manipulation programming has not yet
+                been applied to long-running programs (e.g., data
+                visualization, mapping), perhaps because executing such
+                programs in response to every GUI interaction would mean
+                crossing outside of interactive speeds. We propose extending
+                direct manipulation programming to long-running programs by
+                pairing a standard <em>patch</em> component (<strong><code>patch</code></strong>) with a
+                corresponding <em>reconciliation</em> component (<strong><code>recon</strong></code>).
+                <strong><code>recon</code></strong>
+                directly updates the program <em>output</em> in response
+                to a GUI interaction, obviating the need for forward
+                evaluation.
+              </p>
+              <p>
+                We introduce corresponding
+                <strong><code>patch</code></strong>
+                and
+                <strong><code>recon</code></strong>
+                procedures for the domain of geospatial data visualization
+                and prove them sound---that is, we show that the output
+                produced by
+                <strong><code>recon</code></strong>
+                is identical to the output produced
+                by forward-evaluating a
+                <strong><code>patch</strong></code>-modified
+                program.
+                <strong><code>recon</code></strong>
+                can operate both incrementally and in parallel with
+                <strong><code>patch</code></strong>.
+                Our implementation of our
+                <strong><code>patch</code></strong>-<strong><code>recon</code></strong>
+                instantiation achieves a 2.92× median reduction
+                in interface latency compared to forward evaluation on a
+                suite of real-world geospatial visualization tasks.
+                Looking forward, our results suggest implementations based
+                on
+                <strong><code>patch</code></strong>-<strong><code>recon</code></strong>
+                correspondence are a viable path for
+                extending direct manipulation programming to additional
+                programming domains.
+              </p>
+            </details>
+          </div>
+        </li>
+        <li>
+          <div class="venue">
             <p>PLDI &rsquo;24</p>
           </div>
           <div>
@@ -417,12 +546,13 @@ Justin Lubin
                 These results accord with Deuce's aim to provide human-friendly
                 structural interactions on top of familiar text-based editing.
               </p>
+            </details>
           </div>
         </li>
       </ul>
     </main>
 
     <footer>
-        Last updated: 2025-01-18. Happy new year!
+        Last updated: 2025-04-02. Happy spring! 🍃
     </footer>
 {% endblock %}

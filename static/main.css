@@ -195,6 +195,10 @@ code {
   overflow-x: scroll;
 }
 
+.proper-name {
+  font-variant-caps: small-caps;
+}
+
 /* Background */
 
 #background-canvas {
