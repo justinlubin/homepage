@@ -36,6 +36,7 @@
   --crisp-border: #000000;
   --fade-text-color: rgba(0, 0, 0, 0.5);
   --super-fade-text-color: rgba(0, 0, 0, 0.3);
+  --bio-color: green;
 
   --main-width: 850px;
   --spacing-small: 15px;
@@ -172,6 +173,10 @@ code {
   animation-delay: calc(var(--special-index) * 0.1s);
   animation-direction: alternate;
   animation-iteration-count: infinite;
+}
+
+.special.bio-special {
+    color: var(--bio-color);
 }
 
 @keyframes spin3d {
@@ -408,7 +413,7 @@ footer {
   text-align: right;
 }
 
-.venue p {
+.venue p:first-child {
   background-color: var(--accent-color);
   color: var(--bg-color);
 
@@ -426,12 +431,22 @@ footer {
   top: 5px;
 }
 
-.venue p:hover {
+.venue p:first-child:hover {
   animation-name: spin3d;
   animation-duration: 5s;
   animation-delay: 10s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+.venue .venue-annotation {
+    margin-top: 10px;
+    font-size: 0.75em;
+    font-style: italic;
+}
+
+.venue.bio-venue p:first-child {
+  background-color: var(--bio-color);
 }
 
 .publications h3 {
