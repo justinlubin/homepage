@@ -334,8 +334,9 @@ nav .active:after {
 }
 
 .main-header .narrow span {
+  display: block;
   font-size: 0.8em;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 
 /* Blog Header */
