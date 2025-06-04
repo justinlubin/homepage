@@ -388,6 +388,17 @@ main ol > li:before {
   counter-increment: list;
 }
 
+/* Fun stuff */
+
+#fun-stuff {
+  margin-left: 30px;
+  font-size: 0.85em;
+}
+
+#fun-stuff li {
+  list-style-type: disc;
+}
+
 /* Footer */
 
 footer {
@@ -511,6 +522,7 @@ footer {
 #music li {
   margin-bottom: var(--spacing-small);
   position: relative;
+  list-style-type: none;
 }
 
 #music span:first-child {
