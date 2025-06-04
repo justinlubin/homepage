@@ -66,9 +66,13 @@ html {
 }
 
 body {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
   width: var(--main-width);
-
   margin: var(--spacing-large) auto;
+}
+
+#wrapper {
   padding: var(--spacing-large) calc(2 * var(--spacing-large));
 
   border-radius: 3px;
@@ -77,9 +81,21 @@ body {
 
   background-color: var(--bg-color);
   color: var(--text-color);
+}
 
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
+#banner {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1.2em;
+  line-height: 1.5;
+
+  margin-bottom: var(--spacing-large);
+  padding: var(--spacing-small);
+
+  border: 2px solid var(--crisp-border);
+  border-radius: 3px;
+
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.50);
 }
 
 a {
@@ -697,6 +713,13 @@ footer {
   body {
     width: calc(100% - 2 * var(--spacing-small));
     margin: var(--spacing-small);
+  }
+
+  #banner {
+    margin-bottom: var(--spacing-small);
+  }
+
+  #wrapper {
     padding: var(--spacing-large);
   }
 

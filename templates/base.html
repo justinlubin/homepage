@@ -35,19 +35,31 @@
     <script src="/main.js"></script>
   </head>
   <body>
-    <canvas id="background-canvas">
-    </canvas>
+    <div id="banner">
+            I&rsquo;ll be at
+            <a href="https://pldi25.sigplan.org/">
+                PLDI 2025</a>! ☺
+            Please say hi and stop by
+            <a href="https://pldi25.sigplan.org/details/pldi-2025-papers/19/Programming-by-Navigation">
+                my talk on <b>Programming by Navigation</b></a>
+            on Wednesday at 10:30 AM!
+    </div>
 
-    <nav>
-      <ul>
-        <li><a class="{% if section == "Home" %}active{% endif %}" href="/">Home</a></li>
-        <li><a class="{% if section == "Music" %}active{% endif %}" href="/music">Music</a></li>
-        <li><a class="{% if section == "Blog" %}active{% endif %}" href="/blog">Blog</a></li>
-      </ul>
-    </nav>
+    <div id="wrapper">
+        <canvas id="background-canvas">
+        </canvas>
 
-    {% block header %} {% endblock %}
+        <nav>
+          <ul>
+            <li><a class="{% if section == "Home" %}active{% endif %}" href="/">Home</a></li>
+            <li><a class="{% if section == "Music" %}active{% endif %}" href="/music">Music</a></li>
+            <li><a class="{% if section == "Blog" %}active{% endif %}" href="/blog">Blog</a></li>
+          </ul>
+        </nav>
 
-    {% block content %} {% endblock %}
+        {% block header %} {% endblock %}
+
+        {% block content %} {% endblock %}
+      </div>
   </body>
 </html>
