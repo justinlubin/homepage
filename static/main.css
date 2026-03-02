@@ -537,6 +537,18 @@ footer {
 	font-size: 0.8em;
 }
 
+.publications .note {
+	font-size: 0.9em;
+	margin-top: 3px;
+	font-style: italic;
+	color: var(--accent-color);
+}
+
+.publications .note a {
+	color: inherit;
+	text-decoration: underline;
+}
+
 .publications .links {
 	margin-top: 12px;
 	font-size: 0.7em;
