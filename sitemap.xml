@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://jlubin.net/</loc>
+    </url>
+    <url>
+        <loc>https://jlubin.net/blog/</loc>
+    </url>
+    <url>
+        <loc>https://jlubin.net/blog/monadic-do-snap/</loc>
+        <lastmod>2020-01-13</lastmod>
+    </url>
+    <url>
+        <loc>https://jlubin.net/blog/mt-moon/</loc>
+        <lastmod>2022-04-29</lastmod>
+    </url>
+    <url>
+        <loc>https://jlubin.net/blog/point-hyperplane/</loc>
+        <lastmod>2023-05-29</lastmod>
+    </url>
+    <url>
+        <loc>https://jlubin.net/music/</loc>
+    </url>
+</urlset>
