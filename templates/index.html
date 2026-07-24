@@ -15,14 +15,38 @@ Justin Lubin
 {% block content %}
     <main>
       <p class="named callout">
+        <span>Faculty Job Market</span>
+        <span style="font-size:1em">
+          I&rsquo;'ll be on the CS faculty job market
+          in Fall 2026!
+          <span style="color:var(--fade-text-color)">(Application materials coming soon.)</span>
+        </span>
+      </p>
+
+      <p class="resources">
+        <strong>Programming by Navigation (PBN) resources:</strong>
+        <a href="https://dl.acm.org/doi/10.1145/3729264">
+          original paper at PLDI&nbsp;&rsquo;25</a> +
+        <a href="https://www.youtube.com/watch?v=H_F6epzaeBE">presentation</a> + 
+        <a href="https://github.com/justinlubin/honeybee">repo</a> ◦
+        <a href="https://honeybee-lang.org/">Honeybee (PBN for scientific analyses)</a> ◦
+        <a href="https://dl.acm.org/doi/10.1145/3808344">PBN for debugging proof search at PLDI&nbsp;&rsquo;26</a> +
+        <a href="https://github.com/justinlubin/aonav">repo</a> +
+        <a href="https://github.com/mjpreigh/lean-pbn">as a tactic in Lean</a> ◦
+        <a href="https://capra.cs.cornell.edu/latte26/paper/latte26-final6.pdf">PBN for user-schedulable sparse tensor algebra compilation at LATTE&nbsp;&rsquo;26</a> ◦
+        <a href="https://github.com/justinlubin/tinypbn/">pedagogical PBN in ~50 lines of Python</a> ◦
+        <a href="https://doi.org/10.64898/2026.02.24.707761">example biology paper using Honeybee</a>
+      </p>
+
+      <!-- <p class="named callout">
         <span>Research Mission</span>
         <span style="font-size:1em">
           To enable scientists to write code with only domain expertise, not
           programming expertise.
         </span>
-      </p>
+      </p> -->
 
-      <p>
+      <!-- <p>
         Hi there, I&rsquo;m Justin!
         I am a PhD candidate in computer science advised by
         <a href="https://schasins.com/">
@@ -33,45 +57,114 @@ Justin Lubin
           Ravi Chugh</a> as an undergrad at UChicago.
         I am very grateful for their excellent mentorship and strive to pay it
         forward!
-      </p>
+      </p> -->
 
-      <h2>Research</h2>
-
-      <p>
-        <strong>I co-design programming systems with scientists.</strong> These
-        systems empower scientists without a background in computing to write
-        the code they need by themselves.  To make new user interactions
-        possible in these systems, I develop <strong>programming language
-        theory</strong> informed by what I learn from my <strong>deep
-        embedding with domain experts</strong> and my mixed method
-        human-computer interaction research.
-      </p>
+      <!-- <h2>Research</h2> -->
 
       <p>
-        I&rsquo;m currently immersed in the world of
-        <span class="special bio-special">
-          <span>b</span><span>i</span><span>o</span><span>l</span><span>o</span><span>g</span><span>y</span>
-        </span>
-        to foster a substantive, ongoing, and reciprocal relationship between
-        the fields of programming languages and experimental biology.
-        I have been collaborating most closely with the lovely folks of the
-        <a href="https://www.nunezlab.org/">
-           Nuñez Lab</a>
-        to advance research in biology and to answer the following question
-        with them:
+        Writing scientific programs is hard:
+        <ul>
+          <li>
+            We can&rsquo;t verify the correctness of them by looking
+            at their outputs; because what these programs are supporting is
+            <em>science</em>, if we knew what the outputs of these programs should
+            be, we wouldn&rsquo;t need to   run them in the first place.
+          </li>
+          <li>
+            Due to subtle scientific and statistical assumptions, verifying
+            these programs line-by-line is challenging even for computational
+            scientists and is entirely out of reach for many experimental
+            scientists.
+          </li>
+          <li>
+            Scientific programs can take weeks to run. This is assuming,
+            of course, that we&rsquo;ve managed to get something to run in the first
+            place; programming a scientific analysis requires decomposing the
+            scientific question into an exact, ordered set of particular
+            analysis steps and building on dozens of independently-developed
+            tools, each with their own calling conventions and data structures.
+          </li>
+          <li>
+            Throughout the process, there are judgment calls based on biological
+            expertise that go into every decision, and different valid programs
+            can mean the difference between one scientific conclusion and
+            another.
+          </li>
+        </ul>
       </p>
 
-      <p class="callout">
-        How can we work with scientists to build a programming system
-        <b>for</b> them and <b>with</b> them to empower them to write the code
-        they need without having programming expertise?
+      <figure class="right">
+        <a href="/img/wet-lab.jpg">
+          <img src="/img/wet-lab.jpg"
+             alt="A photo of Justin in an experimental biology laboratory. He is wearing a lab coat and safety goggles and holding a pipette. He is standing, smiling, next to a an open lab notebook and machine displaying data that has been collected."
+             width="275" /></a>
+        <figcaption>
+          Me in the wet lab running my first independent experiment!
+        </figcaption>
+      </figure>
+
+      <p>
+        I am a <strong>programming systems researcher</strong>, but
+        these are all facts I&rsquo;ve learned in my deep collaboration with
+        the
+        <a href="https://sites.google.com/berkeley.edu/nunezlab/home">
+          Nu&ntilde;ez Lab</a>, where for the last four years I&rsquo;ve worked
+          with them to contribute to our understanding of the regulatory
+          principles of the human genome, both experimentally (see right!) and
+          <a href="/img/dry-lab.jpg">computationally</a>
+          (<a href="https://doi.org/10.1038/s41467-025-63167-x">Nat. Commun.&nbsp;&rsquo;25</a>, preprints
+          <a href="https://doi.org/10.1101/2025.10.12.681832">1</a>,
+          <a href="https://doi.org/10.64898/2026.02.24.707761">2</a>,
+          <a href="https://doi.org/10.64898/2026.07.08.737375">3</a>).
+
+        Along the way, I&rsquo;ve worked with them to co-design
+        and build
+        <a href="https://honeybee-lang.org">Honeybee</a>, a programming system
+        that enables them and other experimental scientists to analyze the rich
+        data they produce in the wet lab. This system is built on a technique
+        I&rsquo;ve developed called <strong>Programming by Navigation</strong>
+        (<a href="https://dl.acm.org/doi/10.1145/3729264">PLDI&nbsp;&rsquo;25</a>,
+        <a href="https://doi.org/10.1145/3808344">PLDI&nbsp;&rsquo;26</a>), which the
+        <a href="https://plr.csail.mit.edu/plr2026.html">MIT Programming
+        Languages Review has selected as a research highlight</a>.
       </p>
+
+      <p>
+        Outside science, I&rsquo;ve applied Programming by Navigation
+        to help programmers debug proof search (<i>e.g.</i> Rust trait errors,
+        failing search tactics in interactive theorem provers) in collaboration
+        with <a href="https://www.mwillsey.com/">Max Willsey</a>
+        (<a href="https://doi.org/10.1145/3808344">PLDI&nbsp;&rsquo;26</a>) and to
+        help performance engineers precisely control state-of-the-art sparse
+        tensor algebra compilers in collaboration with <a href="https://weiya711.github.io/">Olivia Hsu</a>
+        (<a href="https://capra.cs.cornell.edu/latte26/paper/latte26-final6.pdf">LATTE&nbsp;&rsquo;26</a>, in progress).
+      </p>
+
+      <!-- <p> -->
+        <!-- I&rsquo;m currently immersed in the world of -->
+        <!-- <span class="special bio-special"> -->
+          <!-- <span>b</span><span>i</span><span>o</span><span>l</span><span>o</span><span>g</span><span>y</span> -->
+        <!-- </span> -->
+        <!-- to foster a substantive, ongoing, and reciprocal relationship between -->
+        <!-- the fields of programming languages and experimental biology. -->
+        <!-- I have been collaborating most closely with the lovely folks of the -->
+        <!-- <a href="https://www.nunezlab.org/"> -->
+           <!-- Nuñez Lab</a> -->
+        <!-- to advance research in biology and to answer the following question -->
+        <!-- with them: -->
+      <!-- </p> -->
+
+      <!-- <p class="callout"> -->
+        <!-- How can we work with scientists to build a programming system -->
+        <!-- <b>for</b> them and <b>with</b> them to empower them to write the code -->
+        <!-- they need without having programming expertise? -->
+      <!-- </p> -->
 
       <h2>Conference and Journal Publications</h2>
 
       <p>
         For more, please see my <a href="/assets/lubin-cv.pdf">CV</a>
-        or <a href="https://scholar.jlubin.net">Google Scholar</a>!
+        or <a href="https://scholar.jlubin.net">Google Scholar</a>.
         <span class="mod-note">
           (&#8727; = equal contribution, &dagger; = research mentee)
         </span>
@@ -975,6 +1068,6 @@ Justin Lubin
     </main>
 
     <footer>
-        Last updated: 2026-07-10. Have A Great Summer! ☀️
+        Last updated: 2026-07-24. Have A Great Summer! ☀️
     </footer>
 {% endblock %}

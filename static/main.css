@@ -38,7 +38,7 @@
 	--super-fade-text-color: rgba(0, 0, 0, 0.3);
 	--bio-color: green;
 
-	--main-width: 850px;
+	--main-width: 950px;
 	--spacing-small: 15px;
 	--spacing-large: 25px;
 }
@@ -170,6 +170,18 @@ code {
 	position: absolute;
 	top: calc(-0.9 * var(--spacing-small));
 	left: var(--spacing-small);
+}
+
+.callout.callout-left {
+	text-align: left;
+	font-style: normal;
+}
+
+.resources {
+	padding-top: var(--spacing-small);
+	padding-bottom: var(--spacing-small);
+	border-top: 1px dashed var(--crisp-border);
+	border-bottom: 1px dashed var(--crisp-border);
 }
 
 @keyframes bob-text {
@@ -392,6 +404,14 @@ nav .active:after {
 	margin-bottom: 7px;
 }
 
+.main-header .sub {
+	margin-top: 7px;
+}
+
+.main-header .links {
+	margin-top: 7px;
+}
+
 /* Blog Header */
 
 .blog-header {
@@ -426,6 +446,15 @@ main h2 {
 	margin-top: var(--spacing-large);
 }
 
+main > ul {
+	margin-left: 30px;
+}
+
+main > ul > li {
+	list-style-type: disc;
+	margin-bottom: calc(var(--spacing-small) / 2);
+}
+
 /* https://stackoverflow.com/a/1636635 */
 main ol {
 	margin-left: 30px;
@@ -441,6 +470,24 @@ main ol > li:before {
 	counter-increment: list;
 }
 
+main .right {
+	float: right;
+	margin-left: var(--spacing-large);
+	margin-right: var(--spacing-small);
+}
+
+main figure {
+	width: 275px;
+}
+
+main figure img {
+	margin-top: 6px;
+}
+
+main figcaption {
+	text-align: center;
+}
+
 /* Fun stuff */
 
 #fun-stuff {
@@ -450,6 +497,7 @@ main ol > li:before {
 
 #fun-stuff li {
 	list-style-type: disc;
+	margin-bottom: 0;
 }
 
 /* Footer */
@@ -760,7 +808,7 @@ footer {
 /* Screen size adjustments */
 
 /* max-width: var(--main-width) + 2 * var(--spacing-large) */
-@media (max-width: 910px) {
+@media (max-width: 1000px) {
 	body {
 		width: calc(100% - 2 * var(--spacing-small));
 		margin: var(--spacing-small);
@@ -809,5 +857,13 @@ footer {
 
 	.blog-header h1 {
 		font-size: 2.5em;
+	}
+
+	main figure {
+		width: 150px;
+	}
+
+	main figure img {
+		width: 150px;
 	}
 }
