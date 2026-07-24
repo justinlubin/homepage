@@ -519,6 +519,7 @@ footer {
 .publications > li {
 	display: flex;
 	margin-top: 20px;
+	margin-left: 0;
 }
 
 .venue {
