@@ -482,6 +482,7 @@ main figure {
 
 main figure img {
 	margin-top: 6px;
+	border-radius: 3px;
 }
 
 main figcaption {
