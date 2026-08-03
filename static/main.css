@@ -262,7 +262,7 @@ code {
 }
 
 .katex-display {
-	overflow-x: scroll;
+	overflow-x: auto;
 }
 
 .proper-name {
@@ -448,7 +448,7 @@ main h2 {
 }
 
 main > ul {
-	margin-left: 30px;
+	/* margin-left: 30px; */
 }
 
 main > ul > li {
@@ -458,7 +458,7 @@ main > ul > li {
 
 /* https://stackoverflow.com/a/1636635 */
 main ol {
-	margin-left: 30px;
+	/* margin-left: 30px; */
 	counter-reset: list;
 }
 
@@ -735,6 +735,16 @@ footer {
 #page code {
 	font-family: monospace;
 	background-color: rgba(0, 0, 0, 0.05);
+}
+
+#page .giallo {
+	background-color: transparent !important;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#page .giallo code {
+	background-color: transparent;
 }
 
 #page ol li {
