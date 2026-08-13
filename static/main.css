@@ -132,6 +132,11 @@ sup {
 	vertical-align: super;
 }
 
+sub {
+	font-size: 0.7em;
+	vertical-align: sub;
+}
+
 code {
 	font-family: monospace;
 }
