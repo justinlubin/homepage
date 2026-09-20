@@ -1,0 +1,83 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+JITCompiled | Point-hyperplane distance
+</title>
+    <script src="https://kit.fontawesome.com/ccff81e838.js"
+            crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/main.css">
+
+    <!-- Favicon, courtesy of https://favicon.io/favicon-generator/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+    
+
+    <script src="/main.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+        <canvas id="background-canvas">
+        </canvas>
+
+        <nav>
+          <ul>
+            <li><a class="" href="/">Home</a></li>
+            <li><a class="" href="/music">Music</a></li>
+            <li><a class="active" href="/blog">Blog</a></li>
+          </ul>
+        </nav>
+
+        
+  <header class="blog-header">
+    <h1><a href="/blog">JITCompiled</a></h1>
+    <p>A blog by <a href="/">Justin Lubin</a>.</p>
+  </header>
+
+
+
+        
+
+<main id="page">
+  <h2>Point-hyperplane distance</h2>
+  <p class="date">May 29, 2023</p>
+  <p>Here’s a super simple proof I did that I thought was quite neat during the course of <a href="https://people.eecs.berkeley.edu/~jrs/189/">CS 289A: Introduction to Machine Learning</a> at Berkeley!</p>
+<p><strong>Theorem.</strong> <em>The distance between a point $x \in \mathbb{R}^n$ and a hyperplane $H = \{v \in \mathbb{R}^n \mid w \cdot v + \alpha = 0 \}$ for $w \in \mathbb{R}^n$ and $\alpha \in \mathbb{R}$ is $\frac{|w\cdot x + \alpha|}{||w||}$.</em></p>
+<p><em>Proof.</em> Suppose $\lambda\in \mathbb{R}$ such that $x - \lambda w \in H$. Then, as $w$ is normal to $H$, the distance between $x$ and $H$ is $||\lambda w||$. Moreover, as $x - \lambda w \in H$, we have</p>
+<p>$$
+0 = w\cdot (x - \lambda w )+ \alpha = w \cdot x - \lambda ||w||^2 + \alpha,
+$$</p>
+<p>so $\lambda =
+\frac{w\cdot x + \alpha}{||w||^2}$. <span class="qed">□</span>
+</p>
+
+  <footer>
+    <p>Return to <a href="/blog">JITCompiled home</a>.</p>
+  </footer>
+</main>
+
+
+      </div>
+  </body>
+</html>
