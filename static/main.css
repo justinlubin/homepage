@@ -483,7 +483,7 @@ main .right {
 }
 
 main figure {
-	width: 275px;
+	width: 200px;
 }
 
 main figure img {
@@ -497,14 +497,9 @@ main figcaption {
 
 /* Fun stuff */
 
-#fun-stuff {
-	margin-left: 30px;
-	font-size: 0.85em;
-}
-
 #fun-stuff li {
+	margin-left: 30px;
 	list-style-type: disc;
-	margin-bottom: 0;
 }
 
 /* Footer */
@@ -530,7 +525,7 @@ footer {
 
 .venue {
 	margin-right: var(--spacing-small);
-	flex: 0 0 130px;
+	flex: 0 0 200px;
 	text-align: right;
 }
 
@@ -596,13 +591,16 @@ footer {
 .publications .note {
 	font-size: 0.9em;
 	margin-top: 3px;
-	font-style: italic;
 	color: var(--accent-color);
 }
 
 .publications .note a {
 	color: inherit;
 	text-decoration: underline;
+}
+
+.publications .note a:hover {
+	background-color: rgba(0, 0, 0, 0.02);
 }
 
 .publications .links {
