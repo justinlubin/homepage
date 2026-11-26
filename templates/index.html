@@ -71,7 +71,9 @@ Justin Lubin
         Highlight</a>), shows how my research approach invents unified
     solutions for big problems across domains as diverse as biology, proof
     engineering, computer architecture, and machine learning.
-    Using my programming tools, dozens of working biologists have now generated their own data analyses for the first time, all guaranteed to be correct by construction.
+    Using Programming by Navigation, dozens of biologists have created their
+    own data analyses for the first time, all guaranteed correct by
+    construction.
   </p>
 
   <h2>Selected Publications</h2>
@@ -83,6 +85,196 @@ Justin Lubin
       (&#8727; = equal contribution, &dagger; = research mentee)
     </span>
   </p>
+
+  <ul class="publications highlighted">
+    <span>Highlighted Publications</span>
+    <li>
+      <div class="venue">
+        <p>PLDI &rsquo;25</p>
+      </div>
+      <div>
+        <h3>
+          <a href="https://doi.org/10.1145/3729264">
+            Programming by Navigation</a>
+        </h3>
+        <ul class="authors">
+          <li class="me">Justin Lubin</li>,
+          <li>Parker Ziegler</li>, and
+          <li>Sarah E. Chasins</li>
+        </ul>
+        <p class="note">
+          <i class="icon fa fa-trophy"></i>
+          <a href="https://plr.csail.mit.edu/plr2026.html">
+            MIT Programming Languages Review 2026</a> Research Highlight
+        </p>
+        <ul class="links">
+          <li><a href="/assets/pldi25a.pdf">pdf</a></li>
+          <li><a href="/assets/pldi25a-supplement.pdf">supplement</a></li>
+          <li><a href="/assets/pldi25a-errata.pdf">errata</a></li>
+          <li><a href="https://www.youtube.com/watch?v=H_F6epzaeBE">presentation</a></li>
+          <li><a href="/assets/pldi25a-slides.pdf">slides</a></li>
+          <li><a href="https://github.com/justinlubin/honeybee">repo</a></li>
+        </ul>
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            When a program synthesis task starts from an ambiguous
+            specification, the synthesis process often involves an
+            iterative specification refinement process. We introduce the
+            Programming by Navigation Synthesis Problem, a new synthesis
+            problem adapted specifically for supporting iterative
+            specification refinement in order to find a
+            <em>particular</em>
+            target solution. In contrast to prior work, we prove that
+            synthesizers that solve the Programming by Navigation
+            Synthesis Problem show
+            <em>all</em>
+            valid next steps
+            (<strong class="proper-name">Strong Completeness</strong>)
+            and
+            <em>only</em>
+            valid next steps
+            (<strong class="proper-name">Strong Soundness</strong>).
+            To meet the demands of the Programming by Navigation
+            Synthesis Problem, we introduce an algorithm to turn a type
+            inhabitation oracle (in the style of classical logic) into a
+            fully constructive program synthesizer. We then define such
+            an oracle via sound compilation to Datalog. Our empirical
+            evaluation shows that this technique results in an efficient
+            Programming by Navigation synthesizer that solves tasks that
+            are either impossible or too large for baselines to solve.
+            Our synthesizer is the first to guarantee that its
+            specification refinement process satisfies both
+            <strong class="proper-name">Strong Completeness</strong>
+            and
+            <strong class="proper-name">Strong Soundness</strong>.
+          </p>
+        </details>
+      </div>
+    </li>
+    <li>
+      <div class="venue">
+        <p>PLDI &rsquo;26</p>
+      </div>
+      <div>
+        <h3>
+          <a href="https://doi.org/10.1145/3808344">
+            Navigating AND&ndash;OR Graph Modifications to Debug Failing Proof Search</a>
+        </h3>
+        <ul class="authors">
+          <li class="me">Justin Lubin</li>,
+          <li>Marlena Preigh</li>,<li class="mod">&dagger;</li>
+          <li>Max Willsey</li>, and
+          <li>Sarah E. Chasins</li>
+        </ul>
+        <ul class="links">
+          <li><a href="/assets/pldi26.pdf">pdf</a></li>
+          <li><a href="/assets/pldi26-supplement.pdf">supplement</a></li>
+          <li><a href="/assets/pldi26-errata.pdf">errata</a></li>
+          <li><a href="https://www.youtube.com/watch?v=jXJS7-MpEko">presentation</a></li>
+          <li><a href="/assets/pldi26-slides.pdf">slides</a></li>
+          <li><a href="https://github.com/justinlubin/aonav">repo</a></li>
+        </ul>
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Proof search powers our most advanced programming tools, from
+            type systems, to search tactics for interactive theorem provers,
+            to Datalog-backed program analyses. Although proof search
+            tooling is powerful and now pervasive, debugging it is hard,
+            even for experts. When proof search cannot prove the goal, the
+            programmer’s best source of information is a massive AND–OR
+            graph representing the tool’s internal state during the proof
+            search process. The difficulty of understanding and debugging
+            this vast trace of internal state locks programmers out of
+            exactly the high-assurance automated reasoning tools we want
+            them to adopt.
+          </p>
+
+          <p>
+            We propose a new formulation of proof search debugging, which:
+            (i)&nbsp;views AND–OR graphs as a partial representations of
+            the underlying proof system, (ii)&nbsp;treats debugging as a
+            process of applying modifications to this proof system, and
+            (iii)&nbsp;uses a debugging tool to solicit these modifications
+            until the resulting proof system proves the original goal.
+            This approach unifies decades of ad-hoc strategies in a single
+            general-purpose framework and is applicable to the diverse
+            range of programming tools that use proof search. Our framework
+            can express existing “why-not” debugging strategies as well as
+            new strategies, and we evaluate such strategies on 284 AND–OR
+            graphs. We find that a strategy that enforces a property called
+            <span class="proper-name">Strong Soundness</span>.
+            reduces the number of decisions by 1.4×–3.2× compared to an unsound baseline,
+            and a new property we call
+            <span class="proper-name">Strong Completeness Modulo Observability</span>.
+            enables pruning to further reduce decisions by 1.0×–2.8× for an overall
+            reduction of 2.0×–3.8×.
+          </p>
+        </details>
+      </div>
+    </li>
+    <li>
+      <div class="venue">
+        <p>OOPSLA &rsquo;21</p>
+      </div>
+      <div>
+        <h3>
+          <a href="https://doi.org/10.1145/3485532">
+            How Statically-Typed Functional Programmers Write Code
+          </a>
+        </h3>
+        <ul class="authors">
+          <li class="me">Justin Lubin</li> and
+          <li>Sarah E. Chasins</li>
+        </ul>
+        <p class="note">
+          <i class="icon fa fa-trophy"></i>
+          3<sup>rd</sup> Place, CHI Graduate Student Research Competition 2021
+        </p>
+        <ul class="links">
+          <li><a href="/assets/oopsla21.pdf">pdf</a></li>
+          <li><a href="https://dl.acm.org/doi/10.1145/3485532#sec-supp">presentation</a></li>
+          <li><a
+              href="https://docs.google.com/presentation/d/e/2PACX-1vQlds8AF3Fa8pChmv-FvrRaha6hW-55cwSuuu8V0m35IoXzZmsr4-GRkN81qp5fJE4kn0HldBjMOJQE/pub">slides</a>
+          </li>
+          <li><a href="/assets/hstfpwc-poster.pdf">poster</a></li>
+        </ul>
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            How working statically-typed functional programmers write
+            code is largely understudied. And yet, a better
+            understanding of developer practices could pave the way for
+            the design of more useful and usable tooling, more ergonomic
+            languages, and more effective on-ramps into programming
+            communities. The goal of this work is to address this
+            knowledge gap: to better understand the high-level authoring
+            patterns that statically-typed functional programmers employ.
+            We conducted a grounded theory analysis of 30 programming
+            sessions of practicing statically-typed functional
+            programmers, 15 of which also included a semi-structured
+            interview. The theory we developed gives insight into how
+            the specific affordances of statically-typed functional
+            programming affect domain modeling, type construction,
+            focusing techniques, exploratory and reasoning strategies,
+            and expressions of intent. We conducted a set of quantitative
+            lab experiments to validate our findings, including that
+            statically-typed functional programmers often iterate between
+            editing types and expressions, that they often run their
+            compiler on code even when they know it will not successfully
+            compile, and that they make textual program edits that
+            reliably signal future edits that they intend to make.
+            Lastly, we outline the implications of our findings for
+            language and tool design. The success of this approach in
+            revealing program authorship patterns suggests that the same
+            methodology could be used to study other understudied
+            programmer populations.
+          </p>
+        </details>
+      </div>
+    </li>
+  </ul>
 
   <ul class="publications">
     <li>
@@ -259,68 +451,6 @@ Justin Lubin
     </li>
     <li>
       <div class="venue">
-        <p>PLDI &rsquo;26</p>
-      </div>
-      <div>
-        <h3>
-          <a href="https://doi.org/10.1145/3808344">
-            Navigating AND&ndash;OR Graph Modifications to Debug Failing Proof Search</a>
-        </h3>
-        <ul class="authors">
-          <li class="me">Justin Lubin</li>,
-          <li>Marlena Preigh</li>,<li class="mod">&dagger;</li>
-          <li>Max Willsey</li>, and
-          <li>Sarah E. Chasins</li>
-        </ul>
-        <ul class="links">
-          <li><a href="/assets/pldi26.pdf">pdf</a></li>
-          <li><a href="/assets/pldi26-supplement.pdf">supplement</a></li>
-          <li><a href="/assets/pldi26-errata.pdf">errata</a></li>
-          <li><a href="https://www.youtube.com/watch?v=jXJS7-MpEko">presentation</a></li>
-          <li><a href="/assets/pldi26-slides.pdf">slides</a></li>
-          <li><a href="https://github.com/justinlubin/aonav">repo</a></li>
-        </ul>
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            Proof search powers our most advanced programming tools, from
-            type systems, to search tactics for interactive theorem provers,
-            to Datalog-backed program analyses. Although proof search
-            tooling is powerful and now pervasive, debugging it is hard,
-            even for experts. When proof search cannot prove the goal, the
-            programmer’s best source of information is a massive AND–OR
-            graph representing the tool’s internal state during the proof
-            search process. The difficulty of understanding and debugging
-            this vast trace of internal state locks programmers out of
-            exactly the high-assurance automated reasoning tools we want
-            them to adopt.
-          </p>
-
-          <p>
-            We propose a new formulation of proof search debugging, which:
-            (i)&nbsp;views AND–OR graphs as a partial representations of
-            the underlying proof system, (ii)&nbsp;treats debugging as a
-            process of applying modifications to this proof system, and
-            (iii)&nbsp;uses a debugging tool to solicit these modifications
-            until the resulting proof system proves the original goal.
-            This approach unifies decades of ad-hoc strategies in a single
-            general-purpose framework and is applicable to the diverse
-            range of programming tools that use proof search. Our framework
-            can express existing “why-not” debugging strategies as well as
-            new strategies, and we evaluate such strategies on 284 AND–OR
-            graphs. We find that a strategy that enforces a property called
-            <span class="proper-name">Strong Soundness</span>.
-            reduces the number of decisions by 1.4×–3.2× compared to an unsound baseline,
-            and a new property we call
-            <span class="proper-name">Strong Completeness Modulo Observability</span>.
-            enables pruning to further reduce decisions by 1.0×–2.8× for an overall
-            reduction of 2.0×–3.8×.
-          </p>
-        </details>
-      </div>
-    </li>
-    <li>
-      <div class="venue">
         <p>CHI &rsquo;26</p>
       </div>
       <div>
@@ -419,70 +549,6 @@ Justin Lubin
             of CRISPR-based epigenome editors into human cells,
             broadening the use of epigenome editing in fundamental
             research and therapeutic applications.
-          </p>
-        </details>
-      </div>
-    </li>
-    <li>
-      <div class="venue">
-        <p>PLDI &rsquo;25</p>
-      </div>
-      <div>
-        <h3>
-          <a href="https://doi.org/10.1145/3729264">
-            Programming by Navigation</a>
-        </h3>
-        <ul class="authors">
-          <li class="me">Justin Lubin</li>,
-          <li>Parker Ziegler</li>, and
-          <li>Sarah E. Chasins</li>
-        </ul>
-        <p class="note">
-          <i class="icon fa fa-trophy"></i>
-          <a href="https://plr.csail.mit.edu/plr2026.html">
-            MIT Programming Languages Review 2026</a> Research Highlight
-        </p>
-        <ul class="links">
-          <li><a href="/assets/pldi25a.pdf">pdf</a></li>
-          <li><a href="/assets/pldi25a-supplement.pdf">supplement</a></li>
-          <li><a href="/assets/pldi25a-errata.pdf">errata</a></li>
-          <li><a href="https://www.youtube.com/watch?v=H_F6epzaeBE">presentation</a></li>
-          <li><a href="/assets/pldi25a-slides.pdf">slides</a></li>
-          <li><a href="https://github.com/justinlubin/honeybee">repo</a></li>
-        </ul>
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            When a program synthesis task starts from an ambiguous
-            specification, the synthesis process often involves an
-            iterative specification refinement process. We introduce the
-            Programming by Navigation Synthesis Problem, a new synthesis
-            problem adapted specifically for supporting iterative
-            specification refinement in order to find a
-            <em>particular</em>
-            target solution. In contrast to prior work, we prove that
-            synthesizers that solve the Programming by Navigation
-            Synthesis Problem show
-            <em>all</em>
-            valid next steps
-            (<strong class="proper-name">Strong Completeness</strong>)
-            and
-            <em>only</em>
-            valid next steps
-            (<strong class="proper-name">Strong Soundness</strong>).
-            To meet the demands of the Programming by Navigation
-            Synthesis Problem, we introduce an algorithm to turn a type
-            inhabitation oracle (in the style of classical logic) into a
-            fully constructive program synthesizer. We then define such
-            an oracle via sound compilation to Datalog. Our empirical
-            evaluation shows that this technique results in an efficient
-            Programming by Navigation synthesizer that solves tasks that
-            are either impossible or too large for baselines to solve.
-            Our synthesizer is the first to guarantee that its
-            specification refinement process satisfies both
-            <strong class="proper-name">Strong Completeness</strong>
-            and
-            <strong class="proper-name">Strong Soundness</strong>.
           </p>
         </details>
       </div>
@@ -669,66 +735,6 @@ Justin Lubin
             learnable by novices, which opens up the possibility of using
             program synthesizers in educational settings as well as
             developer tooling oriented toward novice programmers.
-          </p>
-        </details>
-      </div>
-    </li>
-    <li>
-      <div class="venue">
-        <p>OOPSLA &rsquo;21</p>
-      </div>
-      <div>
-        <h3>
-          <a href="https://doi.org/10.1145/3485532">
-            How Statically-Typed Functional Programmers Write Code
-          </a>
-        </h3>
-        <ul class="authors">
-          <li class="me">Justin Lubin</li> and
-          <li>Sarah E. Chasins</li>
-        </ul>
-        <p class="note">
-          <i class="icon fa fa-trophy"></i>
-          3<sup>rd</sup> Place, CHI Graduate Student Research Competition 2021
-        </p>
-        <ul class="links">
-          <li><a href="/assets/oopsla21.pdf">pdf</a></li>
-          <li><a href="https://dl.acm.org/doi/10.1145/3485532#sec-supp">presentation</a></li>
-          <li><a
-              href="https://docs.google.com/presentation/d/e/2PACX-1vQlds8AF3Fa8pChmv-FvrRaha6hW-55cwSuuu8V0m35IoXzZmsr4-GRkN81qp5fJE4kn0HldBjMOJQE/pub">slides</a>
-          </li>
-          <li><a href="/assets/hstfpwc-poster.pdf">poster</a></li>
-        </ul>
-        <details>
-          <summary>Abstract</summary>
-          <p>
-            How working statically-typed functional programmers write
-            code is largely understudied. And yet, a better
-            understanding of developer practices could pave the way for
-            the design of more useful and usable tooling, more ergonomic
-            languages, and more effective on-ramps into programming
-            communities. The goal of this work is to address this
-            knowledge gap: to better understand the high-level authoring
-            patterns that statically-typed functional programmers employ.
-            We conducted a grounded theory analysis of 30 programming
-            sessions of practicing statically-typed functional
-            programmers, 15 of which also included a semi-structured
-            interview. The theory we developed gives insight into how
-            the specific affordances of statically-typed functional
-            programming affect domain modeling, type construction,
-            focusing techniques, exploratory and reasoning strategies,
-            and expressions of intent. We conducted a set of quantitative
-            lab experiments to validate our findings, including that
-            statically-typed functional programmers often iterate between
-            editing types and expressions, that they often run their
-            compiler on code even when they know it will not successfully
-            compile, and that they make textual program edits that
-            reliably signal future edits that they intend to make.
-            Lastly, we outline the implications of our findings for
-            language and tool design. The success of this approach in
-            revealing program authorship patterns suggests that the same
-            methodology could be used to study other understudied
-            programmer populations.
           </p>
         </details>
       </div>
