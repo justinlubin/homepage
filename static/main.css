@@ -24,6 +24,15 @@
 	src: url("/fonts/Inter-Bold.woff2?v=3.19") format("woff2");
 }
 
+@font-face {
+	font-family: "Inter";
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+	src: url("/fonts/Inter-BoldItalic.woff2?v=4.1") format("woff2");
+}
+
+
 /* Variables */
 
 :root {
