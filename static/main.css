@@ -672,7 +672,7 @@ footer {
 	margin-top: var(--spacing-large);
 	/*background-color: rgba(0, 0, 0, 0.01);*/
 	position: relative;
-	padding-bottom: 5px;
+	padding: 0 var(--spacing-large) 5px 0;
 }
 
 .publications.highlighted>span:first-child {
